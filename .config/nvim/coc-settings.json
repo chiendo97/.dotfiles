@@ -1,0 +1,29 @@
+{
+  "suggest.echodocSupport": true,
+  "suggest.maxCompleteItemCount": 20,
+  "coc.preferences.formatOnSaveFiletypes": ["typescriptreact", "json", "javascriptreact", "python"],
+  "prettier.semi": false,
+  "prettier.singleQuote": true,
+  "diagnostic.errorSign": "•",
+  "diagnostic.warningSign": "•",
+  "diagnostic.infoSign": "•",
+  "languageserver": {
+    "cquery": {
+      "command": "cquery",
+      "args": ["--log-file=/tmp/cq.log"],
+      "filetypes": ["c", "cpp"],
+      "rootPatterns": ["compile_flags.txt", "compile_commands.json", ".vim/", ".git/", ".hg/"],
+      "initializationOptions": {
+        "cacheDirectory": "/tmp/cquery"
+      }
+    }
+  },
+  "python.trace.server": "verbose",
+
+  "python.jediEnabled": true,
+  "python.jediPath": "/usr/local/lib/python3.7/site-packages/",
+
+  "python.linting.pylintPath": "/usr/local/bin/pylint",
+  "python.linting.pylintArgs": ["--generate-members"],
+  "python.formatting.autopep8Path": "/usr/local/bin/autopep8"
+}
