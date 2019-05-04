@@ -1,3 +1,9 @@
+# dotfiles for .files config
+alias dotfiles='/usr/bin/git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME'
+
+# Disable tensorflow warning about optimize CPU build
+export TF_CPP_MIN_LOG_LEVEL=2
+
 export SPARK_HOME=/usr/local/Cellar/apache-spark/2.4.1/libexec
 export PYSPARK_PYTHON=/usr/local/bin/python3
 

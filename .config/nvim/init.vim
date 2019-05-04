@@ -134,6 +134,8 @@ set nowrap
 
 call plug#begin('~/.local/share/nvim/plugged')
 
+
+
 "Plug 'w0rp/ale'
 
 Plug 'simeji/winresizer'
@@ -143,7 +145,7 @@ Plug 'machakann/vim-sandwich'
 
 Plug 'Lokaltog/vim-monotone'
 
-Plug 'joshdick/onedark.vim'
+"Plug 'joshdick/onedark.vim'
 
 Plug 'jiangmiao/auto-pairs'
 
@@ -159,8 +161,8 @@ let g:mkdp_echo_preview_url = 1
 Plug 'vimwiki/vimwiki'
 autocmd FileType vimwiki  :nnoremap <Space><Space> <Plug>VimwikiToggleListItem
 
-Plug 'flazz/vim-colorschemes'
-Plug 'NLKNguyen/papercolor-theme'
+"Plug 'flazz/vim-colorschemes'
+"Plug 'NLKNguyen/papercolor-theme'
 
 Plug 'scrooloose/nerdcommenter'
 nnoremap <c-c> :call NERDComment(0,"toggle")<CR>
@@ -261,7 +263,7 @@ let g:airline_theme='minimalist'
 Plug 'mattn/emmet-vim'
 let g:user_emmet_leader_key=','
 
-Plug 'morhetz/gruvbox'
+"Plug 'morhetz/gruvbox'
 
 call plug#end()
 
@@ -305,8 +307,8 @@ map <C-l> <C-w>l
 
 
 " This mapping for switching tab with 1 2 3 .. 0
-nnoremap H gT
-nnoremap L gt
+"nnoremap H gT
+"nnoremap L gt
 
 nnoremap gV `[v`]
 
