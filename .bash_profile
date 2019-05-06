@@ -1,6 +1,9 @@
 # dotfiles for .files config
 alias dotfiles='/usr/bin/git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME'
 
+# Copy pwd to clipboard
+alias cpwd="pwd | tr -d '\n' | pbcopy"
+
 # Disable tensorflow warning about optimize CPU build
 export TF_CPP_MIN_LOG_LEVEL=2
 
