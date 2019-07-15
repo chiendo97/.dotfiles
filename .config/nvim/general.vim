@@ -42,7 +42,7 @@ set noswapfile
 set tabstop=2           " number of visual spaces per TAB
 set softtabstop=2       " number of spaces in tab when editing
 set sw=2
-set noexpandtab
+set expandtab
 set smarttab            " Handle tabs more intelligently
 
 set autoindent
@@ -75,14 +75,9 @@ set foldmethod=marker
 " }}}
 
 " === Apperance === {{{
-"
-"colorscheme gruvbox
-"colorscheme PaperColor
-"colorscheme onedark
-"colorscheme off
-colorscheme monotone
-"set background=light
-"set background=dark
+"colorscheme monotone
+colorscheme onedark
+
 " }}}
 "
 " === Autocmd === {{{
@@ -92,26 +87,24 @@ if has("autocmd")
   au BufReadPost * if line("'\"") > 0 && line("'\"") <= line("$") | exe "normal! g`\"" | endif
 
   " Syntax of these languages is fussy over tabs Vs spaces
-  autocmd FileType make setlocal ts=8 sts=8 sw=8 noexpandtab
-  autocmd FileType yaml setlocal ts=2 sts=2 sw=2 expandtab
-
-  " Customisations based on house-style (arbitrary)
-  autocmd FileType html setlocal ts=2 sts=2 sw=2 expandtab
-  autocmd FileType css setlocal ts=2 sts=2 sw=2 expandtab
-  autocmd FileType typescript setlocal ts=2 sts=2 sw=2 expandtab
-  autocmd FileType javascript setlocal ts=2 sts=2 sw=2 expandtab
-  autocmd FileType json setlocal ts=2 sts=2 sw=2 expandtab
-  autocmd FileType cpp setlocal ts=4 sts=4 sw=4 expandtab smarttab
-  autocmd FileType vim setlocal ts=2 sts=2 sw=2 expandtab smarttab
-  autocmd FileType sh setlocal ts=2 sts=2 sw=2 expandtab smarttab
+  augroup filetype
+    autocmd FileType make setlocal ts=8 sts=8 sw=8 noexpandtab
+    autocmd FileType yaml setlocal ts=2 sts=2 sw=2 expandtab
+    autocmd FileType html setlocal ts=2 sts=2 sw=2 expandtab
+    autocmd FileType css setlocal ts=2 sts=2 sw=2 expandtab
+    autocmd FileType typescript setlocal ts=2 sts=2 sw=2 expandtab
+    autocmd FileType javascript setlocal ts=2 sts=2 sw=2 expandtab
+    autocmd FileType json setlocal ts=2 sts=2 sw=2 expandtab
+    autocmd FileType cpp setlocal ts=4 sts=4 sw=4 expandtab smarttab
+    autocmd FileType vim setlocal ts=2 sts=2 sw=2 expandtab smarttab
+    autocmd FileType sh setlocal ts=2 sts=2 sw=2 expandtab smarttab
+  augroup END
 
   " Treat .rss files as XML
   autocmd BufNewFile,BufRead *.rss setfiletype xml
 
-  if has("autocmd")
-    augroup templates
-      autocmd BufNewFile *.cpp 0r ~/.vim/templates/skeleton.cpp
-    augroup END
-  endif
+  augroup templates
+    autocmd BufNewFile *.cpp 0r ~/.vim/templates/skeleton.cpp
+  augroup END
 endif
 " }}}

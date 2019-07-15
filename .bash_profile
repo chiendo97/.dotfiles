@@ -50,3 +50,12 @@ if [ -e ~/git-prompt.sh ]; then
   # '\W' adds the name of the current directory
   export PS1="$purple\u$green\$(__git_ps1)$blue \W $ $reset"
 fi 
+
+##
+# Your previous /Users/chiendo97/.bash_profile file was backed up as /Users/chiendo97/.bash_profile.macports-saved_2019-05-12_at_20:03:07
+##
+
+# MacPorts Installer addition on 2019-05-12_at_20:03:07: adding an appropriate PATH variable for use with MacPorts.
+export PATH="/opt/local/bin:/opt/local/sbin:$PATH"
+# Finished adapting your PATH environment variable for use with MacPorts.
+

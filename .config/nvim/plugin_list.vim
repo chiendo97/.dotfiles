@@ -4,13 +4,21 @@
 
 call plug#begin('~/.local/share/nvim/plugged')
 
+"Plug 'kamykn/spelunker.vim'
+
+"Plug 'xuhdev/vim-latex-live-preview'
+
+"Plug 'lervag/vimtex'
+
+Plug 'joshdick/onedark.vim'
+
 Plug 'simeji/winresizer'
 
 Plug 'machakann/vim-sandwich'
 
-Plug 'Lokaltog/vim-monotone'
+"Plug 'Lokaltog/vim-monotone'
 
-Plug 'jiangmiao/auto-pairs'
+"Plug 'jiangmiao/auto-pairs'
 
 Plug '/usr/local/opt/fzf'
 Plug 'junegunn/fzf.vim'
@@ -34,6 +42,5 @@ Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
 
 Plug 'mattn/emmet-vim'
-let g:user_emmet_leader_key=','
 
 call plug#end()

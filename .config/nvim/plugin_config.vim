@@ -3,6 +3,13 @@
 " Plugins Config:
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
+" === latex_preview === {{{
+
+"autocmd Filetype tex setl updatetime=1
+let g:livepreview_previewer = 'open -a Preview'
+
+"}}}
+
 " === coc_vim === {{{
 
 " Use tab for trigger completion with characters ahead and navigate.
@@ -104,10 +111,13 @@ map <C-n> :NERDTreeToggle<CR>
 " Enable extensions
 let g:airline_extensions = ['branch', 'coc']
 
+
 " Do not draw separators for empty sections (only for the active window) >
 let g:airline_skip_empty_sections = 1
 
 " Smartly uniquify buffers names with similar filename, suppressing common parts of paths.
+let g:airline#extensions#tabline#enabled = 1
+let g:airline#extensions#tabline#buffer_nr_show = 1
 let g:airline#extensions#tabline#formatter = 'unique_tail'
 
 " Custom setup that removes filetype/whitespace from default vim airline bar
@@ -147,11 +157,9 @@ let g:airline#extensions#hunks#enabled=0
 " }}}
 
 " === airline_theme === {{{
-"
 let g:airline_theme='minimalist'
 " }}}
 "
 " === emmet-vim === {{{
-"
-let g:user_emmet_leader_key=','
+"let g:user_emmet_leader_key=','
 "" }}}

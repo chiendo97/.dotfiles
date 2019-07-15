@@ -8,6 +8,10 @@
   "diagnostic.warningSign": "•",
   "diagnostic.infoSign": "•",
   "languageserver": {
+    "digestif": {
+      "command": "digestif",
+      "filetypes": ["tex", "plaintex", "context"]
+    },
     "cquery": {
       "command": "cquery",
       "args": ["--log-file=/tmp/cq.log"],
