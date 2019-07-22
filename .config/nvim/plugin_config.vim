@@ -67,7 +67,7 @@ nnoremap <silent> <space>o  :<C-u>CocList outline<cr>
 " Resume latest coc list
 nnoremap <silent> <space>p  :<C-u>CocListResume<CR>
 
-let g:coc_force_debug = 1
+"let g:coc_force_debug = 1
 let g:python_host_prog = '/usr/local/bin/python2'
 let g:python3_host_prog = '/usr/local/bin/python3'
 
