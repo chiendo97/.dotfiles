@@ -8,6 +8,19 @@
   "diagnostic.warningSign": "•",
   "diagnostic.infoSign": "•",
   "languageserver": {
+    "intelephense": {
+      "command": "intelephense",
+      "args": ["--stdio"],
+      "filetypes": ["php"],
+      "initializationOptions": {
+        "storagePath": "/tmp/intelephense"
+      }
+    },
+    "dockerfile": {
+      "command": "docker-langserver",
+      "filetypes": ["dockerfile"],
+      "args": ["--stdio"]
+    },
     "cquery": {
       "command": "cquery",
       "args": ["--log-file=/tmp/cq.log"],
