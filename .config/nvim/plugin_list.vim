@@ -5,16 +5,10 @@
 call plug#begin('~/.local/share/nvim/plugged')
 
 " change tab name "
-Plug 'gcmt/taboo.vim'
+"Plug 'gcmt/taboo.vim'
 
 " find all file with text
 Plug 'mhinz/vim-grepper'
-
-"Plug 'kamykn/spelunker.vim'
-
-"Plug 'xuhdev/vim-latex-live-preview'
-
-"Plug 'lervag/vimtex'
 
 " one color theme "
 Plug 'joshdick/onedark.vim'

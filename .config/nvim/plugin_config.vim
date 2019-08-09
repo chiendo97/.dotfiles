@@ -2,10 +2,6 @@
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Plugins Config:
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" === VimGrepper === {{{
-"nmap gs  <plug>(GrepperOperator)
-"xmap gs  <plug>(GrepperOperator)
-"}}}
 
 " === latex_preview === {{{
 
@@ -16,43 +12,6 @@ let g:livepreview_previewer = 'open -a Preview'
 
 " === coc_vim === {{{
 
-" Use tab for trigger completion with characters ahead and navigate.
-" Use command ':verbose imap <tab>' to make sure tab is not mapped by other plugin.
-"inoremap <silent><expr> <TAB>
-      "\ pumvisible() ? "\<C-n>" :
-      "\ <SID>check_back_space() ? "\<TAB>" :
-      "\ coc#refresh()
-"inoremap <expr><S-TAB> pumvisible() ? "\<C-p>" : "\<C-h>"
-
-"function! s:check_back_space() abort
-  "let col = col('.') - 1
-  "return !col || getline('.')[col - 1]  =~# '\s'
-"endfunction
-
-" Use `[c` and `]c` for navigate diagnostics
-nmap <silent> [c <Plug>(coc-diagnostic-prev)
-nmap <silent> ]c <Plug>(coc-diagnostic-next)
-
-" Remap keys for gotos
-nmap <silent> gd <Plug>(coc-definition)
-nmap <silent> gr <Plug>(coc-references)
-
-" Use K for show documentation in preview window
-nnoremap <silent> K :call <SID>show_documentation()<CR>
-function! s:show_documentation()
-  if &filetype == 'vim'
-    execute 'h '.expand('<cword>')
-  else
-    call CocAction('doHover')
-  endif
-endfunction
-
-" Highlight symbol under cursor on CursorHold
-autocmd CursorHold * silent call CocActionAsync('highlight')
-
-" Remap for rename current word
-nmap <leader>rn <Plug>(coc-rename)
-
 augroup mygroup
   autocmd!
   " Setup formatexpr specified filetype(s).
@@ -61,17 +20,7 @@ augroup mygroup
   autocmd User CocJumpPlaceholder call CocActionAsync('showSignatureHelp')
 augroup end
 
-" Using CocList
-" Show all diagnostics
-nnoremap <silent> <space>a  :<C-u>CocList diagnostics<cr>
-" Manage extensions
-nnoremap <silent> <space>e  :<C-u>CocList extensions<cr>
-" Find symbol of current document
-nnoremap <silent> <space>o  :<C-u>CocList outline<cr>
-" Resume latest coc list
-nnoremap <silent> <space>p  :<C-u>CocListResume<CR>
-
-"let g:coc_force_debug = 1
+" Set default python path
 let g:python_host_prog = '/usr/local/bin/python2'
 let g:python3_host_prog = '/usr/local/bin/python3'
 
@@ -109,26 +58,40 @@ let g:NERDTreeIgnore = ['^\.DS_Store$', '^tags$', '\.git$[[dir]]', '\.idea$[[dir
 map <C-n> :NERDTreeToggle<CR>
 " }}}
 "
-" === vimairline === {{{
-"
-" === Vim airline ==== "
+" === Vim airline ==== {{{
+
 " Enable extensions
-let g:airline_extensions = ['branch', 'coc']
-
-
-" Do not draw separators for empty sections (only for the active window) >
-let g:airline_skip_empty_sections = 1
+let g:airline_extensions = ['branch', 'tabline', 'coc']
 
 " Smartly uniquify buffers names with similar filename, suppressing common parts of paths.
 let g:airline#extensions#tabline#enabled = 1
-let g:airline#extensions#tabline#buffer_nr_show = 1
+
+let g:airline#extensions#tabline#show_tabs = 1
+let g:airline#extensions#tabline#show_tab_count = 0
+let g:airline#extensions#tabline#show_tab_nr = 0
+let g:airline#extensions#tabline#show_tab_type = 0
+
+let g:airline#extensions#tabline#tab_nr_type = 0 " # of splits (default)
+
+let g:airline#extensions#tabline#show_splits = 0
+let g:airline#extensions#tabline#show_buffers = 0
+
+"let g:airline#extensions#tabline#exclude_preview = 0
+let g:airline#extensions#tabline#buf_label_first = 0
+let g:airline#extensions#tabline#buffer_idx_mode = 0
+
+let g:airline#extensions#tabline#alt_sep = 0
+let g:airline#extensions#tabline#left_sep = ''
+let g:airline#extensions#tabline#left_alt_sep = ''
+let g:airline#extensions#tabline#right_sep = ''
+let g:airline#extensions#tabline#right_alt_sep = ''
+
 let g:airline#extensions#tabline#formatter = 'unique_tail'
 
 " Custom setup that removes filetype/whitespace from default vim airline bar
 let g:airline#extensions#default#layout = [['a', 'b', 'c'], ['x', 'z', 'warning', 'error']]
 
 let airline#extensions#coc#stl_format_err = '%E{[%e(#%fe)]}'
-
 let airline#extensions#coc#stl_format_warn = '%W{[%w(#%fw)]}'
 
 " Configure error/warning section to use coc.nvim
@@ -147,21 +110,10 @@ let g:airline_powerline_fonts = 1
 " Enable caching of syntax highlighting groups
 let g:airline_highlighting_cache = 1
 
-" Define custom airline symbols
-if !exists('g:airline_symbols')
-  let g:airline_symbols = {}
-endif
-
-" unicode symbols
-let g:airline_left_sep = '❮'
-let g:airline_right_sep = '❯'
-
-" Don't show git changes to current file in airline
-let g:airline#extensions#hunks#enabled=0
 " }}}
 
 " === airline_theme === {{{
-let g:airline_theme='minimalist'
+"let g:airline_theme='minimalist'
 " }}}
 "
 " === emmet-vim === {{{

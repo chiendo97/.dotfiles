@@ -72,6 +72,10 @@ set backspace=indent,eol,start
 set nowrap
 
 set foldmethod=marker
+"set foldmethod=indent
+
+" Disable newline with comment
+set formatoptions-=cro
 " }}}
 
 " === Apperance === {{{
