@@ -7,11 +7,14 @@ call plug#begin('~/.local/share/nvim/plugged')
 " change tab name "
 "Plug 'gcmt/taboo.vim'
 
+
 " find all file with text
 Plug 'mhinz/vim-grepper'
 
-" one color theme "
+" colorscheme
 Plug 'joshdick/onedark.vim'
+Plug 'netsgnut/arctheme.vim'
+"Plug 'cocopon/pgmnt.vim'
 
 " resize vim windows "
 Plug 'simeji/winresizer'

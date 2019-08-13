@@ -70,6 +70,7 @@ let g:airline#extensions#tabline#show_tabs = 1
 let g:airline#extensions#tabline#show_tab_count = 0
 let g:airline#extensions#tabline#show_tab_nr = 0
 let g:airline#extensions#tabline#show_tab_type = 0
+let g:airline#extensions#tabline#show_close_button = 0
 
 let g:airline#extensions#tabline#tab_nr_type = 0 " # of splits (default)
 

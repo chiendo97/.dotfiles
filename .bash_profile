@@ -1,3 +1,17 @@
+# start tmux automatically
+#if [[ -z "$TMUX" ]] ;then
+  #ID="$( tmux ls | grep -vm1 attached | cut -d: -f1 )" # get the id of a deattached session
+  #if [[ -z "$ID" ]] ;then # if not available create a new one
+    #tmux new-session
+  #else
+    #tmux attach-session -t "$ID" # if available attach to it
+  #fi
+#fi
+#[ -z "$TMUX" ] && command -v tmux > /dev/null && exec tmux
+#if command -v tmux &> /dev/null && [ -z "$TMUX" ]; then
+  #tmux attach -t default || tmux new -s default
+#fi
+
 # dotfiles for .files config
 alias dotfiles='/usr/bin/git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME'
 
@@ -39,8 +53,6 @@ if [ -e ~/git-prompt.sh ]; then
   reset="\[\033[0m\]"
 fi
 
-
-
 # Change command prompt
 if [ -e ~/git-prompt.sh ]; then
   source ~/git-prompt.sh
@@ -50,12 +62,4 @@ if [ -e ~/git-prompt.sh ]; then
   # '\W' adds the name of the current directory
   export PS1="$purple\u$green\$(__git_ps1)$blue \W $ $reset"
 fi 
-
-##
-# Your previous /Users/chiendo97/.bash_profile file was backed up as /Users/chiendo97/.bash_profile.macports-saved_2019-05-12_at_20:03:07
-##
-
-# MacPorts Installer addition on 2019-05-12_at_20:03:07: adding an appropriate PATH variable for use with MacPorts.
-export PATH="/opt/local/bin:/opt/local/sbin:$PATH"
-# Finished adapting your PATH environment variable for use with MacPorts.
 

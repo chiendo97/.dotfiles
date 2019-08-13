@@ -4,7 +4,7 @@
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
 "{{{ === fuzzy find
-nnoremap <leader>g :GFiles<cr>| " fuzzy find files under version control in the working directory (where you launched Vim from)"
+nnoremap <leader>g :GFiles<cr>|    " fuzzy find files under version control in the working directory (where you launched Vim from)"
 nnoremap <leader>f :Files<cr>|     " fuzzy find files in the working directory (where you launched Vim from)
 nnoremap <leader>/ :BLines<cr>|    " fuzzy find lines in the current file
 nnoremap <leader>b :Buffers<cr>|   " fuzzy find an open buffer
@@ -12,18 +12,21 @@ nnoremap <leader>r :Rg |           " fuzzy find text in the working directory
 nnoremap <leader>c :Commands<cr>|  " fuzzy find Vim commands (like Ctrl-Shift-P in Sublime/Atom/VSC)
 "}}}
 
+"{{{ === Tab motion
+
+nnoremap <leader>t :tabedit<CR>
+nnoremap L gt  " Move tab
+nnoremap H gT  " Move tab
+
+"}}}
+
 "{{{ === Motions
+
 " Move down to wrap line
 nnoremap j gj
 
 " Move up to wrap line
 nnoremap k gk
-
-" Move tab
-nnoremap L gt
-
-" Move tab
-nnoremap H gT
 
 " Move windows
 map <C-h> <C-w>h
@@ -104,19 +107,16 @@ let g:coc_snippet_prev = '<s-tab>'
 
 "{{{ === rep
 
-nmap gs  <plug>(GrepperOperator)
-xmap gs  <plug>(GrepperOperator)
+nnoremap gs  <plug>(GrepperOperator)
+xnoremap gs  <plug>(GrepperOperator)
 
 "}}}
 
 "{{{ === vimrc files
 
-                                                    " quick hide highlight search
-nnoremap <silent> <leader>n :noh<CR>
-                                                    " quick edit vimrc
-nnoremap <Leader>ev :tabedit $MYVIMRC<CR>
-                                                    " quick source vimrc (after edit normally)
-nnoremap <Leader>sv :source $MYVIMRC<CR>
+nnoremap <silent> <leader>n :noh<CR>                " quick hide highlight search
+nnoremap <Leader>ev :tabedit $MYVIMRC<CR>           " quick edit vimrc 
+nnoremap <Leader>sv :source $MYVIMRC<CR>            " quick source vimrc (after edit normally)
 
 "}}}
 
@@ -128,7 +128,6 @@ nnoremap gV `[v`]
 
 "{{{ === Folding
 
-"Open and close folds
-nnoremap <space> za   
+nnoremap <space> za   " Open and close folds
 
 "}}}
