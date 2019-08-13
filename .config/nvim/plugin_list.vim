@@ -14,6 +14,7 @@ Plug 'mhinz/vim-grepper'
 " colorscheme
 Plug 'joshdick/onedark.vim'
 Plug 'netsgnut/arctheme.vim'
+Plug 'arcticicestudio/nord-vim'
 "Plug 'cocopon/pgmnt.vim'
 
 " resize vim windows "

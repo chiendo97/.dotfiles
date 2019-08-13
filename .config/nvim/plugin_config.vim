@@ -21,7 +21,7 @@ augroup mygroup
 augroup end
 
 " Set default python path
-let g:python_host_prog = '/usr/local/bin/python2'
+let g:python_host_prog = '/usr/local/bin/python'
 let g:python3_host_prog = '/usr/local/bin/python3'
 
 " }}}
