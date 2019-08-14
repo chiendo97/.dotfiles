@@ -3,6 +3,13 @@
 " Mapping:
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
+"{{{
+
+" Map <C-n> to toogle NERDTree
+"map <C-n> :NERDTreeToggle<CR>
+
+"}}}
+
 "{{{ === fuzzy find
 nnoremap <leader>g :GFiles<cr>|    " fuzzy find files under version control in the working directory (where you launched Vim from)"
 nnoremap <leader>f :Files<cr>|     " fuzzy find files in the working directory (where you launched Vim from)
@@ -12,11 +19,11 @@ nnoremap <leader>r :Rg |           " fuzzy find text in the working directory
 nnoremap <leader>c :Commands<cr>|  " fuzzy find Vim commands (like Ctrl-Shift-P in Sublime/Atom/VSC)
 "}}}
 
-"{{{ === Tab motion
+"{{{ === Tab navigation
 
 nnoremap <leader>t :tabedit<CR>
-nnoremap L gt  " Move tab
-nnoremap H gT  " Move tab
+"nnoremap L gt  " Move tab
+"nnoremap H gT  " Move tab
 
 "}}}
 
@@ -24,15 +31,9 @@ nnoremap H gT  " Move tab
 
 " Move down to wrap line
 nnoremap j gj
-
 " Move up to wrap line
 nnoremap k gk
 
-" Move windows
-map <C-h> <C-w>h
-map <C-j> <C-w>j
-map <C-k> <C-w>k
-map <C-l> <C-w>l
 "}}}
 
 "{{{ === Yank
@@ -42,6 +43,7 @@ map <C-l> <C-w>l
 " " - the last delete
 " / - the last search
 " * - the system clipboard (most of the time)
+" :*y
 "nnoremap d "_d
 "}}}
 
@@ -80,10 +82,12 @@ nnoremap <silent> <leader>le  :<C-u>CocList extensions<cr>
 nnoremap <silent> <leader>lo  :<C-u>CocList outline<cr>
 " Resume latest coc list
 nnoremap <silent> <leader>lp  :<C-u>CocListResume<CR>
+" Open coc list
+nnoremap <silent> <leader>ll  :<C-u>CocList<CR>
 
 "}}}
 
-"{{{ === tab for completion
+"{{{ === Autocomplete
 
 inoremap <silent><expr> <cr> pumvisible() ? coc#_select_confirm() : 
                                            \"\<C-g>u\<CR>\<c-r>=coc#on_enter()\<CR>"
@@ -114,13 +118,14 @@ xnoremap gs  <plug>(GrepperOperator)
 
 "{{{ === vimrc files
 
-nnoremap <silent> <leader>n :noh<CR>                " quick hide highlight search
-nnoremap <Leader>ev :tabedit $MYVIMRC<CR>           " quick edit vimrc 
-nnoremap <Leader>sv :source $MYVIMRC<CR>            " quick source vimrc (after edit normally)
+nnoremap <silent> <leader>n :<C-u>noh<CR>                " quick hide highlight search
+nnoremap <Leader>ev :<C-u>tabedit $MYVIMRC<CR>           " quick edit vimrc 
+nnoremap <Leader>sv :<C-u>source $MYVIMRC<CR>            " quick source vimrc (after edit normally)
+nnoremap <Leader>ec :<C-u>CocConfig<CR>                  " quick edit coc config
 
 "}}}
 
-"{{{ === visual recent pasted code
+""{{{ === visual recent pasted code
 
 nnoremap gV `[v`]
 

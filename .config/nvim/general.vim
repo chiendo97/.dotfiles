@@ -81,8 +81,9 @@ set formatoptions-=cro
 " === Apperance === {{{
 
 "colorscheme monotone
-colorscheme onedark
+"colorscheme onedark
 "colorscheme iceberg
+colorscheme hybrid
 
 " }}}
 "

@@ -4,18 +4,19 @@
 
 call plug#begin('~/.local/share/nvim/plugged')
 
-" change tab name "
-"Plug 'gcmt/taboo.vim'
-
+" vim-tmux-navigation
+Plug 'christoomey/vim-tmux-navigator'
 
 " find all file with text
 Plug 'mhinz/vim-grepper'
 
 " colorscheme
+Plug 'whatyouhide/vim-gotham'
+Plug 'w0ng/vim-hybrid'
 Plug 'joshdick/onedark.vim'
 Plug 'netsgnut/arctheme.vim'
 Plug 'arcticicestudio/nord-vim'
-"Plug 'cocopon/pgmnt.vim'
+Plug 'chriskempson/base16-vim'
 
 " resize vim windows "
 Plug 'simeji/winresizer'
@@ -52,10 +53,11 @@ Plug 'scrooloose/nerdtree'
 " support many syntax "
 Plug 'sheerun/vim-polyglot'
 
+" status bar
 Plug 'vim-airline/vim-airline'
-
 Plug 'vim-airline/vim-airline-themes'
 
+" super snippet html
 Plug 'mattn/emmet-vim'
 
 call plug#end()

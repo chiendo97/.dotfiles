@@ -7,6 +7,7 @@
   "diagnostic.errorSign": "•",
   "diagnostic.warningSign": "•",
   "diagnostic.infoSign": "•",
+  "yank.priority": 150,
   "languageserver": {
     "intelephense": {
       "command": "intelephense",
@@ -21,14 +22,24 @@
       "filetypes": ["dockerfile"],
       "args": ["--stdio"]
     },
-    "cquery": {
-      "command": "cquery",
-      "args": ["--log-file=/tmp/cq.log"],
-      "filetypes": ["c", "cpp"],
-      "rootPatterns": ["compile_flags.txt", "compile_commands.json", ".vim/", ".git/", ".hg/"],
+    "ccls": {
+      "command": "ccls",
+      "filetypes": ["c", "cpp", "objc", "objcpp"],
+      "rootPatterns": [".ccls", "compile_commands.json", ".vim/", ".git/", ".hg/"],
       "initializationOptions": {
-        "cacheDirectory": "/tmp/cquery"
-      }
+         "cache": {
+           "directory": "/tmp/ccls"
+         },
+         "clang": {
+          "resourceDir": "/Library/Developer/CommandLineTools/usr/lib/clang/10.0.1",
+          "extraArgs": [
+            "-isystem",
+            "/Library/Developer/CommandLineTools/usr/include/c++/v1",
+            "-I",
+            "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/"        
+          ]
+        }
+       }
     }
   },
   "python.trace.server": "verbose",
