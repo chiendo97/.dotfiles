@@ -76,6 +76,9 @@ set foldmethod=marker
 
 " Disable newline with comment
 set formatoptions-=cro
+
+" Tell vim to shut up
+set noeb vb t_vb=
 " }}}
 
 " === Apperance === {{{
