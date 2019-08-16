@@ -39,9 +39,6 @@ set nobackup
 set nowb
 set noswapfile
 
-set tabstop=2           " number of visual spaces per TAB
-set softtabstop=2       " number of spaces in tab when editing
-set sw=2
 set expandtab
 set smarttab            " Handle tabs more intelligently
 
@@ -98,6 +95,7 @@ if has("autocmd")
 
   " Syntax of these languages is fussy over tabs Vs spaces
   augroup filetype
+    autocmd!
     autocmd FileType make setlocal ts=8 sts=8 sw=8 noexpandtab
     autocmd FileType yaml setlocal ts=2 sts=2 sw=2 expandtab
     autocmd FileType html setlocal ts=2 sts=2 sw=2 expandtab
@@ -111,10 +109,8 @@ if has("autocmd")
     autocmd FileType sh setlocal ts=2 sts=2 sw=2 expandtab smarttab
   augroup END
 
-  " Treat .rss files as XML
-  autocmd BufNewFile,BufRead *.rss setfiletype xml
-
   augroup templates
+    autocmd!
     autocmd BufNewFile *.cpp 0r ~/.vim/templates/skeleton.cpp
   augroup END
 endif
