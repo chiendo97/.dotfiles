@@ -3,10 +3,13 @@
 " Mapping:
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
-"{{{
+nnoremap <C-[> :
+nnoremap <C-g> G
+
+"{{{ === NERDTree
 
 " Map <C-n> to toogle NERDTree
-"map <C-n> :NERDTreeToggle<CR>
+map <C-n> :NERDTreeToggle<CR>
 
 "}}}
 
@@ -17,6 +20,10 @@ nnoremap <leader>/ :BLines<cr>|    " fuzzy find lines in the current file
 nnoremap <leader>b :Buffers<cr>|   " fuzzy find an open buffer
 nnoremap <leader>r :Rg |           " fuzzy find text in the working directory
 nnoremap <leader>c :Commands<cr>|  " fuzzy find Vim commands (like Ctrl-Shift-P in Sublime/Atom/VSC)
+nnoremap <leader>h :History<cr>|   " fuzzy find files from most recent files
+nnoremap <leader>l :Lines<cr>|     " fuzzy find line in loaded buffers
+nnoremap <leader>m :Maps<cr>|      " fuzzy find key mappings
+nnoremap <leader>H :Helptags!<cr>| " fuzzy find documentation
 "}}}
 
 "{{{ === Tab navigation
@@ -30,9 +37,9 @@ nnoremap <leader>t :tabedit<CR>
 "{{{ === Motions
 
 " Move down to wrap line
-nnoremap j gj
+nnoremap <silent> j gj
 " Move up to wrap line
-nnoremap k gk
+nnoremap <silent> k gk
 
 "}}}
 
@@ -71,19 +78,15 @@ endfunction
 autocmd CursorHold * silent call CocActionAsync('highlight')
 
 " Remap for rename current word
-nmap <leader>rn <Plug>(coc-rename)
+"nmap <leader>rn <Plug>(coc-rename)
 
 " Using CocList
 " Show all diagnostics
-nnoremap <silent> <leader>la  :<C-u>CocList diagnostics<cr>
+"nnoremap <silent> <leader>la  :<C-u>CocList diagnostics<cr>
 " Manage extensions
-nnoremap <silent> <leader>le  :<C-u>CocList extensions<cr>
-" Find symbol of current document
-nnoremap <silent> <leader>lo  :<C-u>CocList outline<cr>
-" Resume latest coc list
-nnoremap <silent> <leader>lp  :<C-u>CocListResume<CR>
+"nnoremap <silent> <leader>le  :<C-u>CocList extensions<cr>
 " Open coc list
-nnoremap <silent> <leader>ll  :<C-u>CocList<CR>
+"nnoremap <silent> <leader>ll  :<C-u>CocList<CR>
 
 "}}}
 
@@ -128,6 +131,7 @@ nnoremap <Leader>ec :<C-u>CocConfig<CR>                  " quick edit coc config
 ""{{{ === visual recent pasted code
 
 nnoremap gV `[v`]
+nnoremap <C-v> V
 
 "}}}
 
