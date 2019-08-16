@@ -7,7 +7,7 @@
   "diagnostic.errorSign": "•",
   "diagnostic.warningSign": "•",
   "diagnostic.infoSign": "•",
-  "yank.priority": 150,
+  "yank.priority": 80,
   "languageserver": {
     "intelephense": {
       "command": "intelephense",
