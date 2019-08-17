@@ -7,10 +7,7 @@ nnoremap <C-[> :
 nnoremap <C-g> G
 
 "{{{ === NERDTree
-
-" Map <C-n> to toogle NERDTree
-map <C-n> :NERDTreeToggle<CR>
-
+map <leader>n :NERDTreeToggle<CR>
 "}}}
 
 "{{{ === fuzzy find
@@ -121,7 +118,7 @@ xnoremap gs  <plug>(GrepperOperator)
 
 "{{{ === vimrc files
 
-nnoremap <silent> <leader>n :<C-u>noh<CR>                " quick hide highlight search
+nnoremap <silent> <leader>N :<C-u>noh<CR>                " quick hide highlight search
 nnoremap <Leader>ev :<C-u>tabedit $MYVIMRC<CR>           " quick edit vimrc 
 nnoremap <Leader>sv :<C-u>source $MYVIMRC<CR>            " quick source vimrc (after edit normally)
 nnoremap <Leader>ec :<C-u>CocConfig<CR>                  " quick edit coc config
