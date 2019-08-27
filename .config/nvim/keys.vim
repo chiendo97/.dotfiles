@@ -6,7 +6,6 @@
 nnoremap <leader>n :noh<CR>
 
 "{{{ === NERDTree
-" Map <C-n> to toogle NERDTree
 map <C-n> :NERDTreeToggle<CR>
 "}}}
 
