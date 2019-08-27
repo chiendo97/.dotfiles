@@ -14,9 +14,6 @@ let g:livepreview_previewer = 'open -a Preview'
 
 augroup mygroup
   autocmd!
-  " Setup formatexpr specified filetype(s).
-  "autocmd FileType typescript,json setl formatexpr=CocAction('formatSelected')
-  " Update signature help on jump placeholder
   autocmd User CocJumpPlaceholder call CocActionAsync('showSignatureHelp')
 augroup end
 
@@ -54,13 +51,12 @@ let g:NERDTreeDirArrowCollapsible = '⬎'
 " Hide certain files and directories from NERDTree
 let g:NERDTreeIgnore = ['^\.DS_Store$', '^tags$', '\.git$[[dir]]', '\.idea$[[dir]]', '\.sass-cache$']
 " }}}
-"
+
 " === Vim airline ==== {{{
 
 " Enable extensions
 let g:airline_extensions = ['branch', 'tabline', 'coc']
 
-" Smartly uniquify buffers names with similar filename, suppressing common parts of paths.
 let g:airline#extensions#tabline#enabled = 1
 
 let g:airline#extensions#tabline#show_tabs = 1
@@ -68,22 +64,16 @@ let g:airline#extensions#tabline#show_tab_count = 0
 let g:airline#extensions#tabline#show_tab_nr = 0
 let g:airline#extensions#tabline#show_tab_type = 0
 let g:airline#extensions#tabline#show_close_button = 0
-
 let g:airline#extensions#tabline#tab_nr_type = 0 " # of splits (default)
-
 let g:airline#extensions#tabline#show_splits = 0
 let g:airline#extensions#tabline#show_buffers = 0
-
-"let g:airline#extensions#tabline#exclude_preview = 0
 let g:airline#extensions#tabline#buf_label_first = 0
 let g:airline#extensions#tabline#buffer_idx_mode = 0
-
 let g:airline#extensions#tabline#alt_sep = 0
 let g:airline#extensions#tabline#left_sep = ''
 let g:airline#extensions#tabline#left_alt_sep = ''
 let g:airline#extensions#tabline#right_sep = ''
 let g:airline#extensions#tabline#right_alt_sep = ''
-
 let g:airline#extensions#tabline#formatter = 'unique_tail'
 
 " Custom setup that removes filetype/whitespace from default vim airline bar
@@ -110,10 +100,6 @@ let g:airline_highlighting_cache = 1
 
 " }}}
 
-" === airline_theme === {{{
-"let g:airline_theme='minimalist'
-" }}}
-"
 " === emmet-vim === {{{
 let g:user_emmet_leader_key='<C-Z>'
 "" }}}

@@ -3,14 +3,11 @@
 " Mapping:
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
-nnoremap <C-[> :
-nnoremap <C-g> G
+nnoremap <leader>n :noh<CR>
 
 "{{{ === NERDTree
-
 " Map <C-n> to toogle NERDTree
 map <C-n> :NERDTreeToggle<CR>
-
 "}}}
 
 "{{{ === fuzzy find
@@ -27,20 +24,16 @@ nnoremap <leader>H :Helptags!<cr>| " fuzzy find documentation
 "}}}
 
 "{{{ === Tab navigation
-
 nnoremap <leader>t :tabedit<CR>
 "nnoremap L gt  " Move tab
 "nnoremap H gT  " Move tab
-
 "}}}
 
 "{{{ === Motions
-
 " Move down to wrap line
 nnoremap <silent> j gj
 " Move up to wrap line
 nnoremap <silent> k gk
-
 "}}}
 
 "{{{ === Yank
@@ -75,25 +68,27 @@ function! s:show_documentation()
 endfunction
 
 " Highlight symbol under cursor on CursorHold
-autocmd CursorHold * silent call CocActionAsync('highlight')
+"autocmd CursorHold * silent call CocActionAsync('highlight')
 
 " Remap for rename current word
 "nmap <leader>rn <Plug>(coc-rename)
 
 " Using CocList
 " Show all diagnostics
-"nnoremap <silent> <leader>la  :<C-u>CocList diagnostics<cr>
+nnoremap <silent> <leader>ia  :<C-u>CocList diagnostics<cr>
 " Manage extensions
-"nnoremap <silent> <leader>le  :<C-u>CocList extensions<cr>
+nnoremap <silent> <leader>ie  :<C-u>CocList extensions<cr>
 " Open coc list
-"nnoremap <silent> <leader>ll  :<C-u>CocList<CR>
+nnoremap <silent> <leader>il  :<C-u>CocList<CR>
 
 "}}}
 
 "{{{ === Autocomplete
 
-inoremap <silent><expr> <cr> pumvisible() ? coc#_select_confirm() : 
-                                           \"\<C-g>u\<CR>\<c-r>=coc#on_enter()\<CR>"
+inoremap <silent><expr> <cr> 
+      \ pumvisible() ? coc#_select_confirm() : 
+      \ "\<C-g>u\<CR>\<c-r>=coc#on_enter()\<CR>"
+
 inoremap <silent><expr> <TAB>
       \ pumvisible() ? "\<C-n>" :
       \ <SID>check_back_space() ? "\<TAB>" :
@@ -109,34 +104,18 @@ endfunction
 let g:coc_snippet_next = '<tab>'
 let g:coc_snippet_prev = '<s-tab>'
 
-
-"}}}
-
-"{{{ === rep
-
-nnoremap gs  <plug>(GrepperOperator)
-xnoremap gs  <plug>(GrepperOperator)
-
 "}}}
 
 "{{{ === vimrc files
-
-nnoremap <silent> <leader>n :<C-u>noh<CR>                " quick hide highlight search
 nnoremap <Leader>ev :<C-u>tabedit $MYVIMRC<CR>           " quick edit vimrc 
 nnoremap <Leader>sv :<C-u>source $MYVIMRC<CR>            " quick source vimrc (after edit normally)
 nnoremap <Leader>ec :<C-u>CocConfig<CR>                  " quick edit coc config
-
 "}}}
 
 ""{{{ === visual recent pasted code
-
 nnoremap gV `[v`]
-nnoremap <C-v> V
-
 "}}}
 
 "{{{ === Folding
-
 nnoremap <space> za   " Open and close folds
-
 "}}}
