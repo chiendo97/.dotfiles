@@ -15,7 +15,7 @@ export SCALA_HOME='/usr/local/opt/scala/idea'
 alias cl='clear'
 
 # dotfiles for .files config
-alias dotfiles='/usr/bin/git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME'
+alias dt='/usr/bin/git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME'
 
 # Copy pwd to clipboard
 alias cpwd="pwd | tr -d '\n' | pbcopy"
