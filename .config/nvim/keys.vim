@@ -5,6 +5,11 @@
 
 nnoremap <leader>n :noh<CR>
 
+"{{{ === NERDCommenter
+nnoremap <c-c> :call NERDComment(0,"toggle")<CR>
+vnoremap <c-c> :call NERDComment(0,"toggle")<CR>
+"}}}
+
 "{{{ === NERDTree
 map <C-n> :NERDTreeToggle<CR>
 "}}}
@@ -29,10 +34,10 @@ nnoremap <leader>t :tabedit<CR>
 "}}}
 
 "{{{ === Motions
-" Move down to wrap line
-nnoremap <silent> j gj
-" Move up to wrap line
-nnoremap <silent> k gk
+
+nnoremap <silent> j gj| " Move down to wrap line
+nnoremap <silent> k gk| " Move up to wrap line
+
 "}}}
 
 "{{{ === Yank

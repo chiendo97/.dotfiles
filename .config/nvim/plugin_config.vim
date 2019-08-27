@@ -3,6 +3,10 @@
 " Plugins Config:
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
+"{{{ === vim-polyglot
+let g:polyglot_disabled = ['csv']
+"}}}
+
 " === latex_preview === {{{
 
 "autocmd Filetype tex setl updatetime=1
@@ -33,10 +37,11 @@ let g:mkdp_echo_preview_url = 1
 " }}}
 
 " === nerdcommenter === {{{
-nnoremap <c-c> :call NERDComment(0,"toggle")<CR>
-vnoremap <c-c> :call NERDComment(0,"toggle")<CR>
+let g:NERDCommenterMappings=0
+let g:NERDCompactSexyComs=1
+let g:NERDDefaultAlign='left'
 " }}}
-"
+
 " === nerdtree === {{{
 " Show hidden files/directories
 let g:NERDTreeShowHidden = 1

@@ -1,14 +1,15 @@
 {
-  "suggest.timeout": 5000,
-  "suggest.echodocSupport": true,
-  "suggest.maxCompleteItemCount": 20,
+  "suggest.timeout": 1000,
+  "suggest.maxCompleteItemCount": 30,
+  "coc.source.buffer.enable": false,
+  "coc.source.around.enable": false,
+  "coc.source.file.enable": false,
   "coc.preferences.formatOnSaveFiletypes": ["typescriptreact", "json", "javascriptreact", "python"],
   "prettier.semi": false,
   "prettier.singleQuote": true,
   "diagnostic.errorSign": "•",
   "diagnostic.warningSign": "•",
   "diagnostic.infoSign": "•",
-  "snippets.priority": 70,
   "languageserver": {
     "intelephense": {
       "command": "intelephense",
@@ -44,10 +45,10 @@
     }
   },
   "python.trace.server": "verbose",
-
   "python.jediEnabled": true,
   "python.jediPath": "/usr/local/lib/python3.7/site-packages/",
-
+  "python.linting.enabled": true,
+  "python.linting.pylintEnabled": true,
   "python.linting.pylintPath": "/usr/local/bin/pylint",
   "python.linting.pylintArgs": ["--generate-members"],
   "python.formatting.autopep8Path": "/usr/local/bin/autopep8"
