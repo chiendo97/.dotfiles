@@ -62,8 +62,6 @@ let g:NERDTreeIgnore = ['^\.DS_Store$', '^tags$', '\.git$[[dir]]', '\.idea$[[dir
 " Enable extensions
 let g:airline_extensions = ['branch', 'tabline', 'coc']
 
-let g:airline#extensions#tabline#enabled = 1
-
 let g:airline#extensions#tabline#show_tabs = 1
 let g:airline#extensions#tabline#show_tab_count = 0
 let g:airline#extensions#tabline#show_tab_nr = 0
@@ -84,12 +82,18 @@ let g:airline#extensions#tabline#formatter = 'unique_tail'
 " Custom setup that removes filetype/whitespace from default vim airline bar
 let g:airline#extensions#default#layout = [['a', 'b', 'c'], ['x', 'z', 'warning', 'error']]
 
+let airline#extensions#coc#error_symbol = 'Error:'
+let airline#extensions#coc#warning_symbol = 'Warning:'
 let airline#extensions#coc#stl_format_err = '%E{[%e(#%fe)]}'
 let airline#extensions#coc#stl_format_warn = '%W{[%w(#%fw)]}'
 
 " Configure error/warning section to use coc.nvim
 let g:airline_section_error = '%{airline#util#wrap(airline#extensions#coc#get_error(),0)}'
 let g:airline_section_warning = '%{airline#util#wrap(airline#extensions#coc#get_warning(),0)}'
+
+" vim_timebox
+"let g:airline_section_x = "%{vim_timebox#time_left()}"
+"call timer_start(900, {-> execute(':AirlineRefresh')}, { 'repeat': -1 })
 
 " Hide the Nerdtree status line to avoid clutter
 let g:NERDTreeStatusline = ''

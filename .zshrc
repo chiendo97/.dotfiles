@@ -106,7 +106,8 @@ ZSH_THEME="robbyrussell"
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git)
+plugins=(git zsh-completions docker)
+autoload -U compinit && compinit
 
 source $ZSH/oh-my-zsh.sh
 
@@ -143,3 +144,5 @@ if [ -f '/Users/chiendo97/google-cloud-sdk/path.zsh.inc' ]; then . '/Users/chien
 if [ -f '/Users/chiendo97/google-cloud-sdk/completion.zsh.inc' ]; then . '/Users/chiendo97/google-cloud-sdk/completion.zsh.inc'; fi
 
 export PATH="$HOME/.yarn/bin:$HOME/.config/yarn/global/node_modules/.bin:$PATH"
+export PATH="/usr/local/sbin:$PATH"
+export PATH="/usr/local/opt/grep/libexec/gnubin:$PATH"

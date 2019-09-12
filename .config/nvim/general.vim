@@ -69,7 +69,7 @@ set nowrap
 set foldmethod=marker
 
 " Disable newline with comment
-set formatoptions-=cro
+set formatoptions-=r formatoptions-=c formatoptions-=o
 
 " Tell vim to shut up
 set noeb vb t_vb=
@@ -81,12 +81,14 @@ set noeb vb t_vb=
 "colorscheme onedark
 "colorscheme iceberg
 "colorscheme hybrid
-colorscheme onedark
-
+"colorscheme onedark
 set termguicolors
-let g:onedark_termcolors=256
-let g:airline_theme='onedark'
-
+"let ayucolor="light"  " for light version of theme
+"let ayucolor="mirage" " for mirage version of theme
+let ayucolor="dark"   " for dark version of theme
+colorscheme ayu
+"let g:onedark_termcolors=256
+"let g:airline_theme='onedark'
 " }}}
 
 " === Autocmd === {{{
@@ -111,7 +113,9 @@ if has("autocmd")
     autocmd FileType sh setlocal ts=2 sts=2 sw=2 expandtab smarttab
     autocmd FileType zsh setlocal ts=2 sts=2 sw=2 expandtab smarttab
     autocmd FileType lua setlocal ts=2 sts=2 sw=2 expandtab smarttab
+    autocmd FileType sql setlocal ts=4 sts=4 sw=4 expandtab smarttab
     autocmd FileType csv setlocal foldmethod=manual 
+    autocmd BufEnter * set fo-=c fo-=r fo-=o
   augroup END
 
   augroup templates

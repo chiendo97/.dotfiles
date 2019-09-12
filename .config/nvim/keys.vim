@@ -11,7 +11,7 @@ vnoremap <c-c> :call NERDComment(0,"toggle")<CR>
 "}}}
 
 "{{{ === NERDTree
-map <C-n> :NERDTreeToggle<CR>
+"map <C-n> :NERDTreeToggle<CR>
 "}}}
 
 "{{{ === fuzzy find
@@ -41,14 +41,15 @@ nnoremap <silent> k gk| " Move up to wrap line
 "}}}
 
 "{{{ === Yank
-" delete to 'blackhole' register 
 " Note: some register location
 " 0 - the last yank
 " " - the last delete
 " / - the last search
 " * - the system clipboard (most of the time)
 " :*y
+" delete to 'blackhole' register 
 "nnoremap d "_d
+vnoremap Y "*y | "Copy to clipboard
 "}}}
 
 "{{{ === Coc
@@ -84,14 +85,16 @@ nnoremap <silent> <leader>ia  :<C-u>CocList diagnostics<cr>
 nnoremap <silent> <leader>ie  :<C-u>CocList extensions<cr>
 " Open coc list
 nnoremap <silent> <leader>il  :<C-u>CocList<CR>
+" Open coc commands
+nnoremap <silent> <leader>ic  :<C-u>CocList commands<CR>
 
 "}}}
 
 "{{{ === Autocomplete
 
-inoremap <silent><expr> <cr> 
-      \ pumvisible() ? coc#_select_confirm() : 
-      \ "\<C-g>u\<CR>\<c-r>=coc#on_enter()\<CR>"
+"inoremap <silent><expr> <cr> 
+"      \ pumvisible() ? coc#_select_confirm() : 
+"      \ "\<C-g>u\<CR>\<c-r>=coc#on_enter()\<CR>"
 
 inoremap <silent><expr> <TAB>
       \ pumvisible() ? "\<C-n>" :
