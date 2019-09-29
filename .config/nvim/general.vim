@@ -88,7 +88,7 @@ set termguicolors
 let ayucolor="dark"   " for dark version of theme
 colorscheme ayu
 "let g:onedark_termcolors=256
-"let g:airline_theme='onedark'
+let g:airline_theme='onedark'
 " }}}
 
 " === Autocmd === {{{

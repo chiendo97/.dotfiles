@@ -31,6 +31,15 @@ nnoremap <leader>H :Helptags!<cr>| " fuzzy find documentation
 nnoremap <leader>t :tabedit<CR>
 "nnoremap L gt  " Move tab
 "nnoremap H gT  " Move tab
+nnoremap g1 1gt
+nnoremap g2 2gt
+nnoremap g3 3gt
+nnoremap g4 4gt
+nnoremap g5 5gt
+nnoremap g6 6gt
+nnoremap g7 7gt
+nnoremap g8 8gt
+nnoremap g9 9gt
 "}}}
 
 "{{{ === Motions
@@ -93,9 +102,9 @@ nnoremap <silent> <leader>ic  :<C-u>CocList commands<CR>
 
 "{{{ === Autocomplete
 
-"inoremap <silent><expr> <cr> 
-"      \ pumvisible() ? coc#_select_confirm() : 
-"      \ "\<C-g>u\<CR>\<c-r>=coc#on_enter()\<CR>"
+inoremap <silent><expr> <cr> 
+      \ pumvisible() ? coc#_select_confirm() : 
+      \ "\<C-g>u\<CR>\<c-r>=coc#on_enter()\<CR>"
 
 inoremap <silent><expr> <TAB>
       \ pumvisible() ? "\<C-n>" :
