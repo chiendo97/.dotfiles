@@ -49,7 +49,8 @@ nnoremap <silent> k gk| " Move up to wrap line
 " :*y
 " delete to 'blackhole' register 
 "nnoremap d "_d
-vnoremap Y "*y | "Copy to clipboard
+"vnoremap Y "*y | " Copy to clipboard
+vnoremap Y "*y
 "}}}
 
 "{{{ === Coc
