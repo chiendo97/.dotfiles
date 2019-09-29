@@ -7,6 +7,8 @@ call plug#begin('~/.local/share/nvim/plugged')
 Plug 'dominikduda/vim_timebox'
 Plug 'kkoomen/vim-doge'
 
+Plug 'Raimondi/delimitMate'
+
 " vim-tmux-navigation
 Plug 'christoomey/vim-tmux-navigator'
 

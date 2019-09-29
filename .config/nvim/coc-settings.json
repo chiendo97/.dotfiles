@@ -1,6 +1,7 @@
 {
-  "suggest.timeout": 10000,
+  "suggest.timeout": 5000,
   "suggest.maxCompleteItemCount": 30,
+  "suggest.autoTrigger": "always",
   "coc.source.buffer.enable": false,
   "coc.preferences.formatOnSaveFiletypes": ["typescriptreact", "json", "javascriptreact", "python"],
   "prettier.semi": false,
