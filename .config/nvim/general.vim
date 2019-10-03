@@ -77,12 +77,12 @@ set noeb vb t_vb=
 
 " === Apperance === {{{
 
+set termguicolors
 "colorscheme monotone
 "colorscheme onedark
 "colorscheme iceberg
 "colorscheme hybrid
 "colorscheme onedark
-set termguicolors
 "let ayucolor="light"  " for light version of theme
 "let ayucolor="mirage" " for mirage version of theme
 let ayucolor="dark"   " for dark version of theme

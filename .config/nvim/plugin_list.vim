@@ -4,6 +4,10 @@
 
 call plug#begin('~/.local/share/nvim/plugged')
 
+Plug 'tpope/vim-fugitive'
+
+Plug 'majutsushi/tagbar'
+
 Plug 'dominikduda/vim_timebox'
 Plug 'kkoomen/vim-doge'
 
@@ -24,6 +28,7 @@ Plug 'netsgnut/arctheme.vim'
 Plug 'arcticicestudio/nord-vim'
 Plug 'chriskempson/base16-vim'
 Plug 'Lokaltog/vim-monotone'
+Plug 'kaicataldo/material.vim'
 "}}}
 
 " resize vim windows "
@@ -44,6 +49,10 @@ Plug 'numirias/semshi', {'do': ':UpdateRemotePlugins'}
 Plug 'shmup/vim-sql-syntax'
 " support many syntax "
 Plug 'sheerun/vim-polyglot'
+" other
+Plug 'blockloop/vim-swigjs'
+Plug 'jparise/vim-graphql'
+Plug 'maxmellon/vim-jsx-pretty'
 "}}}
 
 " preview markdown live "
