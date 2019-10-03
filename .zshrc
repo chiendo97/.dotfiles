@@ -146,3 +146,5 @@ if [ -f '/Users/chiendo97/google-cloud-sdk/completion.zsh.inc' ]; then . '/Users
 export PATH="$HOME/.yarn/bin:$HOME/.config/yarn/global/node_modules/.bin:$PATH"
 export PATH="/usr/local/sbin:$PATH"
 export PATH="/usr/local/opt/grep/libexec/gnubin:$PATH"
+
+fpath=(/usr/local/share/zsh-completions $fpath)
