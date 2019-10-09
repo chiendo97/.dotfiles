@@ -43,6 +43,9 @@ set expandtab
 set smarttab            " Handle tabs more intelligently
 
 set autoindent
+set cindent
+set ts=4 sts=4 sw=4 expandtab smarttab
+set cinoptions+=g0
 
 set number              " show line numbers
 set relativenumber
@@ -76,19 +79,13 @@ set noeb vb t_vb=
 " }}}
 
 " === Apperance === {{{
-
 set termguicolors
-"colorscheme monotone
-"colorscheme onedark
-"colorscheme iceberg
-"colorscheme hybrid
-"colorscheme onedark
 "let ayucolor="light"  " for light version of theme
 "let ayucolor="mirage" " for mirage version of theme
 let ayucolor="dark"   " for dark version of theme
 colorscheme ayu
-"let g:onedark_termcolors=256
-let g:airline_theme='onedark'
+
+"let g:airline_theme='onedark'
 " }}}
 
 " === Autocmd === {{{
@@ -114,7 +111,7 @@ if has("autocmd")
     autocmd FileType zsh setlocal ts=2 sts=2 sw=2 expandtab smarttab
     autocmd FileType lua setlocal ts=2 sts=2 sw=2 expandtab smarttab
     autocmd FileType sql setlocal ts=4 sts=4 sw=4 expandtab smarttab
-    autocmd FileType csv setlocal foldmethod=manual 
+    autocmd FileType xml setlocal ts=2 sts=2 sw=2 expandtab smarttab
     autocmd BufEnter * set fo-=c fo-=r fo-=o
   augroup END
 

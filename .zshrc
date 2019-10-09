@@ -1,5 +1,5 @@
 # java home
-export JAVA_HOME=/Library/Java/JavaVirtualMachines/jdk1.8.0_221.jdk/Contents/Home
+export JAVA_HOME=/Library/Java/JavaVirtualMachines/openjdk-13.jdk/Contents/Home
 
 # hadoop home
 export HADOOP_HOME='/usr/local/Cellar/hadoop/3.1.2/libexec/'
