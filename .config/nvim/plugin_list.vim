@@ -8,27 +8,14 @@ Plug 'tpope/vim-fugitive'
 
 Plug 'majutsushi/tagbar'
 
-Plug 'dominikduda/vim_timebox'
-Plug 'kkoomen/vim-doge'
-
 Plug 'Raimondi/delimitMate'
 
 " vim-tmux-navigation
 Plug 'christoomey/vim-tmux-navigator'
 
 "{{{ === colorscheme
-" colorscheme
 Plug 'ayu-theme/ayu-vim'
-Plug 'arzg/vim-corvine'
-Plug 'sonph/onehalf', {'rtp': 'vim/'}
-Plug 'whatyouhide/vim-gotham'
-Plug 'w0ng/vim-hybrid'
 Plug 'joshdick/onedark.vim'
-Plug 'netsgnut/arctheme.vim'
-Plug 'arcticicestudio/nord-vim'
-Plug 'chriskempson/base16-vim'
-Plug 'Lokaltog/vim-monotone'
-Plug 'kaicataldo/material.vim'
 "}}}
 
 " resize vim windows "
@@ -55,9 +42,6 @@ Plug 'jparise/vim-graphql'
 Plug 'maxmellon/vim-jsx-pretty'
 "}}}
 
-" preview markdown live "
-"Plug 'iamcco/markdown-preview.nvim', { 'do': 'cd app & yarn install'  }
-
 " comment 
 Plug 'scrooloose/nerdcommenter'
 
@@ -70,6 +54,7 @@ Plug 'scrooloose/nerdtree'
 " status bar
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
+"Plug 'itchyny/lightline.vim'
 
 " super snippet html
 Plug 'mattn/emmet-vim'

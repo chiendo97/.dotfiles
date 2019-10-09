@@ -5,6 +5,10 @@
 
 nnoremap <leader>n :noh<CR>
 
+" {{{ === terminal mode
+tnoremap jj <C-\><C-n>
+" }}}
+
 "{{{ === NERDCommenter
 nnoremap <c-c> :call NERDComment(0,"toggle")<CR>
 vnoremap <c-c> :call NERDComment(0,"toggle")<CR>
