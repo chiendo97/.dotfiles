@@ -28,7 +28,7 @@
            "directory": "/tmp/ccls"
          },
          "clang": {
-          "resourceDir": "/Library/Developer/CommandLineTools/usr/lib/clang/10.0.1",
+          "resourceDir": "/Library/Developer/CommandLineTools/usr/lib/clang/11.0.0",
           "extraArgs": [
             "-isystem",
             "/Library/Developer/CommandLineTools/usr/include/c++/v1",
