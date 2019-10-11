@@ -9,6 +9,8 @@
   "diagnostic.infoSign": "•",
   "diagnostic.refreshOnInsertMode": true,
   "java.jdt.ls.vmargs": "-javaagent:/usr/local/share/lombok/lombok.jar -Xbootclasspath/a:/usr/local/share/lombok/lombok.jar",
+  "python.jediPath": "/usr/local/lib/python3.7/site-packages/",
+  "python.formatting.autopep8Path": "/usr/local/bin/autopep8",
   "languageserver": {
     "intelephense": {
       "command": "intelephense",
@@ -28,7 +30,7 @@
            "directory": "/tmp/ccls"
          },
          "clang": {
-          "resourceDir": "/Library/Developer/CommandLineTools/usr/lib/clang/10.0.1",
+          "resourceDir": "/Library/Developer/CommandLineTools/usr/lib/clang/11.0.0",
           "extraArgs": [
             "-isystem",
             "/Library/Developer/CommandLineTools/usr/include/c++/v1",
