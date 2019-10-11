@@ -92,8 +92,8 @@ let airline#extensions#coc#stl_format_warn = '%W{[%w(#%fw)]}'
 let g:airline_section_error = '%{airline#util#wrap(airline#extensions#coc#get_error(),0)}'
 let g:airline_section_warning = '%{airline#util#wrap(airline#extensions#coc#get_warning(),0)}'
 
+" Disable section z
 let g:airline_section_z = ''
-
 
 " vim_timebox
 "let g:airline_section_x = "%{vim_timebox#time_left()}"

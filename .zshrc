@@ -148,3 +148,4 @@ export PATH="/usr/local/sbin:$PATH"
 export PATH="/usr/local/opt/grep/libexec/gnubin:$PATH"
 
 fpath=(/usr/local/share/zsh-completions $fpath)
+export PATH="/usr/local/opt/gettext/bin:$PATH"

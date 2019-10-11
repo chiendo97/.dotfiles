@@ -122,7 +122,7 @@ function! s:check_back_space() abort
   return !col || getline('.')[col - 1]  =~# '\s'
 endfunction
 
-let g:coc_snippet_next = '<C-R>'
+let g:coc_snippet_next = '<cr>'
 "let g:coc_snippet_prev = '<cr>'
 
 "}}}
