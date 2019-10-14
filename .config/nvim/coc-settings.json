@@ -1,6 +1,6 @@
 {
   "suggest.timeout": 5000,
-  "suggest.maxCompleteItemCount": 30,
+  "suggest.maxCompleteItemCount": 10,
   "suggest.autoTrigger": "always",
   "coc.source.buffer.enable": false,
   "coc.preferences.formatOnSaveFiletypes": ["typescriptreact", "json", "javascriptreact", "python"],
@@ -23,7 +23,6 @@
     "ccls": {
       "command": "ccls",
       "filetypes": ["c", "cpp", "objc", "objcpp"],
-      "trace.server": "verbose",
       "rootPatterns": [".ccls", "compile_commands.json", ".vim/", ".git/", ".hg/"],
       "initializationOptions": {
          "cache": {

@@ -4,6 +4,8 @@
 
 call plug#begin('~/.local/share/nvim/plugged')
 
+" Some Git stuff
+Plug 'airblade/vim-gitgutter'
 Plug 'tpope/vim-fugitive'
 
 Plug 'majutsushi/tagbar'
@@ -16,6 +18,7 @@ Plug 'christoomey/vim-tmux-navigator'
 "{{{ === colorscheme
 Plug 'ayu-theme/ayu-vim'
 Plug 'joshdick/onedark.vim'
+Plug 'tyrannicaltoucan/vim-quantum'
 "}}}
 
 " resize vim windows "

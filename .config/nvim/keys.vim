@@ -47,10 +47,8 @@ nnoremap g9 9gt
 "}}}
 
 "{{{ === Motions
-
 nnoremap <silent> j gj| " Move down to wrap line
 nnoremap <silent> k gk| " Move up to wrap line
-
 "}}}
 
 "{{{ === Yank
@@ -101,7 +99,6 @@ nnoremap <silent> <leader>ie  :<C-u>CocList extensions<cr>
 nnoremap <silent> <leader>il  :<C-u>CocList<CR>
 " Open coc commands
 nnoremap <silent> <leader>ic  :<C-u>CocList commands<CR>
-
 "}}}
 
 "{{{ === Autocomplete
