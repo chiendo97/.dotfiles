@@ -19,6 +19,7 @@ Plug 'christoomey/vim-tmux-navigator'
 Plug 'ayu-theme/ayu-vim'
 Plug 'joshdick/onedark.vim'
 Plug 'tyrannicaltoucan/vim-quantum'
+Plug 'kristijanhusak/vim-hybrid-material'
 "}}}
 
 " resize vim windows "
