@@ -3,10 +3,13 @@
 " Mapping:
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
+let mapleader = " "
 nnoremap <leader>n :noh<CR>
 
 " {{{ === terminal mode
 tnoremap jj <C-\><C-n>
+tmap <C-H> <C-\><C-n><C-H>
+tmap <C-L> <C-\><C-n><C-L>
 " }}}
 
 "{{{ === NERDCommenter
@@ -33,17 +36,15 @@ nnoremap <leader>H :Helptags!<cr>| " fuzzy find documentation
 
 "{{{ === Tab navigation
 nnoremap <leader>t :tabedit<CR>
-"nnoremap L gt  " Move tab
-"nnoremap H gT  " Move tab
-nnoremap g1 1gt
-nnoremap g2 2gt
-nnoremap g3 3gt
-nnoremap g4 4gt
-nnoremap g5 5gt
-nnoremap g6 6gt
-nnoremap g7 7gt
-nnoremap g8 8gt
-nnoremap g9 9gt
+nnoremap <leader>1 1gt
+nnoremap <leader>2 2gt
+nnoremap <leader>3 3gt
+nnoremap <leader>4 4gt
+nnoremap <leader>5 5gt
+nnoremap <leader>6 6gt
+nnoremap <leader>7 7gt
+nnoremap <leader>8 8gt
+nnoremap <leader>9 9gt
 "}}}
 
 "{{{ === Motions
@@ -135,5 +136,5 @@ nnoremap gV `[v`]
 "}}}
 
 "{{{ === Folding
-nnoremap <space> za   " Open and close folds
+"nnoremap <space> za   " Open and close folds
 "}}}
