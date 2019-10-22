@@ -88,10 +88,19 @@ colorscheme ayu
 "colorscheme onedark
 "let g:airline_theme='onedark'
 
+"set background=dark
+"let g:quantum_italics=1
+"colorscheme quantum
+"let g:airline_theme='quantum'
+
+let g:enable_bold_font = 1
 set background=dark
-let g:quantum_italics=1
-colorscheme quantum
-let g:airline_theme='quantum'
+set termencoding=utf-8
+set termguicolors
+colorscheme hybrid_material
+
+let g:airline_powerline_fonts = 1
+let g:airline_theme = "hybrid"
 " }}}
 
 " === Autocmd === {{{

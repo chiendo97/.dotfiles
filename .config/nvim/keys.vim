@@ -5,6 +5,7 @@
 
 let mapleader = " "
 nnoremap <leader>n :noh<CR>
+let mapleader = " "
 
 " {{{ === terminal mode
 tnoremap jj <C-\><C-n>
@@ -136,5 +137,5 @@ nnoremap gV `[v`]
 "}}}
 
 "{{{ === Folding
-"nnoremap <space> za   " Open and close folds
+nnoremap <leader><space> za   " Open and close folds
 "}}}
