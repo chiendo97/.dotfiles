@@ -20,6 +20,7 @@ Plug 'ayu-theme/ayu-vim'
 Plug 'joshdick/onedark.vim'
 Plug 'tyrannicaltoucan/vim-quantum'
 Plug 'kristijanhusak/vim-hybrid-material'
+Plug 'patstockwell/vim-monokai-tasty'
 "}}}
 
 " resize vim windows "
@@ -44,6 +45,10 @@ Plug 'sheerun/vim-polyglot'
 Plug 'blockloop/vim-swigjs'
 Plug 'jparise/vim-graphql'
 Plug 'maxmellon/vim-jsx-pretty'
+
+Plug 'pangloss/vim-javascript'
+Plug 'elzr/vim-json'
+Plug 'styled-components/vim-styled-components'
 "}}}
 
 " comment 

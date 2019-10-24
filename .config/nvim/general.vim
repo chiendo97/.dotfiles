@@ -80,6 +80,8 @@ set noeb vb t_vb=
 
 " === Apperance === {{{
 set termguicolors
+set background=dark
+set termencoding=utf-8
 "let ayucolor="light"  " for light version of theme
 "let ayucolor="mirage" " for mirage version of theme
 let ayucolor="dark"   " for dark version of theme
@@ -93,14 +95,10 @@ colorscheme ayu
 "colorscheme quantum
 "let g:airline_theme='quantum'
 
-let g:enable_bold_font = 1
-set background=dark
-set termencoding=utf-8
-set termguicolors
-colorscheme hybrid_material
+"let g:vim_monokai_tasty_italic = 1
+"colorscheme vim-monokai-tasty
+"let g:airline_theme='monokai_tasty'
 
-let g:airline_powerline_fonts = 1
-let g:airline_theme = "hybrid"
 " }}}
 
 " === Autocmd === {{{
