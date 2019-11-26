@@ -3,6 +3,14 @@
 " Plugins Config:
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
+" {{{ === pear-tree
+let g:pear_tree_repeatable_expand = 0
+let g:pear_tree_map_special_keys = 0
+let g:pear_tree_smart_openers = 1
+let g:pear_tree_smart_closers = 1
+let g:pear_tree_smart_backspace = 1
+" }}}
+
 "{{{ === vim-polyglot
 let g:polyglot_disabled = ['csv']
 "}}}
@@ -93,7 +101,7 @@ let g:airline_section_error = '%{airline#util#wrap(airline#extensions#coc#get_er
 let g:airline_section_warning = '%{airline#util#wrap(airline#extensions#coc#get_warning(),0)}'
 
 " Disable section z
-let g:airline_section_z = ''
+"let g:airline_section_z = ''
 
 " vim_timebox
 "let g:airline_section_x = "%{vim_timebox#time_left()}"

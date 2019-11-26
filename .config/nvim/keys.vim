@@ -14,8 +14,10 @@ tmap <C-L> <C-\><C-n><C-L>
 " }}}
 
 "{{{ === NERDCommenter
-nnoremap <c-c> :call NERDComment(0,"toggle")<CR>
-vnoremap <c-c> :call NERDComment(0,"toggle")<CR>
+" nnoremap <c-c> :call NERDComment(0,"toggle")<CR>
+" vnoremap <c-c> :call NERDComment(0,"toggle")<CR>
+nmap <c-c> gcc
+vmap <c-c> gc
 "}}}
 
 "{{{ === NERDTree
@@ -46,11 +48,13 @@ nnoremap <leader>6 6gt
 nnoremap <leader>7 7gt
 nnoremap <leader>8 8gt
 nnoremap <leader>9 9gt
+nnoremap <leader>j gt
+nnoremap <leader>k gT
 "}}}
 
 "{{{ === Motions
-nnoremap <silent> j gj| " Move down to wrap line
-nnoremap <silent> k gk| " Move up to wrap line
+"nnoremap <silent> j gj| " Move down to wrap line
+"nnoremap <silent> k gk| " Move up to wrap line
 "}}}
 
 "{{{ === Yank
@@ -90,7 +94,7 @@ endfunction
 "autocmd CursorHold * silent call CocActionAsync('highlight')
 
 " Remap for rename current word
-"nmap <leader>rn <Plug>(coc-rename)
+nmap <leader>en <Plug>(coc-rename)
 
 " Using CocList
 " Show all diagnostics

@@ -2,12 +2,12 @@
   "suggest.timeout": 5000,
   "suggest.maxCompleteItemCount": 10,
   "suggest.autoTrigger": "always",
-  "coc.preferences.formatOnSaveFiletypes": ["typescriptreact", "json", "javascriptreact", "python"],
+  "coc.preferences.formatOnSaveFiletypes": ["typescriptreact", "json", "javascriptreact", "python", "java"],
   "diagnostic.errorSign": "•",
   "diagnostic.warningSign": "•",
   "diagnostic.infoSign": "•",
   "diagnostic.refreshOnInsertMode": true,
-  "java.home": "/Library/Java/JavaVirtualMachines/jdk-13.jdk/Contents/Home",
+  "java.home": "/Library/Java/JavaVirtualMachines/openjdk-13.0.1.jdk/Contents/Home",
   "java.jdt.ls.vmargs": "-javaagent:/usr/local/share/lombok/lombok.jar -Xbootclasspath/a:/usr/local/share/lombok/lombok.jar",
   "python.jediPath": "/usr/local/lib/python3.7/site-packages/",
   "python.formatting.provider": "yapf",
@@ -45,5 +45,6 @@
         }
        }
     }
-  }
+  },
+  "java.format.settings.url": "/Users/chiendo97/.config/coc/extensions/node_modules/redhat.java/eclipse-formatter.xml"
 }

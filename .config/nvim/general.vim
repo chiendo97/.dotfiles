@@ -26,7 +26,7 @@ set signcolumn=yes
 
 set autoread            "Set to auto read when a file is changed from the outside
 set autowrite           " Save automatically all the buffers in vim
-set noautochdir           " Set the working directory
+set noautochdir         " Set the working directory
 
 set ruler               "Always show current position
 
@@ -45,6 +45,7 @@ set smarttab            " Handle tabs more intelligently
 set autoindent
 set cindent
 set ts=4 sts=4 sw=4 expandtab smarttab
+set cino+=j1,(0,ws,Ws
 set cinoptions+=g0
 
 set number              " show line numbers
@@ -80,25 +81,44 @@ set noeb vb t_vb=
 
 " === Apperance === {{{
 set termguicolors
-set background=dark
-set termencoding=utf-8
-"let ayucolor="light"  " for light version of theme
-"let ayucolor="mirage" " for mirage version of theme
-let ayucolor="dark"   " for dark version of theme
-colorscheme ayu
-
-"colorscheme onedark
-"let g:airline_theme='onedark'
-
 "set background=dark
-"let g:quantum_italics=1
-"colorscheme quantum
-"let g:airline_theme='quantum'
+"let ayucolor="dark"   " for dark version of theme
+"colorscheme ayu
 
-"let g:vim_monokai_tasty_italic = 1
-"colorscheme vim-monokai-tasty
-"let g:airline_theme='monokai_tasty'
+"set background=light
+"colorscheme PaperColor
+"let g:airline_theme='papercolor'
+"let g:PaperColor_Theme_Options = {
+"      \   'language': {
+"      \     'python': {
+"      \       'highlight_builtins' : 0
+"      \     },
+"      \     'cpp': {
+"      \       'highlight_standard_library': 1
+"      \     },
+"      \     'c': {
+"      \       'highlight_builtins' : 1
+"      \     }
+"      \   }
+"      \ }
 
+"colorscheme seoul256-light
+"let g:seoul256_background = 254
+"set background=light
+
+"let g:airline_theme='one'
+"colorscheme one
+"set background=dark " for the dark version
+"set background=light " for the light version
+
+"set background=light " or light if you prefer the light version
+"let g:two_firewatch_italics=1
+"colo two-firewatch
+"let g:airline_theme='twofirewatch' " if you have Airline installed and want the associated theme
+
+set cursorline
+colorscheme onehalfdark
+let g:airline_theme='onehalfdark'
 " }}}
 
 " === Autocmd === {{{
