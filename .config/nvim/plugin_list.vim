@@ -4,7 +4,13 @@
 
 call plug#begin('~/.local/share/nvim/plugged')
 
+Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }
+
+Plug 'wellle/targets.vim'
+
 Plug 'tmsvg/pear-tree'
+" Plug 'tpope/vim-endwise/'
+" Plug 'jiangmiao/auto-pairs'
 
 " Starter for vim
 Plug 'mhinz/vim-startify'
@@ -14,17 +20,18 @@ Plug 'airblade/vim-gitgutter'
 Plug 'tpope/vim-fugitive'
 
 " ctags bar
-"Plug 'majutsushi/tagbar'
+Plug 'majutsushi/tagbar'
 
 " vim-tmux-navigation
 Plug 'christoomey/vim-tmux-navigator'
 
 "{{{ === colorscheme
+Plug 'kjssad/quantum.vim'
 Plug 'ayu-theme/ayu-vim'
 Plug 'NLKNguyen/papercolor-theme'
 Plug 'rakr/vim-one'
-Plug 'rakr/vim-two-firewatch'
 Plug 'sonph/onehalf', {'rtp': 'vim/'}
+Plug 'nightsense/snow'
 "}}}
 
 " resize vim windows "

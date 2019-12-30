@@ -3,12 +3,21 @@
 " Plugins Config:
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
+" {{{ === vim-go
+let g:go_doc_keywordprg_enabled = 0
+let g:go_def_mapping_enabled = 0
+let g:go_fmt_command = "goimports"
+" }}}
+
 " {{{ === pear-tree
 let g:pear_tree_repeatable_expand = 0
 let g:pear_tree_map_special_keys = 0
 let g:pear_tree_smart_openers = 1
 let g:pear_tree_smart_closers = 1
 let g:pear_tree_smart_backspace = 1
+imap <BS> <Plug>(PearTreeBackspace)
+" imap <CR> <Plug>(PearTreeExpand)
+" imap <Esc> <Plug>(PearTreeFinishExpansion)
 " }}}
 
 "{{{ === vim-polyglot
@@ -16,10 +25,8 @@ let g:polyglot_disabled = ['csv']
 "}}}
 
 " === latex_preview === {{{
-
 "autocmd Filetype tex setl updatetime=1
 let g:livepreview_previewer = 'open -a Preview'
-
 "}}}
 
 " === coc_vim === {{{

@@ -53,6 +53,7 @@ set relativenumber
 set showcmd             " show command in bottom bar
 
 set cursorline          " highlight current line
+" set colorcolumn=80
 
 set wildmenu            " visual autocomplete for command menu
 
@@ -116,9 +117,17 @@ set termguicolors
 "colo two-firewatch
 "let g:airline_theme='twofirewatch' " if you have Airline installed and want the associated theme
 
-set cursorline
-colorscheme onehalfdark
-let g:airline_theme='onehalfdark'
+" set cursorline
+" colorscheme onehalfdark
+" let g:airline_theme='onehalfdark'
+
+" set background=light  " light theme
+" colorscheme quantum
+" let g:airline_theme='papercolor'
+
+set background=light
+colorscheme snow
+let g:airline_theme='snow_light'
 " }}}
 
 " === Autocmd === {{{
@@ -138,6 +147,7 @@ if has("autocmd")
     autocmd FileType javascript setlocal ts=2 sts=2 sw=2 expandtab
     autocmd FileType json setlocal ts=2 sts=2 sw=2 expandtab
     autocmd FileType cpp setlocal ts=4 sts=4 sw=4 noexpandtab smarttab
+    autocmd FileType go setlocal ts=4 sts=4 sw=4 noexpandtab smarttab
     autocmd FileType php setlocal ts=4 sts=4 sw=4 expandtab smarttab
     autocmd FileType vim setlocal ts=2 sts=2 sw=2 expandtab smarttab
     autocmd FileType sh setlocal ts=2 sts=2 sw=2 expandtab smarttab

@@ -7,6 +7,8 @@ let mapleader = " "
 nnoremap <leader>n :noh<CR>
 let mapleader = " "
 
+nnoremap <leader>c :CocCommand explorer<CR>
+
 " {{{ === terminal mode
 tnoremap jj <C-\><C-n>
 tmap <C-H> <C-\><C-n><C-H>
@@ -30,7 +32,7 @@ nnoremap <leader>f :Files<cr>|     " fuzzy find files in the working directory (
 nnoremap <leader>/ :BLines<cr>|    " fuzzy find lines in the current file
 nnoremap <leader>b :Buffers<cr>|   " fuzzy find an open buffer
 nnoremap <leader>r :Rg |           " fuzzy find text in the working directory
-nnoremap <leader>c :Commands<cr>|  " fuzzy find Vim commands (like Ctrl-Shift-P in Sublime/Atom/VSC)
+" nnoremap <leader>c :Commands<cr>|  " fuzzy find Vim commands (like Ctrl-Shift-P in Sublime/Atom/VSC)
 nnoremap <leader>h :History<cr>|   " fuzzy find files from most recent files
 nnoremap <leader>l :Lines<cr>|     " fuzzy find line in loaded buffers
 nnoremap <leader>m :Maps<cr>|      " fuzzy find key mappings
@@ -91,7 +93,7 @@ function! s:show_documentation()
 endfunction
 
 " Highlight symbol under cursor on CursorHold
-"autocmd CursorHold * silent call CocActionAsync('highlight')
+autocmd CursorHold * silent call CocActionAsync('highlight')
 
 " Remap for rename current word
 nmap <leader>en <Plug>(coc-rename)
@@ -118,14 +120,15 @@ inoremap <silent><expr> <TAB>
       \ <SID>check_back_space() ? "\<TAB>" :
       \ coc#refresh()
 
-inoremap <expr><S-TAB> pumvisible() ? "\<C-p>" : "\<C-h>"
+inoremap <expr><S-TAB>
+      \ pumvisible() ? "\<C-p>" : "\<C-h>"
 
 function! s:check_back_space() abort
   let col = col('.') - 1
   return !col || getline('.')[col - 1]  =~# '\s'
 endfunction
 
-let g:coc_snippet_next = '<cr>'
+" let g:coc_snippet_next = '<TAB>'
 "let g:coc_snippet_prev = '<cr>'
 
 "}}}

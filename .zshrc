@@ -2,6 +2,11 @@
 # User configuration sourced by interactive shells
 #
 
+
+# {{{ === ENV
+export ENV="DEV"
+# }}}
+
 # {{{ === ZIM 
 # Define zim location
 export ZIM_HOME=${ZDOTDIR:-${HOME}}/.zim
@@ -29,10 +34,9 @@ alias cpwd="pwd | tr -d '\n' | pbcopy" # Copy pwd to clipboard
 export PATH="$HOME/.yarn/bin:$HOME/.config/yarn/global/node_modules/.bin:$PATH"
 export PATH="/usr/local/sbin:$PATH"
 export PATH="/usr/local/opt/grep/libexec/gnubin:$PATH"
-fpath=(/usr/local/share/zsh-completions $fpath)
+export fpath=(/usr/local/share/zsh-completions $fpath)
 export PATH="/usr/local/opt/gettext/bin:$PATH"
-
-# export PYTHONPATH=/usr/local/Cellar/python/3.7.5/Frameworks/Python.framework/Versions/3.7/lib/python3.7/site-packages
+export PATH="$HOME/go/bin/:$PATH"
 # }}}
 
 # {{{ === SETTING
@@ -44,7 +48,7 @@ export LANG=en_US.UTF-8
 export LANGUAGE=en_US.UTF-8
 # }}}
 
-# {{{ === KEY 
+# {{{ === MAPPING KEY 
 autoload -U edit-command-line
 zle -N edit-command-line
 bindkey '^e' edit-command-line
@@ -58,4 +62,9 @@ bindkey '^r' history-incremental-search-backward
 # {{{ === SOURCE 
 source /usr/local/Cellar/fzf/0.18.0/shell/completion.zsh
 source /usr/local/Cellar/fzf/0.18.0/shell/key-bindings.zsh
+# autojump
+[ -f /usr/local/etc/profile.d/autojump.sh ] && . /usr/local/etc/profile.d/autojump.sh
+
+[ -n "$PS1" ] && sh ~/.local/share/nvim/plugged/snow/shell/snow_light.sh
+
 # }}}
