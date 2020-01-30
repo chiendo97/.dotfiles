@@ -125,9 +125,13 @@ set termguicolors
 " colorscheme quantum
 " let g:airline_theme='papercolor'
 
-set background=light
-colorscheme snow
-let g:airline_theme='snow_light'
+" set background=light
+" colorscheme snow
+" let g:airline_theme='snow_light'
+
+colorscheme one
+set background=light " for the light version
+let g:airline_theme='one'
 " }}}
 
 " === Autocmd === {{{

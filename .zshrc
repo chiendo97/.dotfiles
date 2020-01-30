@@ -65,6 +65,7 @@ source /usr/local/Cellar/fzf/0.18.0/shell/key-bindings.zsh
 # autojump
 [ -f /usr/local/etc/profile.d/autojump.sh ] && . /usr/local/etc/profile.d/autojump.sh
 
+# snow colorschmeme
 [ -n "$PS1" ] && sh ~/.local/share/nvim/plugged/snow/shell/snow_light.sh
 
 # }}}

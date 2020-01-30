@@ -2,7 +2,7 @@
   "go.goplsOptions": {
     "completeUnimported": true
   },
-  "coc.preferences.formatOnSaveFiletypes": ["typescriptreact", "json", "javascriptreact", "python", "java"],
+  "coc.preferences.formatOnSaveFiletypes": ["typescriptreact", "json", "javascriptreact", "python" ],
   "explorer.openAction.changeDirectory": false,
   "explorer.file.autoReveal": false,
   "suggest.timeout": 5000,
