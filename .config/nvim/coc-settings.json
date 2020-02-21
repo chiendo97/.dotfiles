@@ -2,19 +2,17 @@
   "go.goplsOptions": {
     "completeUnimported": true
   },
-  "coc.preferences.formatOnSaveFiletypes": ["typescriptreact", "json", "javascriptreact", "python" ],
-  "explorer.openAction.changeDirectory": false,
-  "explorer.file.autoReveal": false,
+
   "suggest.timeout": 5000,
   "suggest.maxCompleteItemCount": 10,
   "suggest.autoTrigger": "always",
   "suggest.minTriggerInputLength": 2,
+
   "diagnostic.errorSign": "•",
   "diagnostic.warningSign": "•",
   "diagnostic.infoSign": "•",
   "diagnostic.refreshOnInsertMode": true,
-  "java.home": "/Library/Java/JavaVirtualMachines/openjdk-13.0.1.jdk/Contents/Home",
-  "java.jdt.ls.vmargs": "-javaagent:/usr/local/share/lombok/lombok.jar -Xbootclasspath/a:/usr/local/share/lombok/lombok.jar",
+
   "python.jediPath": "/usr/local/lib/python3.7/site-packages/",
   "python.formatting.provider": "yapf",
   "python.formatting.yapfPath": "/usr/local/bin/yapf",
@@ -22,26 +20,5 @@
   "python.linting.pylintEnabled": false,
   "python.linting.flake8Enabled": true,
   "python.linting.flake8Path": "/usr/local/bin/flake8",
-  "python.sortImports.path": "/usr/local/bin/isort",
-  "languageserver": {
-    "ccls": {
-      "command": "ccls",
-      "filetypes": ["c", "cpp", "objc", "objcpp"],
-      "rootPatterns": [".ccls", "compile_commands.json", ".vim/", ".git/", ".hg/"],
-      "initializationOptions": {
-         "cache": {
-           "directory": "/tmp/ccls"
-         },
-         "clang": {
-          "resourceDir": "/Library/Developer/CommandLineTools/usr/lib/clang/11.0.0",
-          "extraArgs": [
-            "-isystem",
-            "/Library/Developer/CommandLineTools/usr/include/c++/v1",
-            "-I",
-            "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/"        
-          ]
-        }
-       }
-    }
-  }
+  "python.sortImports.path": "/usr/local/bin/isort"
 }

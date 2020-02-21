@@ -4,7 +4,11 @@
 
 call plug#begin('~/.local/share/nvim/plugged')
 
-Plug 'iamcco/markdown-preview.nvim', { 'do': 'cd app & yarn install'  }
+Plug 'junegunn/goyo.vim'
+
+Plug 'vimwiki/vimwiki'
+
+Plug 'iamcco/markdown-preview.nvim', { 'do': { -> mkdp#util#install() } }
 
 Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }
 
@@ -13,9 +17,6 @@ Plug 'wellle/targets.vim'
 Plug 'tmsvg/pear-tree'
 " Plug 'tpope/vim-endwise/'
 " Plug 'jiangmiao/auto-pairs'
-
-" Starter for vim
-Plug 'mhinz/vim-startify'
 
 " Some Git stuff
 Plug 'airblade/vim-gitgutter'
@@ -28,6 +29,7 @@ Plug 'majutsushi/tagbar'
 Plug 'christoomey/vim-tmux-navigator'
 
 "{{{ === colorscheme
+Plug 'arzg/vim-colors-xcode'
 Plug 'kjssad/quantum.vim'
 Plug 'ayu-theme/ayu-vim'
 Plug 'NLKNguyen/papercolor-theme'
@@ -48,24 +50,13 @@ Plug '/usr/local/opt/fzf'
 Plug 'junegunn/fzf.vim'
 
 "{{{ === Syntax
-" python syntax highlight
-" Plug 'numirias/semshi', {'do': ':UpdateRemotePlugins'}
-" sql syntax
-"Plug 'shmup/vim-sql-syntax'
-" support many syntax "
 Plug 'sheerun/vim-polyglot'
-" other
-"Plug 'blockloop/vim-swigjs'
-"Plug 'jparise/vim-graphql'
-"Plug 'maxmellon/vim-jsx-pretty'
 Plug 'pangloss/vim-javascript'
 Plug 'HerringtonDarkholme/yats.vim'
-"Plug 'elzr/vim-json'
-"Plug 'styled-components/vim-styled-components', { 'branch': 'main' }
 "}}}
 
 " comment 
-"Plug 'scrooloose/nerdcommenter'
+" Plug 'scrooloose/nerdcommenter'
 Plug 'tpope/vim-commentary'
 
 " coc for completion"
@@ -75,9 +66,7 @@ Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'scrooloose/nerdtree'
 
 " status bar
-Plug 'vim-airline/vim-airline'
-Plug 'vim-airline/vim-airline-themes'
-"Plug 'itchyny/lightline.vim'
+Plug 'itchyny/lightline.vim'
 
 " super snippet html
 Plug 'mattn/emmet-vim'

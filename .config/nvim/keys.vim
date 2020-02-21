@@ -7,7 +7,9 @@ let mapleader = " "
 nnoremap <leader>n :noh<CR>
 let mapleader = " "
 
-nnoremap <leader>c :CocCommand explorer<CR>
+" {{{ === Git
+nnoremap <leader>b :<C-U>Gblame<cr>|    " Open git blame for current file"
+" }}}
 
 " {{{ === terminal mode
 tnoremap jj <C-\><C-n>
@@ -16,27 +18,22 @@ tmap <C-L> <C-\><C-n><C-L>
 " }}}
 
 "{{{ === NERDCommenter
-" nnoremap <c-c> :call NERDComment(0,"toggle")<CR>
-" vnoremap <c-c> :call NERDComment(0,"toggle")<CR>
 nmap <c-c> gcc
 vmap <c-c> gc
 "}}}
 
 "{{{ === NERDTree
-"map <C-n> :NERDTreeToggle<CR>
+nnoremap <leader>c :NERDTreeToggle<CR>
 "}}}
 
 "{{{ === fuzzy find
 nnoremap <leader>g :GFiles<cr>|    " fuzzy find files under version control in the working directory (where you launched Vim from)"
 nnoremap <leader>f :Files<cr>|     " fuzzy find files in the working directory (where you launched Vim from)
-nnoremap <leader>/ :BLines<cr>|    " fuzzy find lines in the current file
-nnoremap <leader>b :Buffers<cr>|   " fuzzy find an open buffer
 nnoremap <leader>r :Rg |           " fuzzy find text in the working directory
-" nnoremap <leader>c :Commands<cr>|  " fuzzy find Vim commands (like Ctrl-Shift-P in Sublime/Atom/VSC)
 nnoremap <leader>h :History<cr>|   " fuzzy find files from most recent files
-nnoremap <leader>l :Lines<cr>|     " fuzzy find line in loaded buffers
 nnoremap <leader>m :Maps<cr>|      " fuzzy find key mappings
 nnoremap <leader>H :Helptags!<cr>| " fuzzy find documentation
+nnoremap <leader>C :<C-U>Commands!<cr>| " fuzzy find documentation
 "}}}
 
 "{{{ === Tab navigation
@@ -55,8 +52,8 @@ nnoremap <leader>k gT
 "}}}
 
 "{{{ === Motions
-"nnoremap <silent> j gj| " Move down to wrap line
-"nnoremap <silent> k gk| " Move up to wrap line
+nnoremap <silent> j gj| " Move down to wrap line
+nnoremap <silent> k gk| " Move up to wrap line
 "}}}
 
 "{{{ === Yank
@@ -95,18 +92,13 @@ endfunction
 " Highlight symbol under cursor on CursorHold
 autocmd CursorHold * silent call CocActionAsync('highlight')
 
-" Remap for rename current word
-nmap <leader>en <Plug>(coc-rename)
+nmap <leader>en <Plug>(coc-rename)|                           " Remap for rename current word
 
 " Using CocList
-" Show all diagnostics
-nnoremap <silent> <leader>ia  :<C-u>CocList diagnostics<cr>
-" Manage extensions
-nnoremap <silent> <leader>ie  :<C-u>CocList extensions<cr>
-" Open coc list
-nnoremap <silent> <leader>il  :<C-u>CocList<CR>
-" Open coc commands
-nnoremap <silent> <leader>ic  :<C-u>CocList commands<CR>
+nnoremap <silent> <leader>ia  :<C-u>CocList diagnostics<cr>|  " Show all diagnostics
+nnoremap <silent> <leader>ie  :<C-u>CocList extensions<cr>|   " Manage extensions
+nnoremap <silent> <leader>il  :<C-u>CocList<CR>|              " Open coc list
+nnoremap <silent> <leader>ic  :<C-u>CocList commands<CR>|     " Open coc commands
 "}}}
 
 "{{{ === Autocomplete
@@ -129,7 +121,7 @@ function! s:check_back_space() abort
 endfunction
 
 " let g:coc_snippet_next = '<TAB>'
-"let g:coc_snippet_prev = '<cr>'
+" let g:coc_snippet_prev = '<cr>'
 
 "}}}
 

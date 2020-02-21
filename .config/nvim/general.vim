@@ -129,9 +129,19 @@ set termguicolors
 " colorscheme snow
 " let g:airline_theme='snow_light'
 
-colorscheme one
-set background=light " for the light version
+" colorscheme one
+" set background=dark " for the light version
+" let g:airline_theme='one'
+
+colorscheme xcodewwdc
 let g:airline_theme='one'
+
+augroup vim-colors-xcode
+    autocmd!
+augroup END
+
+autocmd vim-colors-xcode ColorScheme * hi Comment        cterm=italic gui=italic
+autocmd vim-colors-xcode ColorScheme * hi SpecialComment cterm=italic gui=italic
 " }}}
 
 " === Autocmd === {{{
