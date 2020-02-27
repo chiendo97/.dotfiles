@@ -11,10 +11,10 @@ let mapleader = " "
 nnoremap <leader>b :<C-U>Gblame<cr>|    " Open git blame for current file"
 " }}}
 
-" {{{ === terminal mode
-tnoremap jj <C-\><C-n>
-tmap <C-H> <C-\><C-n><C-H>
-tmap <C-L> <C-\><C-n><C-L>
+" {{{ === Terminal mode
+tnoremap <C-F> <C-\><C-n>
+tnoremap <C-H> <C-\><C-n><C-W><C-H>
+tnoremap <C-L> <C-\><C-n><C-W><C-L>
 " }}}
 
 "{{{ === NERDCommenter
@@ -27,13 +27,14 @@ nnoremap <leader>c :NERDTreeToggle<CR>
 "}}}
 
 "{{{ === fuzzy find
-nnoremap <leader>g :GFiles<cr>|    " fuzzy find files under version control in the working directory (where you launched Vim from)"
-nnoremap <leader>f :Files<cr>|     " fuzzy find files in the working directory (where you launched Vim from)
-nnoremap <leader>r :Rg |           " fuzzy find text in the working directory
-nnoremap <leader>h :History<cr>|   " fuzzy find files from most recent files
-nnoremap <leader>m :Maps<cr>|      " fuzzy find key mappings
-nnoremap <leader>H :Helptags!<cr>| " fuzzy find documentation
-nnoremap <leader>C :<C-U>Commands!<cr>| " fuzzy find documentation
+nnoremap <leader>g :GFiles<cr>|          " fuzzy find files under version control in the working directory (where you launched Vim from)"
+nnoremap <leader>f :Files<cr>|           " fuzzy find files in the working directory (where you launched Vim from)
+nnoremap <leader>r :Rg |                 " fuzzy find text in the working directory
+nnoremap <leader>h :History<cr>|         " fuzzy find files from most recent files
+nnoremap <leader>m :Maps<cr>|            " fuzzy find key mappings
+nnoremap <leader>H :Helptags!<cr>|       " fuzzy find documentation
+nnoremap <leader>C :<C-U>Commands!<cr>|  " fuzzy find documentation
+nnoremap <leader>l :<C-U>Lines<cr>|      " fuzzy find line
 "}}}
 
 "{{{ === Tab navigation
@@ -54,6 +55,8 @@ nnoremap <leader>k gT
 "{{{ === Motions
 nnoremap <silent> j gj| " Move down to wrap line
 nnoremap <silent> k gk| " Move up to wrap line
+
+nnoremap * *``|         " a jump adds to the jump list
 "}}}
 
 "{{{ === Yank
@@ -126,9 +129,9 @@ endfunction
 "}}}
 
 "{{{ === vimrc files
-nnoremap <Leader>ev :<C-u>tabedit $MYVIMRC<CR>           " quick edit vimrc 
-nnoremap <Leader>sv :<C-u>source $MYVIMRC<CR>            " quick source vimrc (after edit normally)
-nnoremap <Leader>ec :<C-u>CocConfig<CR>                  " quick edit coc config
+nnoremap <Leader>ev :<C-u>e $MYVIMRC<CR>                  " quick edit vimrc 
+nnoremap <Leader>sv :<C-u>source $MYVIMRC<CR>             " quick source vimrc (after edit normally)
+nnoremap <Leader>ec :<C-u>CocConfig<CR>                   " quick edit coc config
 "}}}
 
 ""{{{ === visual recent pasted code

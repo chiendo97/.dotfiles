@@ -16,7 +16,7 @@ set hidden
 set cmdheight=2
 
 "" Smaller updatetime for CursorHold & CursorHoldI
-set updatetime=500
+set updatetime=1000
 
 "" don't give |ins-completion-menu| messages.
 set shortmess+=c
@@ -34,7 +34,6 @@ set showmatch           " highlight matching [{()}]
 
 set timeoutlen=1000 ttimeoutlen=0
 
-"" Turn backup off, since most stuff is in SVN, git et.c anyway...
 set nobackup
 set nowb
 set noswapfile
@@ -56,6 +55,7 @@ set cursorline          " highlight current line
 " set colorcolumn=80
 
 set wildmenu            " visual autocomplete for command menu
+set wildmode=longest:full
 
 set lazyredraw          " redraw only when we need to
 
@@ -73,75 +73,34 @@ set nowrap
 
 set foldmethod=marker
 
-" Disable newline with comment
-set formatoptions-=r formatoptions-=c formatoptions-=o
+set formatoptions-=r formatoptions-=c formatoptions-=o " Disable newline with comment
 
-" Tell vim to shut up
-set noeb vb t_vb=
+set noeb vb t_vb=       " Tell vim to shut up
 " }}}
 
 " === Apperance === {{{
 set termguicolors
-"set background=dark
-"let ayucolor="dark"   " for dark version of theme
-"colorscheme ayu
 
-"set background=light
-"colorscheme PaperColor
-"let g:airline_theme='papercolor'
-"let g:PaperColor_Theme_Options = {
-"      \   'language': {
-"      \     'python': {
-"      \       'highlight_builtins' : 0
-"      \     },
-"      \     'cpp': {
-"      \       'highlight_standard_library': 1
-"      \     },
-"      \     'c': {
-"      \       'highlight_builtins' : 1
-"      \     }
-"      \   }
-"      \ }
-
-"colorscheme seoul256-light
-"let g:seoul256_background = 254
-"set background=light
-
-"let g:airline_theme='one'
-"colorscheme one
-"set background=dark " for the dark version
-"set background=light " for the light version
-
-"set background=light " or light if you prefer the light version
-"let g:two_firewatch_italics=1
-"colo two-firewatch
-"let g:airline_theme='twofirewatch' " if you have Airline installed and want the associated theme
-
-" set cursorline
-" colorscheme onehalfdark
-" let g:airline_theme='onehalfdark'
-
-" set background=light  " light theme
-" colorscheme quantum
-" let g:airline_theme='papercolor'
+" colorscheme ayu
 
 " set background=light
-" colorscheme snow
-" let g:airline_theme='snow_light'
+" colorscheme PaperColor
 
+" set cursorline
+" colorscheme onehalflight
+
+" set background=light
+" colorscheme quantum
+
+set background=light
+colorscheme snow
+
+" set background=light
 " colorscheme one
-" set background=dark " for the light version
-" let g:airline_theme='one'
 
-colorscheme xcodewwdc
-let g:airline_theme='one'
-
-augroup vim-colors-xcode
-    autocmd!
-augroup END
-
-autocmd vim-colors-xcode ColorScheme * hi Comment        cterm=italic gui=italic
-autocmd vim-colors-xcode ColorScheme * hi SpecialComment cterm=italic gui=italic
+" colorscheme xcodewwdc
+" colorscheme xcodelighthc
+" colorscheme xcodelight
 " }}}
 
 " === Autocmd === {{{

@@ -133,6 +133,7 @@ alias gb='git branch'
 alias gp='git push origin'
 alias gm='git commit -m'
 alias gs='git status'
+alias gl='git log'
 alias ss='source env/bin/activate'
 alias dd='deactivate'
 # dotfiles for .files config
@@ -143,30 +144,23 @@ alias cpwd="pwd | tr -d '\n' | pbcopy" # Copy pwd to clipboard
 # {{{ === PATH
 export fpath=(/usr/local/share/zsh-completions $fpath)
 
-export PATH="$HOME/.yarn/bin:$HOME/.config/yarn/global/node_modules/.bin:$PATH"
+export PATH="$HOME/.yarn/bin:$PATH"
+export PATH="$HOME/.config/yarn/global/node_modules/.bin:$PATH"
 export PATH="/usr/local/sbin:$PATH"
-export PATH="/usr/local/opt/grep/libexec/gnubin:$PATH"
 export PATH="/usr/local/opt/gettext/bin:$PATH"
-export PATH="$HOME/go/bin/:$PATH"
+export PATH="/usr/local/bin/:$PATH"
 
 export JAVA_HOME=$(/usr/libexec/java_home)/
-# export HADOOP_HOME=/usr/local/Cellar/hadoop/3.2.1/bin/hadoop
-# export LD_LIBRARY_PATH="~/Downloads/hadoop-2.7.3/lib/native:$LD_LIBRARY_PATH"
-# export HADOOP_HOME=~/Downloads/hadoop-2.7.3/
-# export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:$HADOOP_HOME/lib/native
-# export PATH="$HADOOP_HOME/bin:$PATH"
-# export HADOOP_CONF_DIR=/usr/local/Cellar/hadoop/3.2.1/libexec/etc/hadoop
-# export SCALA_HOME=/usr/local/Cellar/scala/2.13.1/bin/scala
-
 # }}}
 
 # {{{ === SETTING
 # Allows ‘>’ redirection to truncate existing files. EX: pbpaste > file.txt
 setopt clobber
-setopt no_share_history
+
 export LC_ALL=en_US.UTF-8
 export LANG=en_US.UTF-8
 export LANGUAGE=en_US.UTF-8
+export EDITOR=/usr/local/bin/nvim
 # }}}
 
 # {{{ === MAPPING KEY 
@@ -197,5 +191,4 @@ export  GOPROXY=direct
 export  GOSUMDB=off
 
 export  GOPRIVATE=git.garena.com/*
-
 # }}}

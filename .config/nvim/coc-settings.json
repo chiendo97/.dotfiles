@@ -1,12 +1,20 @@
 {
+
+  "coc.preferences.rootPatterns": [
+    "build.sbt", "build.sc", "build.grade", "pom.xml",
+    ".git",
+    ".hg",
+    ".projections.json"
+  ],
+
+
   "go.goplsOptions": {
     "completeUnimported": true
   },
 
   "suggest.timeout": 5000,
-  "suggest.maxCompleteItemCount": 10,
+  "suggest.maxCompleteItemCount": 15,
   "suggest.autoTrigger": "always",
-  "suggest.minTriggerInputLength": 2,
 
   "diagnostic.errorSign": "•",
   "diagnostic.warningSign": "•",
@@ -20,5 +28,7 @@
   "python.linting.pylintEnabled": false,
   "python.linting.flake8Enabled": true,
   "python.linting.flake8Path": "/usr/local/bin/flake8",
-  "python.sortImports.path": "/usr/local/bin/isort"
+  "python.sortImports.path": "/usr/local/bin/isort",
+
+  "java.errors.incompleteClasspath.severity": "ignore"
 }
