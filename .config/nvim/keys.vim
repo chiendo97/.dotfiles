@@ -4,8 +4,14 @@
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
 let mapleader = " "
+
+" {{{ === highlight
+nnoremap * :let @/ = '\<'.expand('<cword>').'\>'\|set hlsearch<C-M>
 nnoremap <leader>n :noh<CR>
-let mapleader = " "
+nmap <silent> <C-C> :noh<CR><esc>
+imap <silent> <C-C> <esc><C-C>
+vmap <silent> <C-C> <esc><C-C>
+" }}}
 
 " {{{ === Git
 nnoremap <leader>b :<C-U>Gblame<cr>|    " Open git blame for current file"
@@ -18,8 +24,8 @@ tnoremap <C-L> <C-\><C-n><C-W><C-L>
 " }}}
 
 "{{{ === NERDCommenter
-nmap <c-c> gcc
-vmap <c-c> gc
+nmap <C-_> <plug>NERDCommenterToggle| " map <C-/> to use toggle comment
+vmap <C-_> <plug>NERDCommenterToggle| " map <C-/> to use toggle comment
 "}}}
 
 "{{{ === NERDTree
@@ -55,8 +61,6 @@ nnoremap <leader>k gT
 "{{{ === Motions
 nnoremap <silent> j gj| " Move down to wrap line
 nnoremap <silent> k gk| " Move up to wrap line
-
-nnoremap * *``|         " a jump adds to the jump list
 "}}}
 
 "{{{ === Yank

@@ -69,7 +69,7 @@ set list
 set listchars=tab:▸\ ,eol:¬
 
 set backspace=indent,eol,start
-set nowrap
+set wrap
 
 set foldmethod=marker
 
@@ -92,15 +92,15 @@ set termguicolors
 " set background=light
 " colorscheme quantum
 
-set background=light
-colorscheme snow
+" set background=light
+" colorscheme snow
 
 " set background=light
 " colorscheme one
 
 " colorscheme xcodewwdc
 " colorscheme xcodelighthc
-" colorscheme xcodelight
+colorscheme xcodelight
 " }}}
 
 " === Autocmd === {{{

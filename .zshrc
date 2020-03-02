@@ -125,6 +125,8 @@ bindkey -M vicmd 'j' history-substring-search-down
 # {{{ === ALIAS
 alias t="tree -a -I '.git'"
 alias c='clear'
+alias v='f -e vim' # quick opening files with vim
+alias n='f -e nvim' # quick opening files with vim
 
 alias tx='tmux'
 alias nv='nvim'
@@ -192,3 +194,17 @@ export  GOSUMDB=off
 
 export  GOPRIVATE=git.garena.com/*
 # }}}
+
+# {{{ === FASD INIT ===
+# autoload bashcompinit
+# bashcompinit
+
+# fasd_cache="$HOME/.fasd-init-bash"
+# if [ "$(command -v fasd)" -nt "$fasd_cache" -o ! -s "$fasd_cache" ]; then
+#   fasd --init posix-alias bash-hook bash-ccomp bash-ccomp-install >| "$fasd_cache"
+# fi
+# source "$fasd_cache"
+# unset fasd_cache
+# }}}
+
+eval "$(fasd --init auto)"

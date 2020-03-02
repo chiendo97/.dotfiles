@@ -3,7 +3,13 @@
 " Plugins Config:
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
-" {{{ === gitgutter
+" {{{ === NERDCommenter
+let g:NERDCommenterMappings = 0
+let g:NERDSpaceDelims = 1
+let g:NERDDefaultAlign = 'left'
+" }}}
+
+" " {{{ === gitgutter
 let g:gitgutter_map_keys = 0
 " }}}
 

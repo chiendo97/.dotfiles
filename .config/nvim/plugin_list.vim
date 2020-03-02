@@ -4,12 +4,14 @@
 
 call plug#begin('~/.local/share/nvim/plugged')
 
+" Plug 'inkarkat/vim-searchhighlighting'
+
 Plug 'derekwyatt/vim-scala'
 
-Plug 'camspiers/animate.vim'
-Plug 'camspiers/lens.vim'
+" Plug 'camspiers/animate.vim'
+" Plug 'camspiers/lens.vim'
 
-Plug 'junegunn/goyo.vim'
+" Plug 'junegunn/goyo.vim'
 
 Plug 'vimwiki/vimwiki'
 
@@ -20,8 +22,6 @@ Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }
 Plug 'wellle/targets.vim'
 
 Plug 'tmsvg/pear-tree'
-" Plug 'tpope/vim-endwise/'
-" Plug 'jiangmiao/auto-pairs'
 
 " Some Git stuff
 Plug 'airblade/vim-gitgutter'
@@ -61,8 +61,7 @@ Plug 'HerringtonDarkholme/yats.vim'
 "}}}
 
 " comment 
-" Plug 'scrooloose/nerdcommenter'
-Plug 'tpope/vim-commentary'
+Plug 'scrooloose/nerdcommenter'
 
 " coc for completion"
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
