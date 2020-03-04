@@ -4,7 +4,7 @@
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
 " {{{ === NERDCommenter
-let g:NERDCommenterMappings = 0
+let g:NERDCreateDefaultMappings = 0
 let g:NERDSpaceDelims = 1
 let g:NERDDefaultAlign = 'left'
 " }}}
@@ -22,8 +22,7 @@ let g:lightline = {
       \   'right': [ 
       \            [ 'lineinfo' ],
       \            [ 'percent' ],
-      \            [ 'fileformat', 'fileencoding', 'filetype' ],
-      \            [ 'absolutepath' ],
+      \            [ 'fileformat', 'fileencoding', 'filetype' ]
       \            ]
       \ },
       \ 'component_function': {
@@ -42,9 +41,10 @@ endfunction
 " }}}
 
 " {{{ === vim-go
-let g:go_doc_keywordprg_enabled = 0
-let g:go_def_mapping_enabled = 0
+" let g:go_doc_keywordprg_enabled = 0
+" let g:go_def_mapping_enabled = 0
 let g:go_fmt_command = "goimports"
+let g:go_doc_popup_window = 1
 " }}}
 
 " {{{ === pear-tree

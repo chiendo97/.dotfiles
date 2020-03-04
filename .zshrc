@@ -130,17 +130,22 @@ alias n='f -e nvim' # quick opening files with vim
 
 alias tx='tmux'
 alias nv='nvim'
-alias gf='git diff'
+alias gf='git fetch --all'
+alias gd='git diff'
 alias gb='git branch'
 alias gp='git push origin'
 alias gm='git commit -m'
 alias gs='git status'
 alias gl='git log'
+
 alias ss='source env/bin/activate'
 alias dd='deactivate'
-# dotfiles for .files config
-alias dt='/usr/bin/git --git-dir=$HOME/.dotfiles/.git/ --work-tree=$HOME' 
+
+alias dt='/usr/bin/git --git-dir=$HOME/.dotfiles/.git/ --work-tree=$HOME' # dotfiles for .files config
 alias cpwd="pwd | tr -d '\n' | pbcopy" # Copy pwd to clipboard
+
+alias mci='mvn clean install'
+alias mcp='mvn clean package'
 # }}}
 
 # {{{ === PATH
@@ -153,6 +158,9 @@ export PATH="/usr/local/opt/gettext/bin:$PATH"
 export PATH="/usr/local/bin/:$PATH"
 
 export JAVA_HOME=$(/usr/libexec/java_home)/
+
+export HADOOP_HOME=/usr/local/Cellar/hadoop/3.2.1/libexec/
+export HADOOP_VERSION=3.2.1
 # }}}
 
 # {{{ === SETTING
@@ -186,7 +194,6 @@ source /usr/local/Cellar/fzf/0.20.0/shell/key-bindings.zsh
 # {{{ === GO DEV
 export  GOPATH=$HOME/go
 export  PATH=$GOPATH/bin:$PATH
-export  GOROOT=/usr/local/Cellar/go/1.13.8/libexec
 
 export  GO111MODULE=on
 export  GOPROXY=direct
@@ -196,15 +203,6 @@ export  GOPRIVATE=git.garena.com/*
 # }}}
 
 # {{{ === FASD INIT ===
-# autoload bashcompinit
-# bashcompinit
-
-# fasd_cache="$HOME/.fasd-init-bash"
-# if [ "$(command -v fasd)" -nt "$fasd_cache" -o ! -s "$fasd_cache" ]; then
-#   fasd --init posix-alias bash-hook bash-ccomp bash-ccomp-install >| "$fasd_cache"
-# fi
-# source "$fasd_cache"
-# unset fasd_cache
+eval "$(fasd --init auto)"
 # }}}
 
-eval "$(fasd --init auto)"

@@ -1,20 +1,20 @@
 {
-
   "coc.preferences.rootPatterns": [
     "build.sbt", "build.sc", "build.grade", "pom.xml",
-    ".git",
-    ".hg",
-    ".projections.json"
+    ".git", ".hg"
   ],
-
 
   "go.goplsOptions": {
     "completeUnimported": true
   },
+  "go.trace.server": "verbose",
+
+  "coc.source.omni.filetypes": ["go"],
 
   "suggest.timeout": 5000,
-  "suggest.maxCompleteItemCount": 15,
+  "suggest.maxCompleteItemCount": 10,
   "suggest.autoTrigger": "always",
+  "suggest.minTriggerInputLength": 2,
 
   "diagnostic.errorSign": "•",
   "diagnostic.warningSign": "•",

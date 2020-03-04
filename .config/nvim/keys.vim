@@ -6,8 +6,8 @@
 let mapleader = " "
 
 " {{{ === highlight
-nnoremap * :let @/ = '\<'.expand('<cword>').'\>'\|set hlsearch<C-M>
-nnoremap <leader>n :noh<CR>
+nnoremap <silent> * :let @/ = '\<'.expand('<cword>').'\>'\|set hlsearch<C-M>
+" nnoremap <leader>n :noh<CR>
 nmap <silent> <C-C> :noh<CR><esc>
 imap <silent> <C-C> <esc><C-C>
 vmap <silent> <C-C> <esc><C-C>
@@ -97,7 +97,7 @@ function! s:show_documentation()
 endfunction
 
 " Highlight symbol under cursor on CursorHold
-autocmd CursorHold * silent call CocActionAsync('highlight')
+" autocmd CursorHold * silent call CocActionAsync('highlight')
 
 nmap <leader>en <Plug>(coc-rename)|                           " Remap for rename current word
 
