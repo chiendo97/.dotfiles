@@ -9,7 +9,7 @@
   },
   "go.trace.server": "verbose",
 
-  "coc.source.omni.filetypes": ["go"],
+  "coc.source.omni.filetypes": [""],
 
   "suggest.timeout": 5000,
   "suggest.maxCompleteItemCount": 10,
@@ -26,7 +26,7 @@
   "python.formatting.yapfPath": "/usr/local/bin/yapf",
   "python.formatting.autopep8Path": "/usr/local/bin/autopep8",
   "python.linting.pylintEnabled": false,
-  "python.linting.flake8Enabled": true,
+  "python.linting.flake8Enabled": false,
   "python.linting.flake8Path": "/usr/local/bin/flake8",
   "python.sortImports.path": "/usr/local/bin/isort",
 

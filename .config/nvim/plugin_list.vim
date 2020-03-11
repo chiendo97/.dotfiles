@@ -4,14 +4,9 @@
 
 call plug#begin('~/.local/share/nvim/plugged')
 
-" Plug 'inkarkat/vim-searchhighlighting'
+Plug 'zdcthomas/medit'
 
 Plug 'derekwyatt/vim-scala'
-
-" Plug 'camspiers/animate.vim'
-" Plug 'camspiers/lens.vim'
-
-" Plug 'junegunn/goyo.vim'
 
 Plug 'vimwiki/vimwiki'
 

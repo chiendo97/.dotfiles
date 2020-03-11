@@ -76,6 +76,8 @@ set foldmethod=marker
 set formatoptions-=r formatoptions-=c formatoptions-=o " Disable newline with comment
 
 set noeb vb t_vb=       " Tell vim to shut up
+
+set mouse=a
 " }}}
 
 " === Apperance === {{{
@@ -100,10 +102,11 @@ set termguicolors
 
 " colorscheme xcodewwdc
 " colorscheme xcodelighthc
-colorscheme xcodelight
+" colorscheme xcodelight
+colorscheme xcodedark
 " }}}
 
-" === Autocmd === {{{
+" === Auctocmd === {{{
 "
 " Only do this part when compiled with support for autocommands
 if has("autocmd")
