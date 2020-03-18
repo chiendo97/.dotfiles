@@ -3,6 +3,8 @@
 " Plugins Config:
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
+let $FZF_DEFAULT_COMMAND = 'rg -uu '
+
 " {{{ === NERDCommenter
 let g:NERDCreateDefaultMappings = 0
 let g:NERDSpaceDelims = 1
