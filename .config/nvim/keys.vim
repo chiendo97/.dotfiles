@@ -74,7 +74,7 @@ nnoremap <silent> k gk| " Move up to wrap line
 "nnoremap d "_d
 "vnoremap Y "*y | " Copy to clipboard
 vnoremap Y "*y
-nnoremap p "0p
+" nnoremap p "0p
 "}}}
 
 "{{{ === Coc

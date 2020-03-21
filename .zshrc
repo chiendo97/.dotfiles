@@ -205,4 +205,3 @@ export  GOPRIVATE=git.garena.com/*
 # {{{ === FASD INIT ===
 eval "$(fasd --init auto)"
 # }}}
-
