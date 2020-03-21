@@ -64,17 +64,18 @@ nnoremap <silent> k gk| " Move up to wrap line
 "}}}
 
 "{{{ === Yank
+
 " Note: some register location
 " 0 - the last yank
 " " - the last delete
 " / - the last search
 " * - the system clipboard (most of the time)
 " :*y
+
 " delete to 'blackhole' register 
 "nnoremap d "_d
-"vnoremap Y "*y | " Copy to clipboard
-vnoremap Y "*y
-" nnoremap p "0p
+
+vnoremap Y "*y| " Copy to clipboard
 "}}}
 
 "{{{ === Coc

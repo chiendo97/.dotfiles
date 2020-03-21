@@ -10,6 +10,9 @@
   "go.trace.server": "verbose",
 
   "coc.source.omni.filetypes": [""],
+  
+  "list.nextKeymap": "<C-n>",
+  "list.previousKeymap": "<C-p>",
 
   "suggest.timeout": 5000,
   "suggest.maxCompleteItemCount": 10,
