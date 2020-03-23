@@ -5,6 +5,11 @@
 
 let mapleader = " "
 
+" {{{ === line navigation
+nnoremap <A-j> :m .+1<CR>==
+nnoremap <A-k> :m .-2<CR>==
+" }}}
+
 " {{{ === highlight
 nnoremap <silent> * :let @/ = '\<'.expand('<cword>').'\>'\|set hlsearch<C-M>
 " nnoremap <leader>n :noh<CR>

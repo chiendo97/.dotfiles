@@ -16,6 +16,7 @@ brew upgrade
 # Save Homebrew’s installed location.
 BREW_PREFIX=$(brew --prefix)
 
+brew install fd
 brew install ctags
 brew install fzf
 brew install node
