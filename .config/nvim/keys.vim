@@ -6,7 +6,7 @@
 let mapleader = " "
 
 " {{{ === Align
-xmap a <Plug>(EasyAlign)  | " Start interactive EasyAlign in visual mode (e.g. vipga)
+xmap a <Plug>(EasyAlign)| " Start interactive EasyAlign in visual mode (e.g. vipga)
 " }}}
 
 " {{{ === line navigation
