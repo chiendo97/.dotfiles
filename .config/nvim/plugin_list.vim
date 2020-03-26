@@ -4,6 +4,13 @@
 
 call plug#begin('~/.local/share/nvim/plugged')
 
+" align text
+Plug 'junegunn/vim-easy-align'
+
+" Autoformat tool from Google
+Plug 'google/vim-maktaba'
+Plug 'google/vim-codefmt'
+Plug 'google/vim-glaive'
 
 " Macro editing: <leader>q + register
 Plug 'zdcthomas/medit'

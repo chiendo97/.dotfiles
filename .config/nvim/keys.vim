@@ -5,6 +5,10 @@
 
 let mapleader = " "
 
+" {{{ === Align
+xmap a <Plug>(EasyAlign)  | " Start interactive EasyAlign in visual mode (e.g. vipga)
+" }}}
+
 " {{{ === line navigation
 nnoremap <A-j> :m .+1<CR>==
 nnoremap <A-k> :m .-2<CR>==
@@ -81,6 +85,7 @@ nnoremap <silent> k gk| " Move up to wrap line
 "nnoremap d "_d
 
 vnoremap Y "*y| " Copy to clipboard
+vnoremap P "0p| " Paste last yank
 "}}}
 
 "{{{ === Coc
