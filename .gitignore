@@ -1,0 +1,11 @@
+# Ignore everything
+*
+
+# But not these files...
+!.gitignore
+!.bootstrap.sh
+!.brew.sh
+!.config
+!.git
+!.tmux.conf
+!.zshrc
