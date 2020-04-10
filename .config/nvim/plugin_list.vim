@@ -38,6 +38,7 @@ Plug 'majutsushi/tagbar'
 Plug 'christoomey/vim-tmux-navigator'
 
 "{{{ === colorscheme
+Plug 'joshdick/onedark.vim'
 Plug 'arzg/vim-colors-xcode'
 Plug 'kjssad/quantum.vim'
 Plug 'ayu-theme/ayu-vim'
@@ -59,12 +60,12 @@ Plug '/usr/local/opt/fzf'
 Plug 'junegunn/fzf.vim'
 
 "{{{ === Syntax and languages
+Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }
 Plug 'derekwyatt/vim-scala'
 Plug 'sheerun/vim-polyglot'
 Plug 'pangloss/vim-javascript'
 Plug 'HerringtonDarkholme/yats.vim'
 Plug 'mattn/emmet-vim'
-Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }
 "}}}
 
 " comment 
@@ -75,6 +76,7 @@ Plug 'neoclide/coc.nvim', {'branch': 'release'}
 
 " directory tree
 Plug 'scrooloose/nerdtree'
+Plug 'ryanoasis/vim-devicons'
 
 " status bar
 Plug 'itchyny/lightline.vim'

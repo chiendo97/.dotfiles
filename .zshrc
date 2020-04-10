@@ -174,16 +174,18 @@ export EDITOR=/usr/local/bin/nvim
 # }}}
 
 # {{{ === MAPPING KEY 
-bindkey -v # use like vim editor
+# bindkey -v # use like vim editor
+bindkey -e # use like emacs editor
 bindkey '^p' up-history
 bindkey '^n' down-history
 bindkey '^r' history-incremental-search-backward
 
 autoload -U edit-command-line
 zle -N edit-command-line
-bindkey '^e' edit-command-line
+bindkey '^f' edit-command-line
 
-bindkey '^a' vi-beginning-of-line
+# bindkey '^a' vi-beginning-of-line
+# bindkey '^e' vi-ending-of-line
 # }}}
 
 # {{{ === SOURCE 

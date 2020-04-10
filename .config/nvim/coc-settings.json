@@ -15,7 +15,7 @@
   "list.previousKeymap": "<C-p>",
 
   "suggest.timeout": 5000,
-  "suggest.maxCompleteItemCount": 10,
+  "suggest.maxCompleteItemCount": 20,
   "suggest.autoTrigger": "always",
   "suggest.minTriggerInputLength": 2,
 

@@ -82,6 +82,7 @@ set mouse=a
 
 " === Apperance === {{{
 set termguicolors
+set background=dark
 
 " colorscheme ayu
 
@@ -103,13 +104,21 @@ set termguicolors
 " colorscheme xcodewwdc
 " colorscheme xcodelighthc
 " colorscheme xcodelight
-colorscheme xcodedark
+" colorscheme xcodedark
+colorscheme onedark
+let g:onedark_hide_endofbuffer=1
+let g:onedark_termcolors=256
+let g:onedark_terminal_italics=1
 " }}}
 
 " === Auctocmd === {{{
 "
 " Only do this part when compiled with support for autocommands
 if has("autocmd")
+  " If more than one window and previous buffer was NERDTree, go back to it.
+  autocmd BufEnter * if bufname('#') =~# "^NERD_tree_" && winnr('$') > 1 | b# | endif
+  autocmd BufEnter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
+
   au BufReadPost * if line("'\"") > 0 && line("'\"") <= line("$") | exe "normal! g`\"" | endif
 
   " Syntax of these languages is fussy over tabs Vs spaces

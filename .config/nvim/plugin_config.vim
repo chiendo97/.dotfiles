@@ -11,11 +11,21 @@ let g:NERDDefaultAlign = 'left'
 
 " " {{{ === gitgutter
 let g:gitgutter_map_keys = 0
+let g:gitgutter_sign_added = '▌'
+let g:gitgutter_sign_modified = '▌'
+let g:gitgutter_sign_removed = '▁'
+let g:gitgutter_sign_removed_first_line = '▌'
+let g:gitgutter_sign_modified_removed = '▌'
+let g:gitgutter_map_keys = 0
+let g:gitgutter_realtime = 1
+highlight GitGutterDelete guifg=#F97CA9
+highlight GitGutterAdd    guifg=#BEE275
+highlight GitGutterChange guifg=#96E1EF
 " }}}
 
 " {{{ === lightline
 let g:lightline = {
-      \ 'colorscheme': 'Tomorrow',
+      \ 'colorscheme': 'onedark',
       \ 'active': {
       \   'left': [ [ 'mode', 'paste' ],
       \             [ 'absolutepath', 'readonly', 'modified' ] ],
@@ -92,8 +102,10 @@ let g:NERDTreeShowHidden = 1
 let g:NERDTreeMinimalUI = 1
 
 " Custom icons for expandable/expanded directories
-let g:NERDTreeDirArrowExpandable = '⬏'
-let g:NERDTreeDirArrowCollapsible = '⬎'
+let g:NERDTreeDirArrowExpandable = ''
+let g:NERDTreeDirArrowCollapsible = ''
+let g:NERDTreeAutoDeleteBuffer = 1
+let loaded_netrwPlugin = 1
 
 " Hide certain files and directories from NERDTree
 let g:NERDTreeIgnore = ['^\.DS_Store$', '^tags$', '\.git$[[dir]]', '\.idea$[[dir]]', '\.sass-cache$']
