@@ -41,7 +41,7 @@ vmap <C-_> <plug>NERDCommenterToggle| " map <C-/> to use toggle comment
 nnoremap <leader>c :NERDTreeToggle<CR>
 "}}}
 
-"{{{ === fuzzy find
+"{{{ === fuzzy search
 nnoremap <leader>g :GFiles<cr>|          " fuzzy find files under version control in the working directory (where you launched Vim from)"
 nnoremap <leader>f :Files<cr>|           " fuzzy find files in the working directory (where you launched Vim from)
 nnoremap <leader>r :Rg |                 " fuzzy find text in the working directory

@@ -25,7 +25,7 @@ highlight GitGutterChange guifg=#96E1EF
 
 " {{{ === lightline
 let g:lightline = {
-      \ 'colorscheme': 'onedark',
+      \ 'colorscheme': 'jellybeans',
       \ 'active': {
       \   'left': [ [ 'mode', 'paste' ],
       \             [ 'absolutepath', 'readonly', 'modified' ] ],
@@ -55,7 +55,11 @@ let g:go_doc_keywordprg_enabled = 0
 let g:go_def_mapping_enabled = 0
 let g:go_fmt_command = "goimports"
 let g:go_doc_popup_window = 1
-" let g:go_def_mode = 'guru'
+let g:go_highlight_structs = 1 
+let g:go_highlight_methods = 1
+let g:go_highlight_functions = 1
+let g:go_highlight_operators = 1
+let g:go_highlight_build_constraints = 1
 " }}}
 
 " {{{ === pear-tree
@@ -64,7 +68,7 @@ let g:pear_tree_map_special_keys = 0
 let g:pear_tree_smart_openers = 1
 let g:pear_tree_smart_closers = 1
 let g:pear_tree_smart_backspace = 1
-imap <BS> <Plug>(PearTreeBackspace)
+" imap <BS> <Plug>(PearTreeBackspace)
 " imap <CR> <Plug>(PearTreeExpand)
 " imap <Esc> <Plug>(PearTreeFinishExpansion)
 " }}}

@@ -15,6 +15,7 @@ Plug 'google/vim-glaive'
 " Macro editing: <leader>q + register
 Plug 'zdcthomas/medit'
 
+" Vim wiki <leader>ww to open
 Plug 'vimwiki/vimwiki'
 
 " Preview markdown live: :Mark
@@ -25,7 +26,8 @@ Plug 'kana/vim-textobj-user'
 " Plug 'wellle/targets.vim'
 
 " Auto close pair
-Plug 'tmsvg/pear-tree'
+" Plug 'tmsvg/pear-tree'
+Plug 'doums/coBra'
 
 " Some Git stuff
 Plug 'airblade/vim-gitgutter'
@@ -38,6 +40,8 @@ Plug 'majutsushi/tagbar'
 Plug 'christoomey/vim-tmux-navigator'
 
 "{{{ === colorscheme
+Plug 'nanotech/jellybeans.vim'
+Plug 'morhetz/gruvbox'
 Plug 'joshdick/onedark.vim'
 Plug 'arzg/vim-colors-xcode'
 Plug 'kjssad/quantum.vim'
@@ -52,8 +56,8 @@ Plug 'nightsense/snow'
 Plug 'simeji/winresizer'
 
 " helpful with surround"
-Plug 'tpope/vim-surround'
-Plug 'tpope/vim-repeat'
+" Plug 'tpope/vim-surround'
+" Plug 'tpope/vim-repeat'
 
 " find file with name"
 Plug '/usr/local/opt/fzf'

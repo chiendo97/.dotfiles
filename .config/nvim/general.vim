@@ -65,11 +65,11 @@ set ignorecase
 set smartcase
 let @/ = ""             " no highlight after source vimrc
 
-set list
+" set list
 set listchars=tab:▸\ ,eol:¬
 
 set backspace=indent,eol,start
-set wrap
+set nowrap
 
 set foldmethod=marker
 
@@ -89,7 +89,6 @@ set background=dark
 " set background=light
 " colorscheme PaperColor
 
-" set cursorline
 " colorscheme onehalflight
 
 " set background=light
@@ -105,10 +104,15 @@ set background=dark
 " colorscheme xcodelighthc
 " colorscheme xcodelight
 " colorscheme xcodedark
-colorscheme onedark
-let g:onedark_hide_endofbuffer=1
-let g:onedark_termcolors=256
-let g:onedark_terminal_italics=1
+
+" colorscheme onedark
+" let g:onedark_hide_endofbuffer=1
+" let g:onedark_termcolors=256
+" let g:onedark_terminal_italics=1
+
+" colorscheme gruvbox
+
+colorscheme jellybeans
 " }}}
 
 " === Auctocmd === {{{
