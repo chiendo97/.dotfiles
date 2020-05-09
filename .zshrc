@@ -194,14 +194,15 @@ source /usr/local/Cellar/fzf/0.20.0/shell/key-bindings.zsh
 # }}}
 
 # {{{ === GO DEV
-export  GOPATH=$HOME/go
-export  PATH=$GOPATH/bin:$PATH
+export GOPATH=$HOME/go
+export PATH=$GOPATH/bin:$PATH
 
-export  GO111MODULE=on
-export  GOPROXY=direct
-export  GOSUMDB=off
+export GO111MODULE=on
+export GOPROXY=direct
+export GOSUMDB=off
 
-export  GOPRIVATE=git.garena.com/*
+export GOPRIVATE=git.garena.com/*
+# export  GOFLAGS=-mod=vendor
 # }}}
 
 # {{{ === FASD INIT ===

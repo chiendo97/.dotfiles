@@ -10,6 +10,7 @@
   "go.trace.server": "verbose",
 
   "coc.source.omni.filetypes": [""],
+  "coc.preferences.formatOnSaveFiletypes": ["python"],
   
   "list.nextKeymap": "<C-n>",
   "list.previousKeymap": "<C-p>",
@@ -25,11 +26,11 @@
   "diagnostic.refreshOnInsertMode": true,
 
   "python.jediPath": "/usr/local/lib/python3.7/site-packages/",
-  "python.formatting.provider": "yapf",
+  "python.formatting.provider": "autopep8",
   "python.formatting.yapfPath": "/usr/local/bin/yapf",
   "python.formatting.autopep8Path": "/usr/local/bin/autopep8",
   "python.linting.pylintEnabled": false,
-  "python.linting.flake8Enabled": false,
+  "python.linting.flake8Enabled": true,
   "python.linting.flake8Path": "/usr/local/bin/flake8",
   "python.sortImports.path": "/usr/local/bin/isort",
 

@@ -7,11 +7,6 @@ call plug#begin('~/.local/share/nvim/plugged')
 " align text
 Plug 'junegunn/vim-easy-align'
 
-" Autoformat tool from Google
-Plug 'google/vim-maktaba'
-Plug 'google/vim-codefmt'
-Plug 'google/vim-glaive'
-
 " Macro editing: <leader>q + register
 Plug 'zdcthomas/medit'
 
@@ -27,7 +22,7 @@ Plug 'kana/vim-textobj-user'
 
 " Auto close pair
 " Plug 'tmsvg/pear-tree'
-Plug 'doums/coBra'
+" Plug 'doums/coBra'
 
 " Some Git stuff
 Plug 'airblade/vim-gitgutter'
@@ -40,6 +35,8 @@ Plug 'majutsushi/tagbar'
 Plug 'christoomey/vim-tmux-navigator'
 
 "{{{ === colorscheme
+Plug 'shinchu/lightline-gruvbox.vim'
+Plug 'lifepillar/vim-gruvbox8'
 Plug 'nanotech/jellybeans.vim'
 Plug 'morhetz/gruvbox'
 Plug 'joshdick/onedark.vim'
@@ -56,7 +53,7 @@ Plug 'nightsense/snow'
 Plug 'simeji/winresizer'
 
 " helpful with surround"
-" Plug 'tpope/vim-surround'
+Plug 'tpope/vim-surround'
 " Plug 'tpope/vim-repeat'
 
 " find file with name"
