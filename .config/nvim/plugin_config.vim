@@ -57,28 +57,11 @@ let g:go_fmt_command = "goimports"
 let g:go_doc_popup_window = 1
 " }}}
 
-" {{{ === pear-tree
-let g:pear_tree_repeatable_expand = 0
-let g:pear_tree_map_special_keys = 0
-let g:pear_tree_smart_openers = 1
-let g:pear_tree_smart_closers = 1
-let g:pear_tree_smart_backspace = 1
-" imap <BS> <Plug>(PearTreeBackspace)
-" imap <CR> <Plug>(PearTreeExpand)
-" imap <Esc> <Plug>(PearTreeFinishExpansion)
-" }}}
-
 " === latex_preview === {{{
-"autocmd Filetype tex setl updatetime=1
 let g:livepreview_previewer = 'open -a Preview'
 "}}}
 
 " === coc_vim === {{{
-augroup mygroup
-  autocmd!
-  autocmd User CocJumpPlaceholder call CocActionAsync('showSignatureHelp')
-augroup end
-
 " Set default python path
 let g:python_host_prog = '/usr/local/bin/python'
 let g:python3_host_prog = '/usr/local/bin/python3'
@@ -109,7 +92,3 @@ let loaded_netrwPlugin = 1
 " Hide certain files and directories from NERDTree
 let g:NERDTreeIgnore = ['^\.DS_Store$', '^tags$', '\.git$[[dir]]', '\.idea$[[dir]]', '\.sass-cache$']
 " }}}
-
-" === emmet-vim === {{{
-let g:user_emmet_leader_key='<C-Z>'
-"" }}}

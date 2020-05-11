@@ -152,9 +152,5 @@ if has("autocmd")
     autocmd BufNewFile *.cpp 0r ~/.vim/templates/skeleton.cpp
   augroup END
   
-  augroup autoread
-    autocmd!
-    autocmd CursorHold * checktime 
-  augroup END
 endif
 " }}}

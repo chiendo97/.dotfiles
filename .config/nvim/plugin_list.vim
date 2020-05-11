@@ -17,12 +17,10 @@ Plug 'vimwiki/vimwiki'
 Plug 'iamcco/markdown-preview.nvim', { 'do': { -> mkdp#util#install() } }
 
 " Vim plugin that provides additional text objects
-Plug 'kana/vim-textobj-user'
-" Plug 'wellle/targets.vim'
+Plug 'wellle/targets.vim'
 
 " Auto close pair
-" Plug 'tmsvg/pear-tree'
-" Plug 'doums/coBra'
+Plug 'chiendo97/coBra'
 
 " Some Git stuff
 Plug 'airblade/vim-gitgutter'
@@ -53,7 +51,7 @@ Plug 'nightsense/snow'
 Plug 'simeji/winresizer'
 
 " helpful with surround"
-Plug 'tpope/vim-surround'
+" Plug 'tpope/vim-surround'
 " Plug 'tpope/vim-repeat'
 
 " find file with name"
@@ -64,9 +62,8 @@ Plug 'junegunn/fzf.vim'
 Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }
 Plug 'derekwyatt/vim-scala'
 Plug 'sheerun/vim-polyglot'
-Plug 'pangloss/vim-javascript'
-Plug 'HerringtonDarkholme/yats.vim'
-Plug 'mattn/emmet-vim'
+" Plug 'HerringtonDarkholme/yats.vim'
+" Plug 'mattn/emmet-vim'
 "}}}
 
 " comment 

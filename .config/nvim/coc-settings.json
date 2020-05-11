@@ -11,6 +11,7 @@
 
   "coc.source.omni.filetypes": [""],
   "coc.preferences.formatOnSaveFiletypes": ["python"],
+  "coc.preferences.formatOnType": true,
   
   "list.nextKeymap": "<C-n>",
   "list.previousKeymap": "<C-p>",

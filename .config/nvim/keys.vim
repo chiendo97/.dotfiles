@@ -16,7 +16,6 @@ nnoremap <A-k> :m .-2<CR>==
 
 " {{{ === highlight
 nnoremap <silent> * :let @/ = '\<'.expand('<cword>').'\>'\|set hlsearch<C-M>
-" nnoremap <leader>n :noh<CR>
 nmap <silent> <C-C> :noh<CR><esc>
 imap <silent> <C-C> <esc><C-C>
 vmap <silent> <C-C> <esc><C-C>
@@ -108,9 +107,6 @@ function! s:show_documentation()
   endif
 endfunction
 
-" Highlight symbol under cursor on CursorHold
-" autocmd CursorHold * silent call CocActionAsync('highlight')
-
 nmap <leader>en <Plug>(coc-rename)|                           " Remap for rename current word
 
 " Using CocList
@@ -139,12 +135,9 @@ function! s:check_back_space() abort
   return !col || getline('.')[col - 1]  =~# '\s'
 endfunction
 
-" let g:coc_snippet_next = '<TAB>'
-" let g:coc_snippet_prev = '<cr>'
-
 "}}}
 
-"{{{ === vimrc files
+"{{{ === config files
 nnoremap <Leader>ev :<C-u>e $MYVIMRC<CR>                  " quick edit vimrc 
 nnoremap <Leader>sv :<C-u>source $MYVIMRC<CR>             " quick source vimrc (after edit normally)
 nnoremap <Leader>ec :<C-u>CocConfig<CR>                   " quick edit coc config
