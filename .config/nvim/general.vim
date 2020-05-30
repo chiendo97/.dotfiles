@@ -65,7 +65,7 @@ set ignorecase
 set smartcase
 let @/ = ""             " no highlight after source vimrc
 
-" set list
+set list
 set listchars=tab:▸\ ,eol:¬
 
 set backspace=indent,eol,start
@@ -78,6 +78,8 @@ set formatoptions-=r formatoptions-=c formatoptions-=o " Disable newline with co
 set noeb vb t_vb=       " Tell vim to shut up
 
 set mouse=a
+
+set sidescrolloff=30   " keep 30 columns visible left and right of the cursor at all times
 " }}}
 
 " === Apperance === {{{
@@ -86,29 +88,7 @@ set background=dark
 
 " colorscheme ayu
 
-" set background=light
-" colorscheme PaperColor
-
-" colorscheme onehalflight
-
-" set background=light
-" colorscheme quantum
-
-" set background=light
-" colorscheme snow
-
-" set background=light
-" colorscheme one
-
-" colorscheme xcodewwdc
-" colorscheme xcodelighthc
-" colorscheme xcodelight
-" colorscheme xcodedark
-
 " colorscheme onedark
-" let g:onedark_hide_endofbuffer=1
-" let g:onedark_termcolors=256
-" let g:onedark_terminal_italics=1
 
 colorscheme gruvbox
 

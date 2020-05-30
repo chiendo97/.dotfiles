@@ -12,6 +12,13 @@ xmap ga <Plug>(EasyAlign)| " Start interactive EasyAlign in visual mode (e.g. vi
 " {{{ === line navigation
 nnoremap <A-j> :m .+1<CR>==
 nnoremap <A-k> :m .-2<CR>==
+" 0 - jump to the start of the line
+" ^ - jump to the first non-blank character of the line
+nnoremap H ^
+vnoremap H ^
+" $ - jump to the end of the line
+nnoremap L $
+vnoremap L $
 " }}}
 
 " {{{ === highlight
@@ -118,17 +125,20 @@ nnoremap <silent> <leader>ic  :<C-u>CocList commands<CR>|     " Open coc command
 
 "{{{ === Autocomplete
 
-inoremap <silent><expr> <cr> 
+inoremap <silent><expr> <cr>
       \ pumvisible() ? coc#_select_confirm() : 
       \ "\<C-g>u\<CR>\<c-r>=coc#on_enter()\<CR>"
 
-inoremap <silent><expr> <TAB>
-      \ pumvisible() ? "\<C-n>" :
-      \ <SID>check_back_space() ? "\<TAB>" :
-      \ coc#refresh()
+" Use <c-space> to trigger completion.
+" inoremap <silent><expr> <C-CR> coc#refresh()
 
-inoremap <expr><S-TAB>
-      \ pumvisible() ? "\<C-p>" : "\<C-h>"
+" inoremap <silent><expr> <TAB>
+"       \ pumvisible() ? "\<C-n>" :
+"       \ <SID>check_back_space() ? "\<TAB>" :
+"       \ coc#refresh()
+
+" inoremap <expr><S-TAB>
+"       \ pumvisible() ? "\<C-p>" : "\<C-h>"
 
 function! s:check_back_space() abort
   let col = col('.') - 1

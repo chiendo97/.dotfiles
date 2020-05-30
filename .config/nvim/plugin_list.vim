@@ -4,7 +4,10 @@
 
 call plug#begin('~/.local/share/nvim/plugged')
 
-" align text
+" Jump with s/S
+Plug 'justinmk/vim-sneak'
+
+" align text ga=
 Plug 'junegunn/vim-easy-align'
 
 " Macro editing: <leader>q + register
@@ -33,18 +36,12 @@ Plug 'majutsushi/tagbar'
 Plug 'christoomey/vim-tmux-navigator'
 
 "{{{ === colorscheme
-Plug 'shinchu/lightline-gruvbox.vim'
 Plug 'lifepillar/vim-gruvbox8'
 Plug 'nanotech/jellybeans.vim'
 Plug 'morhetz/gruvbox'
 Plug 'joshdick/onedark.vim'
-Plug 'arzg/vim-colors-xcode'
-Plug 'kjssad/quantum.vim'
-Plug 'ayu-theme/ayu-vim'
-Plug 'NLKNguyen/papercolor-theme'
 Plug 'rakr/vim-one'
 Plug 'sonph/onehalf', {'rtp': 'vim/'}
-Plug 'nightsense/snow'
 "}}}
 
 " resize vim windows "
