@@ -16,7 +16,7 @@ set hidden
 set cmdheight=2
 
 "" Smaller updatetime for CursorHold & CursorHoldI
-set updatetime=1000
+set updatetime=300
 
 "" don't give |ins-completion-menu| messages.
 set shortmess+=c
@@ -86,13 +86,7 @@ set sidescrolloff=30   " keep 30 columns visible left and right of the cursor at
 set termguicolors
 set background=dark
 
-" colorscheme ayu
-
-" colorscheme onedark
-
 colorscheme gruvbox
-
-" colorscheme jellybeans
 " }}}
 
 " === Auctocmd === {{{

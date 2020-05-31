@@ -23,7 +23,7 @@ Plug 'iamcco/markdown-preview.nvim', { 'do': { -> mkdp#util#install() } }
 Plug 'wellle/targets.vim'
 
 " Auto close pair
-Plug 'chiendo97/coBra'
+" Plug 'chiendo97/coBra'
 
 " Some Git stuff
 Plug 'airblade/vim-gitgutter'
@@ -48,8 +48,8 @@ Plug 'sonph/onehalf', {'rtp': 'vim/'}
 Plug 'simeji/winresizer'
 
 " helpful with surround"
-" Plug 'tpope/vim-surround'
-" Plug 'tpope/vim-repeat'
+Plug 'tpope/vim-surround'
+Plug 'tpope/vim-repeat'
 
 " find file with name"
 Plug '/usr/local/opt/fzf'

@@ -9,19 +9,18 @@ let mapleader = " "
 xmap ga <Plug>(EasyAlign)| " Start interactive EasyAlign in visual mode (e.g. vipga)
 " }}}
 
-" {{{ === line navigation
+" {{{ === Line navigation
 nnoremap <A-j> :m .+1<CR>==
 nnoremap <A-k> :m .-2<CR>==
-" 0 - jump to the start of the line
 " ^ - jump to the first non-blank character of the line
 nnoremap H ^
 vnoremap H ^
-" $ - jump to the end of the line
-nnoremap L $
-vnoremap L $
+" g_ - jump to the end of the line
+nnoremap L g_
+vnoremap L g_
 " }}}
 
-" {{{ === highlight
+" {{{ === Highlight
 nnoremap <silent> * :let @/ = '\<'.expand('<cword>').'\>'\|set hlsearch<C-M>
 nmap <silent> <C-C> :noh<CR><esc>
 imap <silent> <C-C> <esc><C-C>
@@ -30,12 +29,6 @@ vmap <silent> <C-C> <esc><C-C>
 
 " {{{ === Git
 nnoremap <leader>b :<C-U>Gblame<cr>|    " Open git blame for current file"
-" }}}
-
-" {{{ === Terminal mode
-tnoremap <C-F> <C-\><C-n>
-tnoremap <C-H> <C-\><C-n><C-W><C-H>
-tnoremap <C-L> <C-\><C-n><C-W><C-L>
 " }}}
 
 "{{{ === NERDCommenter
@@ -47,7 +40,7 @@ vmap <C-_> <plug>NERDCommenterToggle| " map <C-/> to use toggle comment
 nnoremap <leader>c :NERDTreeToggle<CR>
 "}}}
 
-"{{{ === fuzzy search
+"{{{ === Fuzzy search
 nnoremap <leader>g :GFiles<cr>|          " fuzzy find files under version control in the working directory (where you launched Vim from)"
 nnoremap <leader>f :Files<cr>|           " fuzzy find files in the working directory (where you launched Vim from)
 nnoremap <leader>r :Rg |                 " fuzzy find text in the working directory
@@ -100,14 +93,16 @@ vnoremap P "0p| " Paste last yank
 nmap <silent> [c <Plug>(coc-diagnostic-prev)
 nmap <silent> ]c <Plug>(coc-diagnostic-next)
 
-" Remap keys for gotos
+" GoTo code navigation.
 nmap <silent> gd <Plug>(coc-definition)
+nmap <silent> gy <Plug>(coc-type-definition)
+nmap <silent> gi <Plug>(coc-implementation)
 nmap <silent> gr <Plug>(coc-references)
 
 " Use K for show documentation in preview window
 nnoremap <silent> K :call <SID>show_documentation()<CR>
 function! s:show_documentation()
-  if &filetype == 'vim'
+  if (index(['vim','help'], &filetype) >= 0)
     execute 'h '.expand('<cword>')
   else
     call CocAction('doHover')
@@ -125,35 +120,23 @@ nnoremap <silent> <leader>ic  :<C-u>CocList commands<CR>|     " Open coc command
 
 "{{{ === Autocomplete
 
-inoremap <silent><expr> <cr>
-      \ pumvisible() ? coc#_select_confirm() : 
-      \ "\<C-g>u\<CR>\<c-r>=coc#on_enter()\<CR>"
+if exists('*complete_info')
+  inoremap <expr> <cr> complete_info()["selected"] != "-1" ? "\<C-y>" : "\<C-g>u\<CR>"
+else
+  inoremap <expr> <cr> pumvisible() ? "\<C-y>" : "\<C-g>u\<CR>"
+endif
 
 " Use <c-space> to trigger completion.
-" inoremap <silent><expr> <C-CR> coc#refresh()
-
-" inoremap <silent><expr> <TAB>
-"       \ pumvisible() ? "\<C-n>" :
-"       \ <SID>check_back_space() ? "\<TAB>" :
-"       \ coc#refresh()
-
-" inoremap <expr><S-TAB>
-"       \ pumvisible() ? "\<C-p>" : "\<C-h>"
-
-function! s:check_back_space() abort
-  let col = col('.') - 1
-  return !col || getline('.')[col - 1]  =~# '\s'
-endfunction
-
+inoremap <silent><expr> <c-space> coc#refresh()
 "}}}
 
-"{{{ === config files
+"{{{ === Config files
 nnoremap <Leader>ev :<C-u>e $MYVIMRC<CR>                  " quick edit vimrc 
 nnoremap <Leader>sv :<C-u>source $MYVIMRC<CR>             " quick source vimrc (after edit normally)
 nnoremap <Leader>ec :<C-u>CocConfig<CR>                   " quick edit coc config
 "}}}
 
-""{{{ === visual recent pasted code
+""{{{ === Visual recent pasted code
 nnoremap gV `[v`]
 "}}}
 

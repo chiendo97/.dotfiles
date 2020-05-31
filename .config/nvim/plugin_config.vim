@@ -3,9 +3,7 @@
 " Plugins Config:
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
-"{{{
-" let g:sneak#label = 1
-
+"{{{ === Sneak
 " case insensitive sneak
 let g:sneak#use_ic_scs = 1
 
@@ -15,7 +13,6 @@ let g:sneak#s_next = 1
 " Change the colors
 highlight Sneak guifg=black guibg=#00C7DF ctermfg=black ctermbg=cyan
 highlight SneakScope guifg=red guibg=yellow ctermfg=red ctermbg=yellow
-
 "}}}
 
 " {{{ === NERDCommenter
@@ -24,7 +21,7 @@ let g:NERDSpaceDelims = 1
 let g:NERDDefaultAlign = 'left'
 " }}}
 
-" " {{{ === gitgutter
+" " {{{ === Gitgutter
 let g:gitgutter_map_keys = 0
 let g:gitgutter_sign_added = '▌'
 let g:gitgutter_sign_modified = '▌'
@@ -38,7 +35,7 @@ highlight GitGutterAdd    guifg=#BEE275
 highlight GitGutterChange guifg=#96E1EF
 " }}}
 
-" {{{ === lightline
+" {{{ === Lightline
 let g:lightline = {
       \ 'colorscheme': 'gruvbox',
       \ 'active': {
@@ -65,33 +62,33 @@ function! LightlineFilename()
 endfunction
 " }}}
 
-" {{{ === vim-go
+" {{{ === Vim-go
 let g:go_doc_keywordprg_enabled = 0
 let g:go_def_mapping_enabled = 0
 let g:go_fmt_command = "goimports"
 let g:go_doc_popup_window = 1
 " }}}
 
-" === latex_preview === {{{
+" === Latex_preview === {{{
 let g:livepreview_previewer = 'open -a Preview'
 "}}}
 
-" === coc_vim === {{{
+" === Coc_vim === {{{
 " Set default python path
 let g:python_host_prog = '/usr/local/bin/python'
 let g:python3_host_prog = '/usr/local/bin/python3'
 " }}}
 
-" === winresizer === {{{
+" === Winresizer === {{{
 let g:winresizer_start_key = '<C-T>'
 " }}}
 
-" === markdown === {{{
+" === Markdown === {{{
 let g:mkdp_auto_start = 0
 let g:mkdp_echo_preview_url = 1
 " }}}
 
-" === nerdtree === {{{
+" === Nerdtree === {{{
 " Show hidden files/directories
 let g:NERDTreeShowHidden = 1
 
