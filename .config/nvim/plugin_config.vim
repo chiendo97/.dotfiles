@@ -3,6 +3,11 @@
 " Plugins Config:
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
+"{{{ === VimWiki
+let g:vimwiki_list = [{'path': '~/vimwiki/',
+                      \ 'syntax': 'markdown', 'ext': '.md'}]
+"}}}
+
 "{{{ === Sneak
 " case insensitive sneak
 let g:sneak#use_ic_scs = 1
@@ -48,10 +53,10 @@ let g:lightline = {
       \            ]
       \ },
       \ 'component_function': {
-      \   'gitbranch': 'FugitiveHead',
       \   'absolutepath': 'LightlineFilename',
       \ },
       \ }
+
 function! LightlineFilename()
   let root = fnamemodify(get(b:, 'git_dir'), ':h')
   let path = expand('%:p')

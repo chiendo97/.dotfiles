@@ -4,6 +4,8 @@
 
 call plug#begin('~/.local/share/nvim/plugged')
 
+Plug 'danilamihailov/vim-wiki-tips'
+
 " Jump with s/S
 Plug 'justinmk/vim-sneak'
 

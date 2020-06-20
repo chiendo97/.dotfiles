@@ -28,7 +28,7 @@ set autoread            "Set to auto read when a file is changed from the outsid
 set autowrite           " Save automatically all the buffers in vim
 set noautochdir         " Set the working directory
 
-set ruler               "Always show current position
+set ruler               " Always show current position
 
 set showmatch           " highlight matching [{()}]
 
@@ -50,6 +50,7 @@ set cinoptions+=g0
 set number              " show line numbers
 set relativenumber
 set showcmd             " show command in bottom bar
+set showtabline=2       " show tabline in top bar
 
 set cursorline          " highlight current line
 " set colorcolumn=80
@@ -84,8 +85,10 @@ set sidescrolloff=30   " keep 30 columns visible left and right of the cursor at
 
 " === Apperance === {{{
 set termguicolors
-set background=dark
+set background=light
 
+let g:gruvbox_italic = 1
+let g:gruvbox_italicize_comments = 1
 colorscheme gruvbox
 " }}}
 

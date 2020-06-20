@@ -12,6 +12,10 @@ xmap ga <Plug>(EasyAlign)| " Start interactive EasyAlign in visual mode (e.g. vi
 " {{{ === Line navigation
 nnoremap <A-j> :m .+1<CR>==
 nnoremap <A-k> :m .-2<CR>==
+inoremap <A-j> <Esc>:m .+1<CR>==gi
+inoremap <A-k> <Esc>:m .-2<CR>==gi
+vnoremap <A-j> :m '>+1<CR>gv=gv
+vnoremap <A-k> :m '<-2<CR>gv=gv
 " ^ - jump to the first non-blank character of the line
 nnoremap H ^
 vnoremap H ^
@@ -52,18 +56,16 @@ nnoremap <leader>l :<C-U>Lines<cr>|      " fuzzy find line
 "}}}
 
 "{{{ === Tab navigation
-nnoremap <leader>t :tabedit<CR>
-nnoremap <leader>1 1gt
-nnoremap <leader>2 2gt
-nnoremap <leader>3 3gt
-nnoremap <leader>4 4gt
-nnoremap <leader>5 5gt
-nnoremap <leader>6 6gt
-nnoremap <leader>7 7gt
-nnoremap <leader>8 8gt
-nnoremap <leader>9 9gt
-nnoremap <leader>j gt
-nnoremap <leader>k gT
+nnoremap <silent> gt :tabedit<CR>
+nnoremap <silent> g1 1gt
+nnoremap <silent> g2 2gt
+nnoremap <silent> g3 3gt
+nnoremap <silent> g4 4gt
+nnoremap <silent> g5 5gt
+nnoremap <silent> g6 6gt
+nnoremap <silent> g7 7gt
+nnoremap <silent> g8 8gt
+nnoremap <silent> g9 9gt
 "}}}
 
 "{{{ === Motions

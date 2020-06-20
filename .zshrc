@@ -1,4 +1,4 @@
-# Start configuration added by Zim install {{{
+# === Start configuration added by Zim install {{{
 #
 # User configuration sourced by interactive shells
 #
@@ -125,21 +125,19 @@ bindkey -M vicmd 'j' history-substring-search-down
 # {{{ === ALIAS
 alias t="tree -a -I '.git'"
 alias c='clear'
-alias v='f -e vim' # quick opening files with vim
-alias n='f -e nvim' # quick opening files with vim
+alias v='vim' # quick opening files with vim
+alias n='nvim' # quick opening files with vim
 
 alias tx='tmux'
 alias nv='nvim'
 alias gf='git fetch --all'
 alias gd='git diff'
 alias gb='git branch'
-alias gp='git push origin'
-alias gm='git commit -m'
 alias gs='git status'
 alias gl='git log'
 
-alias ss='source env/bin/activate'
-alias dd='deactivate'
+alias ps='source env/bin/activate'
+alias pd='deactivate'
 
 alias dt='/usr/bin/git --git-dir=$HOME/.dotfiles/.git/ --work-tree=$HOME' # dotfiles for .files config
 alias cpwd="pwd | tr -d '\n' | pbcopy" # Copy pwd to clipboard
@@ -174,7 +172,6 @@ export EDITOR=/usr/local/bin/nvim
 # }}}
 
 # {{{ === MAPPING KEY 
-# bindkey -v # use like vim editor
 bindkey -e # use like emacs editor
 bindkey '^p' up-history
 bindkey '^n' down-history
@@ -183,9 +180,6 @@ bindkey '^r' history-incremental-search-backward
 autoload -U edit-command-line
 zle -N edit-command-line
 bindkey '^f' edit-command-line
-
-# bindkey '^a' vi-beginning-of-line
-# bindkey '^e' vi-ending-of-line
 # }}}
 
 # {{{ === SOURCE 
@@ -202,7 +196,6 @@ export GOPROXY=direct
 export GOSUMDB=off
 
 export GOPRIVATE=git.garena.com/*
-# export  GOFLAGS=-mod=vendor
 # }}}
 
 # {{{ === FASD INIT ===
