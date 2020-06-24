@@ -139,6 +139,9 @@ alias gl='git log'
 alias ps='source env/bin/activate'
 alias pd='deactivate'
 
+alias gst='git stash'
+alias gsp='git stash pop'
+
 alias dt='/usr/bin/git --git-dir=$HOME/.dotfiles/.git/ --work-tree=$HOME' # dotfiles for .files config
 alias cpwd="pwd | tr -d '\n' | pbcopy" # Copy pwd to clipboard
 

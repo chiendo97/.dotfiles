@@ -3,9 +3,15 @@
 " Plugins Config:
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
+"{{{ === Git-messenger
+let g:git_messenger_no_default_mappings=v:true
+nmap M <Plug>(git-messenger)
+"}}}
+
 "{{{ === VimWiki
 let g:vimwiki_list = [{'path': '~/vimwiki/',
                       \ 'syntax': 'markdown', 'ext': '.md'}]
+let g:vimwiki_folding = 'list:quick'
 "}}}
 
 "{{{ === Sneak
