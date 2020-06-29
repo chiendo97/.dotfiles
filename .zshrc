@@ -136,8 +136,8 @@ alias gb='git branch'
 alias gs='git status'
 alias gl='git log'
 
-alias ps='source env/bin/activate'
-alias pd='deactivate'
+alias pys='source env/bin/activate'
+alias pyd='deactivate'
 
 alias gst='git stash'
 alias gsp='git stash pop'
