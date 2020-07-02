@@ -4,6 +4,8 @@
 
 call plug#begin('~/.local/share/nvim/plugged')
 
+Plug 'danilamihailov/beacon.nvim'
+
 Plug 'rhysd/git-messenger.vim'
 
 Plug 'danilamihailov/vim-wiki-tips'

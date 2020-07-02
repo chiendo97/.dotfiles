@@ -58,6 +58,11 @@ let g:lightline = {
       \            [ 'fileformat', 'fileencoding', 'filetype' ]
       \            ]
       \ },
+      \ 'inactive' : {
+      \   'left': [ [ 'absolutepath' ] ],
+      \   'right': [ [ 'lineinfo' ],
+      \            [ 'percent' ] ] 
+      \ },
       \ 'component_function': {
       \   'absolutepath': 'LightlineFilename',
       \ },
