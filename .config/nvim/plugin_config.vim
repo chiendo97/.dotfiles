@@ -48,14 +48,14 @@ highlight GitGutterChange guifg=#96E1EF
 
 " {{{ === Lightline
 let g:lightline = {
-      \ 'colorscheme': 'gruvbox',
+      \ 'colorscheme': '2intellij',
       \ 'active': {
       \   'left': [ [ 'mode', 'paste' ],
       \             [ 'absolutepath', 'readonly', 'modified' ] ],
       \   'right': [ 
       \            [ 'lineinfo' ],
       \            [ 'percent' ],
-      \            [ 'fileformat', 'fileencoding', 'filetype' ]
+      \            [ 'filetype' ]
       \            ]
       \ },
       \ 'inactive' : {
@@ -65,16 +65,39 @@ let g:lightline = {
       \ },
       \ 'component_function': {
       \   'absolutepath': 'LightlineFilename',
+      \   'mode': 'LightlineMode',
+      \   'filetype': 'LightlineFiletype',
       \ },
       \ }
+
+function! LightlineFiletype()
+  return winwidth(0) > 60 ? (&filetype !=# '' ? &filetype : 'no ft') : ''
+endfunction
+
+function! LightlineMode()
+  let fname = expand('%:t')
+  return fname == '__Tagbar__' ? 'Tagbar' :
+        \ fname == 'ControlP' ? 'CtrlP' :
+        \ fname == '__Gundo__' ? 'Gundo' :
+        \ fname == '__Gundo_Preview__' ? 'Gundo Preview' :
+        \ fname =~ 'NERD_tree' ?  g:NERDTreeStatusline:
+        \ &ft == 'unite' ? 'Unite' :
+        \ &ft == 'vimfiler' ? 'VimFiler' :
+        \ &ft == 'vimshell' ? 'VimShell' :
+        \ lightline#mode()
+endfunction
 
 function! LightlineFilename()
   let root = fnamemodify(get(b:, 'git_dir'), ':h')
   let path = expand('%:p')
+  let absolutepath = ''
   if path[:len(root)-1] ==# root
-    return path[len(root)+1:]
+    let absolutepath = path[len(root)+1:]
+  else
+    let absolutepath = expand('%')
   endif
-  return expand('%')
+  return winwidth(0) > 70 ? absolutepath : expand('%')
+
 endfunction
 " }}}
 
@@ -83,6 +106,26 @@ let g:go_doc_keywordprg_enabled = 0
 let g:go_def_mapping_enabled = 0
 let g:go_fmt_command = "goimports"
 let g:go_doc_popup_window = 1
+let g:go_fold_enable = ['block', 'import', 'varconst', 'package_comment', 'comment']
+
+let g:go_highlight_array_whitespace_error = 0
+let g:go_highlight_build_constraints      = 0
+let g:go_highlight_chan_whitespace_error  = 0
+" io.Reader
+let g:go_highlight_extra_types            = 0
+let g:go_highlight_fields                 = 1
+let g:go_highlight_format_strings         = 1
+let g:go_highlight_function_calls         = 1
+let g:go_highlight_function_parameters    = 0
+let g:go_highlight_functions              = 1
+let g:go_highlight_generate_tags          = 0
+let g:go_highlight_operators              = 0
+let g:go_highlight_space_tab_error        = 0
+let g:go_highlight_string_spellcheck      = 0
+" struct and interfaces names
+let g:go_highlight_types                  = 0
+let g:go_highlight_variable_assignments   = 0
+let g:go_highlight_variable_declarations  = 0
 " }}}
 
 " === Latex_preview === {{{

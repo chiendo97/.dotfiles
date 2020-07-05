@@ -53,7 +53,6 @@ set showcmd             " show command in bottom bar
 set showtabline=2       " show tabline in top bar
 
 set cursorline          " highlight current line
-" set colorcolumn=80
 
 set wildmenu            " visual autocomplete for command menu
 set wildmode=longest:full
@@ -73,6 +72,7 @@ set backspace=indent,eol,start
 set nowrap
 
 set foldmethod=marker
+set foldlevel=0
 
 set formatoptions-=r formatoptions-=c formatoptions-=o " Disable newline with comment
 
@@ -87,20 +87,30 @@ set sidescrolloff=30   " keep 30 columns visible left and right of the cursor at
 set termguicolors
 set background=light
 
-let g:gruvbox_italic = 1
-let g:gruvbox_italicize_comments = 1
-colorscheme gruvbox
+colorscheme 2intellij
 " }}}
 
 " === Auctocmd === {{{
-"
-" Only do this part when compiled with support for autocommands
 if has("autocmd")
-  " If more than one window and previous buffer was NERDTree, go back to it.
-  autocmd BufEnter * if bufname('#') =~# "^NERD_tree_" && winnr('$') > 1 | b# | endif
-  autocmd BufEnter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
 
-  au BufReadPost * if line("'\"") > 0 && line("'\"") <= line("$") | exe "normal! g`\"" | endif
+  augroup nerdtree
+    autocmd!
+    " If more than one window and previous buffer was NERDTree, go back to it.
+    autocmd BufEnter * if bufname('#') =~# "^NERD_tree_" && winnr('$') > 1 | b# | endif
+    autocmd BufEnter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
+    " autocmd BufEnter * set fo-=c fo-=r fo-=o
+  augroup END
+
+  augroup line
+    autocmd!
+    au BufReadPost * if line("'\"") > 0 && line("'\"") <= line("$") | exe "normal! g`\"" | endif
+  augroup END
+
+  augroup fold
+    autocmd!
+    autocmd FileType * set foldmethod=marker foldlevel=0
+    autocmd FileType go set foldmethod=syntax foldlevel=20
+  augroup END
 
   " Syntax of these languages is fussy over tabs Vs spaces
   augroup filetype
@@ -121,7 +131,6 @@ if has("autocmd")
     autocmd FileType lua setlocal ts=2 sts=2 sw=2 expandtab smarttab
     autocmd FileType sql setlocal ts=4 sts=4 sw=4 expandtab smarttab
     autocmd FileType xml setlocal ts=2 sts=2 sw=2 expandtab smarttab
-    autocmd BufEnter * set fo-=c fo-=r fo-=o
   augroup END
 
   augroup templates

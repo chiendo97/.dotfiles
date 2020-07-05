@@ -97,6 +97,7 @@ font:
     #   - (macOS) Menlo
     #   - (Linux/BSD) monospace
     #   - (Windows) Consolas
+    # family: JetBrainsMono
     family: Hack Nerd Font
 
     # The `style` can be specified to pick a specific face.
@@ -119,6 +120,7 @@ font:
     #
     # If the italic family is not specified, it will fall back to the
     # value specified for the normal font.
+    # family: JetBrainsMono
     family: Hack Nerd Font
 
     # The `style` can be specified to pick a specific face.
@@ -136,11 +138,11 @@ font:
     #style: Bold Italic
 
   # Point size
-  size: 13.5
+  size: 15
 
   # Offset is the extra space around each character. `offset.y` can be thought of
   # as modifying the line spacing, and `offset.x` as modifying the letter spacing.
-  #offset:
+  # offset:
   #  x: 0
   #  y: 0
 
@@ -165,46 +167,41 @@ font:
   #
   # This is a global setting and will require a log out or restart to take
   # effect.
-  #use_thin_strokes: true
+  # use_thin_strokes: true
 
 # If `true`, bold text is drawn using the bright color variants.
 #draw_bold_text_with_bright_colors: false
 
-# Colors (Gruvbox light)
+# Colors (One Half Light)
 colors:
-  # Default colors
   primary:
-    # hard contrast: background = '0xf9f5d7'
-    background: '0xfbf1c7'
-    # soft contrast: background = '0xf2e5bc'
-    foreground: '0x3c3836'
+    background: '0xfafafa'
+    foreground: '0x383a42'
 
   # Cursor colors []
   cursor:
     text:   '0xfbf1c7'
     cursor: '0x000000'
 
-  # Normal colors
   normal:
-    black:   '0xfbf1c7'
-    red:     '0xcc241d'
-    green:   '0x98971a'
-    yellow:  '0xd79921'
-    blue:    '0x458588'
-    magenta: '0xb16286'
-    cyan:    '0x689d6a'
-    white:   '0x7c6f64'
+    black: '0x383a42'
+    red: '0xe45649'
+    green: '0x50a14f'
+    yellow: '0xc18401'
+    blue: '0x0184bc'
+    magenta: '0xa626a4'
+    cyan: '0x0997b3'
+    white: '0xfafafa'
 
-  # Bright colors
   bright:
-    black:   '0x928374'
-    red:     '0x9d0006'
-    green:   '0x79740e'
-    yellow:  '0xb57614'
-    blue:    '0x076678'
-    magenta: '0x8f3f71'
-    cyan:    '0x427b58'
-    white:   '0x3c3836'
+    black: '0x383a42'
+    red: '0xe45649'
+    green: '0x50a14f'
+    yellow: '0xc18401'
+    blue: '0x0184bc'
+    magenta: '0xa626a4'
+    cyan: '0x0997b3'
+    white: '0xfafafa'
 
 # Visual Bell
 #
