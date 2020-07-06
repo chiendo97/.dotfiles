@@ -66,13 +66,15 @@ set smartcase
 let @/ = ""             " no highlight after source vimrc
 
 set list
-set listchars=tab:▸\ ,eol:¬
+set listchars=tab:┆\
+set listchars+=eol:¬
+set listchars+=trail:·,extends:→
 
 set backspace=indent,eol,start
 set nowrap
 
-set foldmethod=marker
-set foldlevel=0
+" set foldmethod=marker
+" set foldlevel=0
 
 set formatoptions-=r formatoptions-=c formatoptions-=o " Disable newline with comment
 
@@ -108,8 +110,8 @@ if has("autocmd")
 
   augroup fold
     autocmd!
-    autocmd FileType * set foldmethod=marker foldlevel=0
-    autocmd FileType go set foldmethod=syntax foldlevel=20
+    autocmd FileType * setlocal foldmethod=marker foldlevel=0
+    autocmd FileType go setlocal foldmethod=syntax foldlevel=20
   augroup END
 
   " Syntax of these languages is fussy over tabs Vs spaces

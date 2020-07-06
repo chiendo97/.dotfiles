@@ -71,7 +71,7 @@ let g:lightline = {
       \ }
 
 function! LightlineFiletype()
-  return winwidth(0) > 60 ? (&filetype !=# '' ? &filetype : 'no ft') : ''
+  return winwidth(0) > 70 ? (strlen(&filetype) ? &filetype . ' ' . WebDevIconsGetFileTypeSymbol() : 'no ft') : ''
 endfunction
 
 function! LightlineMode()
@@ -80,7 +80,7 @@ function! LightlineMode()
         \ fname == 'ControlP' ? 'CtrlP' :
         \ fname == '__Gundo__' ? 'Gundo' :
         \ fname == '__Gundo_Preview__' ? 'Gundo Preview' :
-        \ fname =~ 'NERD_tree' ?  g:NERDTreeStatusline:
+        \ fname =~ 'NERD_tree' ?  'Nerd Tree':
         \ &ft == 'unite' ? 'Unite' :
         \ &ft == 'vimfiler' ? 'VimFiler' :
         \ &ft == 'vimshell' ? 'VimShell' :
