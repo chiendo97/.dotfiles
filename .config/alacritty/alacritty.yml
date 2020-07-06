@@ -138,7 +138,7 @@ font:
     #style: Bold Italic
 
   # Point size
-  size: 15
+  size: 14
 
   # Offset is the extra space around each character. `offset.y` can be thought of
   # as modifying the line spacing, and `offset.x` as modifying the letter spacing.
@@ -178,30 +178,29 @@ colors:
     background: '0xfafafa'
     foreground: '0x383a42'
 
-  # Cursor colors []
   cursor:
-    text:   '0xfbf1c7'
-    cursor: '0x000000'
+    text:       '0xfbf1c7'
+    cursor:     '0x000000'
 
   normal:
-    black: '0x383a42'
-    red: '0xe45649'
-    green: '0x50a14f'
-    yellow: '0xc18401'
-    blue: '0x0184bc'
-    magenta: '0xa626a4'
-    cyan: '0x0997b3'
-    white: '0xfafafa'
+    black:      '0x383a42'
+    red:        '0xe45649'
+    green:      '0x50a14f'
+    yellow:     '0xc18401'
+    blue:       '0x0184bc'
+    magenta:    '0xa626a4'
+    cyan:       '0x0997b3'
+    white:      '0xfafafa'
 
   bright:
-    black: '0x383a42'
-    red: '0xe45649'
-    green: '0x50a14f'
-    yellow: '0xc18401'
-    blue: '0x0184bc'
-    magenta: '0xa626a4'
-    cyan: '0x0997b3'
-    white: '0xfafafa'
+    black:      '0x928374'
+    red:        '0xe45649'
+    green:      '0x50a14f'
+    yellow:     '0xc18401'
+    blue:       '0x0184bc'
+    magenta:    '0xa626a4'
+    cyan:       '0x0997b3'
+    white:      '0xfafafa'
 
 # Visual Bell
 #
@@ -244,20 +243,20 @@ colors:
 # Allow terminal applications to change Alacritty's window title.
 #dynamic_title: true
 
-cursor:
-  text: '0x000000'
-  cursor: '0xffffff'
-  # Cursor style
-  #
-  # Values for `style`:
-  #   - ▇ Block
-  #   - _ Underline
-  #   - | Beam
-  style: Block
+# cursor:
+#   text:       '0xfbf1c7'
+#   cursor:     '0x000000'
+#   # Cursor style
+#   #
+#   # Values for `style`:
+#   #   - ▇ Block
+#   #   - _ Underline
+#   #   - | Beam
+#   style: Block
 
-  # If this is `true`, the cursor will be rendered as a hollow box when the
-  # window is not focused.
-  unfocused_hollow: true
+#   # If this is `true`, the cursor will be rendered as a hollow box when the
+#   # window is not focused.
+#   unfocused_hollow: true
 
 # Live config reload (changes require restart)
 # live_config_reload: true
