@@ -100,7 +100,7 @@ if has("autocmd")
     " If more than one window and previous buffer was NERDTree, go back to it.
     autocmd BufEnter * if bufname('#') =~# "^NERD_tree_" && winnr('$') > 1 | b# | endif
     autocmd BufEnter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
-    " autocmd BufEnter * set fo-=c fo-=r fo-=o
+    autocmd BufEnter * set fo-=c fo-=r fo-=o
   augroup END
 
   augroup line

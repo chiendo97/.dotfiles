@@ -29,6 +29,14 @@ nnoremap <silent> * :let @/ = '\<'.expand('<cword>').'\>'\|set hlsearch<C-M>
 nmap <silent> <C-C> :noh<CR><esc>
 imap <silent> <C-C> <esc><C-C>
 vmap <silent> <C-C> <esc><C-C>
+
+function! RgCurrentWord()
+    let @/ = ''
+    let wordUnderCursor = expand("<cword>")
+    execute 'Rg '. wordUnderCursor
+endfunction
+nnoremap <silent> <leader>R :call RgCurrentWord()<CR>
+
 " }}}
 
 " {{{ === Git
