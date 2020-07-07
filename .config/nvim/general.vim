@@ -66,7 +66,7 @@ set smartcase
 let @/ = ""             " no highlight after source vimrc
 
 set list
-set listchars=tab:┆\
+set listchars=tab:┆\ 
 set listchars+=eol:¬
 set listchars+=trail:·,extends:→
 
