@@ -25,18 +25,32 @@ vnoremap L g_
 " }}}
 
 " {{{ === Highlight
+
 nnoremap <silent> * :let @/ = '\<'.expand('<cword>').'\>'\|set hlsearch<C-M>
 nmap <silent> <C-C> :noh<CR><esc>
 imap <silent> <C-C> <esc><C-C>
 vmap <silent> <C-C> <esc><C-C>
 
-function! RgCurrentWord()
+nnoremap <silent> <leader>R :call <SID>RgCurrentWord()<CR>
+function! s:RgCurrentWord()
     let @/ = ''
     let wordUnderCursor = expand("<cword>")
     execute 'Rg '. wordUnderCursor
 endfunction
-nnoremap <silent> <leader>R :call RgCurrentWord()<CR>
 
+vnoremap <silent> <leader>R :call <SID>RgCurrentSelected()<CR>
+function! s:RgCurrentSelected()
+  let [line_start, column_start] = getpos("'<")[1:2]
+  let [line_end, column_end] = getpos("'>")[1:2]
+  let lines = getline(line_start, line_end)
+  if len(lines) == 0
+    return ''
+  endif
+  let lines[-1] = lines[-1][: column_end - (&selection == 'inclusive' ? 1 : 2)]
+  let lines[0] = lines[0][column_start - 1:]
+  let currentSelected = join(lines, "\n")
+  execute 'Rg '. currentSelected
+endfunction
 " }}}
 
 " {{{ === Git
