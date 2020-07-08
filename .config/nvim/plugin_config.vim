@@ -102,28 +102,28 @@ endfunction
 " }}}
 
 " {{{ === Vim-go
+let g:go_gopls_enabled = 0 " Disable vim-go gopls since we use coc-go gopls instead
 let g:go_doc_keywordprg_enabled = 0
 let g:go_def_mapping_enabled = 0
-let g:go_fmt_command = "goimports"
-let g:go_doc_popup_window = 1
-let g:go_fold_enable = ['block', 'import', 'varconst', 'package_comment', 'comment']
+let g:go_fmt_command = "goimports" " Refactor code when save
+let g:go_doc_popup_window = 1 " Use popup windows of neovim
+let g:go_fold_enable = ['block', 'import', 'varconst', 'package_comment', 'comment'] " fold settings
 
+" Highlight settings
 let g:go_highlight_array_whitespace_error = 0
 let g:go_highlight_build_constraints      = 0
 let g:go_highlight_chan_whitespace_error  = 0
-" io.Reader
-let g:go_highlight_extra_types            = 0
+let g:go_highlight_extra_types            = 0 " io.Reader
 let g:go_highlight_fields                 = 1
 let g:go_highlight_format_strings         = 1
 let g:go_highlight_function_calls         = 1
-let g:go_highlight_function_parameters    = 0
 let g:go_highlight_functions              = 1
+let g:go_highlight_function_parameters    = 0
 let g:go_highlight_generate_tags          = 0
 let g:go_highlight_operators              = 0
 let g:go_highlight_space_tab_error        = 0
 let g:go_highlight_string_spellcheck      = 0
-" struct and interfaces names
-let g:go_highlight_types                  = 0
+let g:go_highlight_types                  = 0 " struct and interfaces names
 let g:go_highlight_variable_assignments   = 0
 let g:go_highlight_variable_declarations  = 0
 " }}}

@@ -73,6 +73,7 @@ set listchars+=trail:·,extends:→
 set backspace=indent,eol,start
 set nowrap
 
+set nofoldenable " Disable fold by default
 " set foldmethod=marker
 " set foldlevel=0
 
@@ -103,6 +104,11 @@ if has("autocmd")
     autocmd BufEnter * set fo-=c fo-=r fo-=o
   augroup END
 
+  augroup syntaxsettings
+    autocmd!
+    autocmd Filetype * if getfsize(expand("%")) > 100000 | setlocal syntax=OFF | endif
+  augroup END
+
   augroup line
     autocmd!
     au BufReadPost * if line("'\"") > 0 && line("'\"") <= line("$") | exe "normal! g`\"" | endif
@@ -110,8 +116,8 @@ if has("autocmd")
 
   augroup fold
     autocmd!
-    autocmd FileType * setlocal foldmethod=marker foldlevel=0
-    autocmd FileType go setlocal foldmethod=syntax foldlevel=20
+    autocmd FileType * if getfsize(expand("%")) < 100000 | setlocal foldmethod=marker foldlevel=0 | endif 
+    autocmd FileType go if getfsize(expand("%")) < 100000 | setlocal foldmethod=syntax foldlevel=20 | endif 
   augroup END
 
   " Syntax of these languages is fussy over tabs Vs spaces

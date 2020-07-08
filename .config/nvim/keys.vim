@@ -5,6 +5,14 @@
 
 let mapleader = " "
 
+"{{{ === Debug
+nnoremap <silent> <leader>D :call <SID>Debug()<CR>
+function! s:Debug()
+  let x = getfsize(expand("%"))
+  echo x
+endfunction
+"}}}
+
 " {{{ === Align
 xmap ga <Plug>(EasyAlign)| " Start interactive EasyAlign in visual mode (e.g. vipga)
 " }}}
