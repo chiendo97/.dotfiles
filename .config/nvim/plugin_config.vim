@@ -48,7 +48,7 @@ highlight GitGutterChange guifg=#96E1EF
 
 " {{{ === Lightline
 let g:lightline = {
-      \ 'colorscheme': '2intellij',
+      \ 'colorscheme': 'intellij',
       \ 'active': {
       \   'left': [ [ 'mode', 'paste' ],
       \             [ 'absolutepath', 'readonly', 'modified' ] ],

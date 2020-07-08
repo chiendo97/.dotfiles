@@ -90,7 +90,7 @@ set sidescrolloff=30   " keep 30 columns visible left and right of the cursor at
 set termguicolors
 set background=light
 
-colorscheme 2intellij
+colorscheme intellij
 " }}}
 
 " === Auctocmd === {{{
