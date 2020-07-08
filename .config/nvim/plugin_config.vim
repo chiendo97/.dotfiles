@@ -59,7 +59,7 @@ let g:lightline = {
       \            ]
       \ },
       \ 'inactive' : {
-      \   'left': [ [ 'absolutepath' ] ],
+      \   'left': [ [ 'mode', 'absolutepath' ] ],
       \   'right': [ [ 'lineinfo' ],
       \            [ 'percent' ] ] 
       \ },
@@ -67,6 +67,8 @@ let g:lightline = {
       \   'absolutepath': 'LightlineFilename',
       \   'mode': 'LightlineMode',
       \   'filetype': 'LightlineFiletype',
+      \   'percent': 'LightLinePercent',
+      \   'lineinfo': 'LightLineLineInfo'
       \ },
       \ }
 
@@ -74,13 +76,27 @@ function! LightlineFiletype()
   return winwidth(0) > 70 ? (strlen(&filetype) ? &filetype . ' ' . WebDevIconsGetFileTypeSymbol() : 'no ft') : ''
 endfunction
 
+function! LightLinePercent()
+  if &ft !=? 'nerdtree'
+    return line('.') * 100 / line('$') . '%'
+  else
+    return ''
+  endif
+endfunction
+function! LightLineLineInfo()
+  if &ft !=? 'nerdtree'
+    return line('.').':'. col('.')
+  else
+    return ''
+  endif
+endfunction
 function! LightlineMode()
   let fname = expand('%:t')
-  return fname == '__Tagbar__' ? 'Tagbar' :
+  return fname =~ '__Tagbar__' ? 'Tagbar' :
         \ fname == 'ControlP' ? 'CtrlP' :
         \ fname == '__Gundo__' ? 'Gundo' :
         \ fname == '__Gundo_Preview__' ? 'Gundo Preview' :
-        \ fname =~ 'NERD_tree' ?  'Nerd Tree':
+        \ fname =~ 'NERD_tree' ?  'NERDTREE':
         \ &ft == 'unite' ? 'Unite' :
         \ &ft == 'vimfiler' ? 'VimFiler' :
         \ &ft == 'vimshell' ? 'VimShell' :
@@ -88,6 +104,9 @@ function! LightlineMode()
 endfunction
 
 function! LightlineFilename()
+  if &ft == 'nerdtree' || &ft =~ 'tagbar'
+    return ''
+  endif
   let root = fnamemodify(get(b:, 'git_dir'), ':h')
   let path = expand('%:p')
   let absolutepath = ''
@@ -97,7 +116,6 @@ function! LightlineFilename()
     let absolutepath = expand('%')
   endif
   return winwidth(0) > 70 ? absolutepath : expand('%')
-
 endfunction
 " }}}
 

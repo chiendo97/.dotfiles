@@ -73,7 +73,7 @@ set listchars+=trail:·,extends:→
 set backspace=indent,eol,start
 set nowrap
 
-set nofoldenable " Disable fold by default
+" set nofoldenable " Disable fold by default
 " set foldmethod=marker
 " set foldlevel=0
 
@@ -129,7 +129,7 @@ if has("autocmd")
     autocmd FileType css setlocal ts=2 sts=2 sw=2 expandtab
     autocmd FileType typescript setlocal ts=2 sts=2 sw=2 expandtab
     autocmd FileType javascript setlocal ts=2 sts=2 sw=2 expandtab
-    autocmd FileType json setlocal ts=2 sts=2 sw=2 expandtab
+    autocmd FileType json setlocal ts=4 sts=4 sw=4 expandtab
     autocmd FileType cpp setlocal ts=4 sts=4 sw=4 noexpandtab smarttab
     autocmd FileType go setlocal ts=4 sts=4 sw=4 noexpandtab smarttab
     autocmd FileType php setlocal ts=4 sts=4 sw=4 expandtab smarttab
