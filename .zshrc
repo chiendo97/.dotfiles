@@ -199,7 +199,7 @@ export GOPROXY=direct
 export GOSUMDB=off
 
 export GOPRIVATE=git.garena.com/*
-export SP_UNIX_SOCKET='/Users/chien.le/run/spex/spex.sock'
+export SP_UNIX_SOCKET=~/run/spex/spex.sock
 # }}}
 
 # {{{ === FASD INIT ===
