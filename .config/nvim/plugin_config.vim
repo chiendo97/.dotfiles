@@ -47,6 +47,14 @@ highlight GitGutterChange guifg=#96E1EF
 " }}}
 
 " {{{ === Lightline
+command! LightlineReload call LightlineReload()
+
+function! LightlineReload()
+  call lightline#init()
+  call lightline#colorscheme()
+  call lightline#update()
+endfunction
+
 let g:lightline = {
       \ 'colorscheme': 'intellij',
       \ 'active': {
@@ -59,18 +67,38 @@ let g:lightline = {
       \            ]
       \ },
       \ 'inactive' : {
-      \   'left': [ [ 'mode', 'absolutepath' ] ],
+      \   'left': [ [ 'inactivemode', 'absolutepath' ] ],
       \   'right': [ [ 'lineinfo' ],
       \            [ 'percent' ] ] 
       \ },
+      \ 'tabline': {
+      \   'left': [ [ 'tabs' ] ],
+      \   'right': [ [ 'close' ] ]
+      \ },
+      \ 'tab': {
+      \   'active': [ 'tabnum', 'filename', 'modified' ],
+      \   'inactive': [ 'tabnum', 'filename', 'modified' ]
+      \ },
       \ 'component_function': {
-      \   'absolutepath': 'LightlineFilename',
-      \   'mode': 'LightlineMode',
-      \   'filetype': 'LightlineFiletype',
-      \   'percent': 'LightLinePercent',
-      \   'lineinfo': 'LightLineLineInfo'
+      \   'absolutepath':     'LightlineFilename',
+      \   'mode':             'LightlineMode',
+      \   'inactivemode':     'LightlineInactiveMode',
+      \   'filetype':         'LightlineFiletype',
+      \   'percent':          'LightLinePercent',
+      \   'lineinfo':         'LightLineLineInfo'
+      \ },
+      \ 'tab_component_function': {
+      \   'filename': 'LightlineTabname',
       \ },
       \ }
+
+function! LightlineTabname(n) abort
+  let bufnr = tabpagebuflist(a:n)[tabpagewinnr(a:n) - 1]
+  let fname = expand('#' . bufnr . ':t')
+  return fname =~ '__Tagbar__' ? 'Tagbar' :
+        \ fname =~ 'NERD_tree' ? 'NERDTREE' : 
+        \ ('' != fname ? fname : '[No Name]')
+endfunction
 
 function! LightlineFiletype()
   return winwidth(0) > 70 ? (strlen(&filetype) ? &filetype . ' ' . WebDevIconsGetFileTypeSymbol() : 'no ft') : ''
@@ -83,6 +111,7 @@ function! LightLinePercent()
     return ''
   endif
 endfunction
+
 function! LightLineLineInfo()
   if &ft !=? 'nerdtree'
     return line('.').':'. col('.')
@@ -90,6 +119,20 @@ function! LightLineLineInfo()
     return ''
   endif
 endfunction
+
+function! LightlineInactiveMode()
+  let fname = expand('%:t')
+  return fname =~ '__Tagbar__' ? 'Tagbar' :
+        \ fname == 'ControlP' ? 'CtrlP' :
+        \ fname == '__Gundo__' ? 'Gundo' :
+        \ fname == '__Gundo_Preview__' ? 'Gundo Preview' :
+        \ fname =~ 'NERD_tree' ?  'NERDTREE':
+        \ &ft == 'unite' ? 'Unite' :
+        \ &ft == 'vimfiler' ? 'VimFiler' :
+        \ &ft == 'vimshell' ? 'VimShell' :
+        \ ''
+endfunction
+
 function! LightlineMode()
   let fname = expand('%:t')
   return fname =~ '__Tagbar__' ? 'Tagbar' :
