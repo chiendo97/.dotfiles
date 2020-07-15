@@ -117,7 +117,7 @@ if has("autocmd")
   augroup fold
     autocmd!
     autocmd FileType * if getfsize(expand("%")) < 100000 | setlocal foldmethod=marker foldlevel=0 | endif 
-    autocmd FileType go if getfsize(expand("%")) < 100000 | setlocal foldmethod=syntax foldlevel=20 | endif 
+    autocmd FileType go if getfsize(expand("%")) < 10000 | setlocal foldmethod=syntax foldlevel=20 | endif 
   augroup END
 
   " Syntax of these languages is fussy over tabs Vs spaces
