@@ -101,6 +101,7 @@ function! LightlineTabname(n) abort
 endfunction
 
 function! LightlineFiletype()
+  return winwidth(0) > 70 ? (strlen(&filetype) ? &filetype . ' ' : '') : ''
   return winwidth(0) > 70 ? (strlen(&filetype) ? &filetype . ' ' . WebDevIconsGetFileTypeSymbol() : 'no ft') : ''
 endfunction
 
@@ -161,6 +162,42 @@ function! LightlineFilename()
   return winwidth(0) > 70 ? absolutepath : expand('%')
 endfunction
 " }}}
+
+set statusline=
+set statusline+=\ 
+set statusline+=%f
+set statusline+=%m
+set statusline+=%=
+set statusline+=\ %y
+set statusline+=\ %p%%
+set statusline+=\ %l:%c
+
+function! Tabline()
+  let s = ''
+  for i in range(tabpagenr('$'))
+    let tab = i + 1
+    let winnr = tabpagewinnr(tab)
+    let buflist = tabpagebuflist(tab)
+    let bufnr = buflist[winnr - 1]
+    let bufname = bufname(bufnr)
+    let bufmodified = getbufvar(bufnr, "&mod")
+
+    let s .= '%' . tab . 'T'
+    let s .= (tab == tabpagenr() ? '%#TabLineSel#' : '%#TabLine#')
+    let s .= ' ' . tab .':'
+    let s .= (bufname != '' ? ' '. fnamemodify(bufname, ':t') . ' ' : '[No Name] ')
+
+    if bufmodified
+      let s .= '[+] '
+    endif
+  endfor
+
+  let s .= '%#TabLineFill#'
+  return s
+endfunction
+set tabline=
+set tabline+=%!Tabline()
+
 
 " {{{ === Vim-go
 let g:go_gopls_enabled = 0 " Disable vim-go gopls since we use coc-go gopls instead
@@ -223,4 +260,8 @@ let loaded_netrwPlugin = 1
 
 " Hide certain files and directories from NERDTree
 let g:NERDTreeIgnore = ['^\.DS_Store$', '^tags$', '\.git$[[dir]]', '\.idea$[[dir]]', '\.sass-cache$']
+
+" Disable highlight of file extension
+let g:NERDTreeDisableFileExtensionHighlight = 1
+highlight! link NERDTreeFlags NERDTreeDir
 " }}}

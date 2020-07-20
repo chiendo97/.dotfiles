@@ -41,5 +41,7 @@
 
   "java.errors.incompleteClasspath.severity": "ignore",
 
+  "explorer.previewAction.onHover": false,
+
   "clangd.path": "/Users/chiendo97/.config/coc/extensions/coc-clangd-data/install/10.0.0/clangd_10.0.0/bin/clangd"
 }

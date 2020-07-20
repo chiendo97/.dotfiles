@@ -80,10 +80,12 @@ Plug 'scrooloose/nerdcommenter'
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
 
 " directory tree
+" Plug 'Shougo/defx.nvim', { 'do': ':UpdateRemotePlugins' }
 Plug 'scrooloose/nerdtree'
 Plug 'ryanoasis/vim-devicons'
+" Plug 'tiagofumo/vim-nerdtree-syntax-highlight'
 
 " status bar
-Plug 'itchyny/lightline.vim'
+" Plug 'itchyny/lightline.vim'
 
 call plug#end()

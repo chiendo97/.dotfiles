@@ -12,7 +12,7 @@ filetype indent plugin on
 " if hidden is not set, TextEdit might fail.
 set hidden
 
-"" Better display for messages
+"Better display for messages
 set cmdheight=2
 
 "" Smaller updatetime for CursorHold & CursorHoldI
@@ -93,27 +93,28 @@ set background=light
 colorscheme intellij
 " }}}
 
-" === Auctocmd === {{{
+" === Autocmd === {{{
 if has("autocmd")
 
-  augroup nerdtree
+  " Disable newline with comment
+  augroup newline
     autocmd!
-    " If more than one window and previous buffer was NERDTree, go back to it.
-    autocmd BufEnter * if bufname('#') =~# "^NERD_tree_" && winnr('$') > 1 | b# | endif
-    autocmd BufEnter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
     autocmd BufEnter * set fo-=c fo-=r fo-=o
   augroup END
 
-  augroup syntaxsettings
+  " Auto disable syntax with large file
+  augroup syntaxoff
     autocmd!
     autocmd Filetype * if getfsize(expand("%")) > 100000 | setlocal syntax=OFF | endif
   augroup END
 
+  " Back to line
   augroup line
     autocmd!
     au BufReadPost * if line("'\"") > 0 && line("'\"") <= line("$") | exe "normal! g`\"" | endif
   augroup END
 
+  " Auto disable folding with large file
   augroup fold
     autocmd!
     autocmd FileType * if getfsize(expand("%")) < 100000 | setlocal foldmethod=marker foldlevel=0 | endif 
