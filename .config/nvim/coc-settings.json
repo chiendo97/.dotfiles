@@ -3,7 +3,7 @@
     "build.sbt", "build.sc", "build.grade", "pom.xml",
     ".git", ".hg"
   ],
-  "coc.preferences.formatOnSaveFiletypes": ["python"],
+  "coc.preferences.formatOnSaveFiletypes": ["python", "json"],
   "coc.preferences.formatOnType": true,
 
   "coc.source.omni.filetypes": [""],

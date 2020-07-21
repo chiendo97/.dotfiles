@@ -8,8 +8,6 @@ Plug 'ap/vim-css-color'
 
 Plug 'chiendo97/intellij.vim'
 
-Plug 'danilamihailov/beacon.nvim'
-
 Plug 'rhysd/git-messenger.vim'
 
 Plug 'danilamihailov/vim-wiki-tips'
