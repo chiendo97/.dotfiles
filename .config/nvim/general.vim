@@ -73,10 +73,6 @@ set listchars+=trail:·,extends:→
 set backspace=indent,eol,start
 set nowrap
 
-" set nofoldenable " Disable fold by default
-" set foldmethod=marker
-" set foldlevel=0
-
 set formatoptions-=r formatoptions-=c formatoptions-=o " Disable newline with comment
 
 set noeb vb t_vb=       " Tell vim to shut up
@@ -91,6 +87,45 @@ set termguicolors
 set background=light
 
 colorscheme intellij
+" }}}
+
+" {{{ === Statusline
+set statusline=
+set statusline+=\ 
+set statusline+=%f
+set statusline+=%m
+set statusline+=%=
+set statusline+=\ %y
+set statusline+=\ %p%%
+set statusline+=\ %l:%c
+" }}}
+
+" {{{ === Tabline
+function! Tabline()
+  let s = ''
+  for i in range(tabpagenr('$'))
+    let tab = i + 1
+    let winnr = tabpagewinnr(tab)
+    let buflist = tabpagebuflist(tab)
+    let bufnr = buflist[winnr - 1]
+    let bufname = bufname(bufnr)
+    let bufmodified = getbufvar(bufnr, "&mod")
+
+    let s .= '%' . tab . 'T'
+    let s .= (tab == tabpagenr() ? '%#TabLineSel#' : '%#TabLine#')
+    let s .= ' ' . tab .':'
+    let s .= (bufname != '' ? ' '. fnamemodify(bufname, ':t') . ' ' : '[No Name] ')
+
+    if bufmodified
+      let s .= '[+] '
+    endif
+  endfor
+
+  let s .= '%#TabLineFill#'
+  return s
+endfunction
+set tabline=
+set tabline+=%!Tabline()
 " }}}
 
 " === Autocmd === {{{

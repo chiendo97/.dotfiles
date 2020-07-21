@@ -14,18 +14,6 @@ let g:vimwiki_list = [{'path': '~/vimwiki/',
 let g:vimwiki_folding = 'list:quick'
 "}}}
 
-"{{{ === Sneak
-" case insensitive sneak
-let g:sneak#use_ic_scs = 1
-
-" immediately move to the next instance of search, if you move the cursor sneak is back to default behavior
-let g:sneak#s_next = 1
-
-" Change the colors
-highlight Sneak guifg=black guibg=#00C7DF ctermfg=black ctermbg=cyan
-highlight SneakScope guifg=red guibg=yellow ctermfg=red ctermbg=yellow
-"}}}
-
 " {{{ === NERDCommenter
 let g:NERDCreateDefaultMappings = 0
 let g:NERDSpaceDelims = 1
@@ -45,159 +33,6 @@ highlight GitGutterDelete guifg=#F97CA9
 highlight GitGutterAdd    guifg=#BEE275
 highlight GitGutterChange guifg=#96E1EF
 " }}}
-
-" {{{ === Lightline
-command! LightlineReload call LightlineReload()
-
-function! LightlineReload()
-  call lightline#init()
-  call lightline#colorscheme()
-  call lightline#update()
-endfunction
-
-let g:lightline = {
-      \ 'colorscheme': 'intellij',
-      \ 'active': {
-      \   'left': [ [ 'mode', 'paste' ],
-      \             [ 'absolutepath', 'readonly', 'modified' ] ],
-      \   'right': [ 
-      \            [ 'lineinfo' ],
-      \            [ 'percent' ],
-      \            [ 'filetype' ]
-      \            ]
-      \ },
-      \ 'inactive' : {
-      \   'left': [ [ 'inactivemode', 'absolutepath' ] ],
-      \   'right': [ [ 'lineinfo' ],
-      \            [ 'percent' ] ] 
-      \ },
-      \ 'tabline': {
-      \   'left': [ [ 'tabs' ] ],
-      \   'right': [ [ 'close' ] ]
-      \ },
-      \ 'tab': {
-      \   'active': [ 'tabnum', 'filename', 'modified' ],
-      \   'inactive': [ 'tabnum', 'filename', 'modified' ]
-      \ },
-      \ 'component_function': {
-      \   'absolutepath':     'LightlineFilename',
-      \   'mode':             'LightlineMode',
-      \   'inactivemode':     'LightlineInactiveMode',
-      \   'filetype':         'LightlineFiletype',
-      \   'percent':          'LightLinePercent',
-      \   'lineinfo':         'LightLineLineInfo'
-      \ },
-      \ 'tab_component_function': {
-      \   'filename': 'LightlineTabname',
-      \ },
-      \ }
-
-function! LightlineTabname(n) abort
-  let bufnr = tabpagebuflist(a:n)[tabpagewinnr(a:n) - 1]
-  let fname = expand('#' . bufnr . ':t')
-  return fname =~ '__Tagbar__' ? 'Tagbar' :
-        \ fname =~ 'NERD_tree' ? 'NERDTREE' : 
-        \ ('' != fname ? fname : '[No Name]')
-endfunction
-
-function! LightlineFiletype()
-  return winwidth(0) > 70 ? (strlen(&filetype) ? &filetype . ' ' : '') : ''
-  return winwidth(0) > 70 ? (strlen(&filetype) ? &filetype . ' ' . WebDevIconsGetFileTypeSymbol() : 'no ft') : ''
-endfunction
-
-function! LightLinePercent()
-  if &ft !=? 'nerdtree'
-    return line('.') * 100 / line('$') . '%'
-  else
-    return ''
-  endif
-endfunction
-
-function! LightLineLineInfo()
-  if &ft !=? 'nerdtree'
-    return line('.').':'. col('.')
-  else
-    return ''
-  endif
-endfunction
-
-function! LightlineInactiveMode()
-  let fname = expand('%:t')
-  return fname =~ '__Tagbar__' ? 'Tagbar' :
-        \ fname == 'ControlP' ? 'CtrlP' :
-        \ fname == '__Gundo__' ? 'Gundo' :
-        \ fname == '__Gundo_Preview__' ? 'Gundo Preview' :
-        \ fname =~ 'NERD_tree' ?  'NERDTREE':
-        \ &ft == 'unite' ? 'Unite' :
-        \ &ft == 'vimfiler' ? 'VimFiler' :
-        \ &ft == 'vimshell' ? 'VimShell' :
-        \ ''
-endfunction
-
-function! LightlineMode()
-  let fname = expand('%:t')
-  return fname =~ '__Tagbar__' ? 'Tagbar' :
-        \ fname == 'ControlP' ? 'CtrlP' :
-        \ fname == '__Gundo__' ? 'Gundo' :
-        \ fname == '__Gundo_Preview__' ? 'Gundo Preview' :
-        \ fname =~ 'NERD_tree' ?  'NERDTREE':
-        \ &ft == 'unite' ? 'Unite' :
-        \ &ft == 'vimfiler' ? 'VimFiler' :
-        \ &ft == 'vimshell' ? 'VimShell' :
-        \ lightline#mode()
-endfunction
-
-function! LightlineFilename()
-  if &ft == 'nerdtree' || &ft =~ 'tagbar'
-    return ''
-  endif
-  let root = fnamemodify(get(b:, 'git_dir'), ':h')
-  let path = expand('%:p')
-  let absolutepath = ''
-  if path[:len(root)-1] ==# root
-    let absolutepath = path[len(root)+1:]
-  else
-    let absolutepath = expand('%')
-  endif
-  return winwidth(0) > 70 ? absolutepath : expand('%')
-endfunction
-" }}}
-
-set statusline=
-set statusline+=\ 
-set statusline+=%f
-set statusline+=%m
-set statusline+=%=
-set statusline+=\ %y
-set statusline+=\ %p%%
-set statusline+=\ %l:%c
-
-function! Tabline()
-  let s = ''
-  for i in range(tabpagenr('$'))
-    let tab = i + 1
-    let winnr = tabpagewinnr(tab)
-    let buflist = tabpagebuflist(tab)
-    let bufnr = buflist[winnr - 1]
-    let bufname = bufname(bufnr)
-    let bufmodified = getbufvar(bufnr, "&mod")
-
-    let s .= '%' . tab . 'T'
-    let s .= (tab == tabpagenr() ? '%#TabLineSel#' : '%#TabLine#')
-    let s .= ' ' . tab .':'
-    let s .= (bufname != '' ? ' '. fnamemodify(bufname, ':t') . ' ' : '[No Name] ')
-
-    if bufmodified
-      let s .= '[+] '
-    endif
-  endfor
-
-  let s .= '%#TabLineFill#'
-  return s
-endfunction
-set tabline=
-set tabline+=%!Tabline()
-
 
 " {{{ === Vim-go
 let g:go_gopls_enabled = 0 " Disable vim-go gopls since we use coc-go gopls instead
@@ -259,9 +94,18 @@ let g:NERDTreeAutoDeleteBuffer = 1
 let loaded_netrwPlugin = 1
 
 " Hide certain files and directories from NERDTree
-let g:NERDTreeIgnore = ['^\.DS_Store$', '^tags$', '\.git$[[dir]]', '\.idea$[[dir]]', '\.sass-cache$']
+let g:NERDTreeIgnore = [
+      \'^\.DS_Store$', 
+      \'^tags$', 
+      \'\.git$[[dir]]',
+      \'\.idea$[[dir]]',
+      \'\.sass-cache$',
+      \'etcd*[[file]]',
+      \'\.etcd*[[file]]'
+      \]
 
 " Disable highlight of file extension
 let g:NERDTreeDisableFileExtensionHighlight = 1
+
 highlight! link NERDTreeFlags NERDTreeDir
 " }}}

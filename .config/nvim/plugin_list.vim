@@ -14,9 +14,6 @@ Plug 'rhysd/git-messenger.vim'
 
 Plug 'danilamihailov/vim-wiki-tips'
 
-" Jump with s/S
-Plug 'justinmk/vim-sneak'
-
 " align text ga=
 Plug 'junegunn/vim-easy-align'
 
@@ -32,9 +29,6 @@ Plug 'iamcco/markdown-preview.nvim', { 'do': { -> mkdp#util#install() } }
 " Vim plugin that provides additional text objects
 Plug 'wellle/targets.vim'
 
-" Auto close pair
-" Plug 'chiendo97/coBra'
-
 " Some Git stuff
 Plug 'airblade/vim-gitgutter'
 Plug 'tpope/vim-fugitive'
@@ -45,16 +39,11 @@ Plug 'majutsushi/tagbar'
 " vim-tmux-navigation
 Plug 'christoomey/vim-tmux-navigator'
 
-"{{{ === colorscheme
-Plug 'lifepillar/vim-gruvbox8'
-Plug 'nanotech/jellybeans.vim'
+" colorscheme
 Plug 'morhetz/gruvbox'
-Plug 'joshdick/onedark.vim'
-Plug 'rakr/vim-one'
 Plug 'sonph/onehalf', {'rtp': 'vim/'}
-"}}}
 
-" resize vim windows "
+" resize vim windows with ctrl + T
 Plug 'simeji/winresizer'
 
 " helpful with surround"
@@ -80,12 +69,7 @@ Plug 'scrooloose/nerdcommenter'
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
 
 " directory tree
-" Plug 'Shougo/defx.nvim', { 'do': ':UpdateRemotePlugins' }
 Plug 'scrooloose/nerdtree'
 Plug 'ryanoasis/vim-devicons'
-" Plug 'tiagofumo/vim-nerdtree-syntax-highlight'
-
-" status bar
-" Plug 'itchyny/lightline.vim'
 
 call plug#end()
