@@ -45,8 +45,9 @@ Plug 'sonph/onehalf', {'rtp': 'vim/'}
 Plug 'simeji/winresizer'
 
 " helpful with surround"
-Plug 'tpope/vim-surround'
-Plug 'tpope/vim-repeat'
+Plug 'machakann/vim-sandwich'
+" Plug 'tpope/vim-surround'
+" Plug 'tpope/vim-repeat'
 
 " find file with name"
 Plug '/usr/local/opt/fzf'
