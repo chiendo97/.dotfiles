@@ -32,12 +32,13 @@ vnoremap L g_
 " }}}
 
 " {{{ === Highlight
-
 nnoremap <silent> * :let @/ = '\<'.expand('<cword>').'\>'\|set hlsearch<C-M>
 nmap <silent> <C-C> :noh<CR><esc>
 imap <silent> <C-C> <esc><C-C>
 vmap <silent> <C-C> <esc><C-C>
+" }}}
 
+" {{{ === Rg
 nnoremap <silent> <leader>R :call <SID>RgCurrentWord()<CR>
 function! s:RgCurrentWord()
     let @/ = ''
@@ -103,22 +104,29 @@ nnoremap <silent> k gk| " Move up to wrap line
 "}}}
 
 "{{{ === Yank
-
 " Note: some register location
 " 0 - the last yank
 " " - the last delete
 " / - the last search
 " * - the system clipboard (most of the time)
-" :*y
+" - - blackhole
 
-" delete to 'blackhole' register 
-"nnoremap d "_d
+vnoremap y "*y| " Copy to clipboard
+vnoremap p "*p| " Paste from clipboard
 
-vnoremap Y "*y| " Copy to clipboard
-vnoremap P "0p| " Paste last yank
+" Copy (current path + current line number) to clipboard
+nnoremap <leader>yp :let @* = expand("%") . ":" . line(".")<CR>
+nnoremap <leader>yP :let @* = expand("%:p") . ":" . line(".")<CR>
+
+" Copy (current path + current line number + current line) to clipboard
+nnoremap <silent><leader>Fp :norm yy<CR>:let @* = expand("%") . ":" . line(".") . ":" . @"<CR>
+nnoremap <silent><leader>FP :norm yy<CR>:let @* = expand("%:p") . ":" . line(".") . ":" . @"<CR>
 "}}}
 
 "{{{ === Coc
+
+let g:coc_snippet_next = '<tab>'
+let g:coc_snippet_prev = '<s-tab>'
 
 " Use `[c` and `]c` for navigate diagnostics
 nmap <silent> [c <Plug>(coc-diagnostic-prev)
@@ -162,9 +170,9 @@ inoremap <silent><expr> <c-space> coc#refresh()
 "}}}
 
 "{{{ === Config files
-nnoremap <Leader>ev :<C-u>e $MYVIMRC<CR>                  " quick edit vimrc 
-nnoremap <Leader>sv :<C-u>source $MYVIMRC<CR>             " quick source vimrc (after edit normally)
-nnoremap <Leader>ec :<C-u>CocConfig<CR>                   " quick edit coc config
+nnoremap <Leader>ev :<C-u>e $MYVIMRC<CR>|                  " quick edit vimrc
+nnoremap <Leader>sv :<C-u>source $MYVIMRC<CR>|             " quick source vimrc (after edit normally)
+nnoremap <Leader>ec :<C-u>CocConfig<CR>|                   " quick edit coc config
 "}}}
 
 ""{{{ === Visual recent pasted code

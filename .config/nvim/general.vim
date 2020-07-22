@@ -95,6 +95,7 @@ set statusline+=\
 set statusline+=%f
 set statusline+=%m
 set statusline+=%=
+set statusline+=%{coc#status()}%{get(b:,'coc_current_function','')}
 set statusline+=\ %y
 set statusline+=\ %p%%
 set statusline+=\ %l:%c
