@@ -36,6 +36,8 @@ nnoremap <silent> * :let @/ = '\<'.expand('<cword>').'\>'\|set hlsearch<C-M>
 nmap <silent> <C-C> :noh<CR><esc>
 imap <silent> <C-C> <esc><C-C>
 vmap <silent> <C-C> <esc><C-C>
+
+vnoremap // y/\V<C-R>=escape(@",'/\')<CR><CR>
 " }}}
 
 " {{{ === Rg

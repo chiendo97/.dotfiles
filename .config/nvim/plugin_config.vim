@@ -35,7 +35,12 @@ highlight GitGutterChange guifg=#96E1EF
 " }}}
 
 " {{{ === Vim-go
-let g:go_gopls_enabled = 0 " Disable vim-go gopls since we use coc-go gopls instead
+let g:go_debug_windows = {
+      \ 'vars':       'rightbelow 60vnew',
+      \ 'stack':      'rightbelow 10new',
+      \ }
+
+let g:go_gopls_enabled = 1 " Disable vim-go gopls since we use coc-go gopls instead
 let g:go_doc_keywordprg_enabled = 0
 let g:go_def_mapping_enabled = 0
 let g:go_fmt_command = "goimports" " Refactor code when save
