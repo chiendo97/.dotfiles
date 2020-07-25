@@ -6,8 +6,6 @@ call plug#begin('~/.local/share/nvim/plugged')
 
 Plug 'ap/vim-css-color'
 
-Plug 'chiendo97/intellij.vim'
-
 Plug 'rhysd/git-messenger.vim'
 
 Plug 'danilamihailov/vim-wiki-tips'
@@ -38,6 +36,7 @@ Plug 'majutsushi/tagbar'
 Plug 'christoomey/vim-tmux-navigator'
 
 " colorscheme
+Plug 'chiendo97/intellij.vim'
 Plug 'morhetz/gruvbox'
 Plug 'sonph/onehalf', {'rtp': 'vim/'}
 
@@ -46,8 +45,6 @@ Plug 'simeji/winresizer'
 
 " helpful with surround"
 Plug 'machakann/vim-sandwich'
-" Plug 'tpope/vim-surround'
-" Plug 'tpope/vim-repeat'
 
 " find file with name"
 Plug '/usr/local/opt/fzf'

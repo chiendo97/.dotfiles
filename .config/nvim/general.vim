@@ -91,14 +91,19 @@ colorscheme intellij
 
 " {{{ === Statusline
 set statusline=
-set statusline+=\ 
-set statusline+=%f
-set statusline+=%m
-set statusline+=%=
+set statusline+=\ %n\                             " Buffer number
+set statusline+=\ %<%f%m%r%h%w\                   " File path, modified, readonly, helpfile, preview
+set statusline+=│                                 " Separator
+set statusline+=\ %Y\                             " FileType
+set statusline+=│                                 " Separator
+set statusline+=\ %{''.(&fenc!=''?&fenc:&enc).''} " Encoding
+set statusline+=\ (%{&ff})                        " FileFormat (dos/unix..)
+set statusline+=%=                                " Right Side
 set statusline+=%{coc#status()}%{get(b:,'coc_current_function','')}
-set statusline+=\ %y
-set statusline+=\ %p%%
-set statusline+=\ %l:%c
+set statusline+=│                                 " Separator
+set statusline+=\ col:\ %02v\                     " Colomn number
+set statusline+=│                                 " Separator
+set statusline+=\ ln:\ %02l/%L\ (%p%%)\           " Line number / total lines, percentage of document
 " }}}
 
 " {{{ === Tabline
@@ -114,12 +119,11 @@ function! Tabline()
 
     let s .= '%' . tab . 'T'
     let s .= (tab == tabpagenr() ? '%#TabLineSel#' : '%#TabLine#')
-    let s .= ' ' . tab .':'
-    let s .= (bufname != '' ? ' '. fnamemodify(bufname, ':t') . ' ' : '[No Name] ')
+    let s .= ' ' . tab .' '
+    let s .= (bufname != '' ? '['. fnamemodify(bufname, ':t') . ']' : '[No Name]')
+    let s .= (bufmodified ? '[+]' : '')
+    let s .= '%#TabLine# │'
 
-    if bufmodified
-      let s .= '[+] '
-    endif
   endfor
 
   let s .= '%#TabLineFill#'
