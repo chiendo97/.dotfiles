@@ -135,7 +135,6 @@ set tabline+=%!Tabline()
 
 " === Autocmd === {{{
 if has("autocmd")
-
   " Disable newline with comment
   augroup newline
     autocmd!

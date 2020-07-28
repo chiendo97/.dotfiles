@@ -4,6 +4,8 @@
 
 call plug#begin('~/.local/share/nvim/plugged')
 
+Plug 'jiangmiao/auto-pairs'
+
 Plug 'ap/vim-css-color'
 
 Plug 'rhysd/git-messenger.vim'
@@ -53,7 +55,7 @@ Plug 'junegunn/fzf.vim'
 "{{{ === Syntax and languages
 Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }
 Plug 'derekwyatt/vim-scala'
-Plug 'sheerun/vim-polyglot'
+" Plug 'sheerun/vim-polyglot'
 " Plug 'HerringtonDarkholme/yats.vim'
 " Plug 'mattn/emmet-vim'
 "}}}
