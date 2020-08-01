@@ -6,10 +6,13 @@
 let mapleader = " "
 
 "{{{ === Debug
-nnoremap <silent> <leader>D :call <SID>Debug()<CR>
-function! s:Debug()
-  echo mode()
-endfunction
+" nnoremap <silent> <leader>D :call <SID>Debug()<CR>
+" function! s:Debug()
+"   echo mode()
+" endfunction
+nnoremap <leader>D :echo "hi<" . synIDattr(synID(line("."),col("."),1),"name") . '> trans<'
+\ . synIDattr(synID(line("."),col("."),0),"name") . "> lo<"
+\ . synIDattr(synIDtrans(synID(line("."),col("."),1)),"name") . ">"<CR>
 "}}}
 
 " {{{ === Align
@@ -73,7 +76,8 @@ vmap <C-_> <plug>NERDCommenterToggle| " map <C-/> to use toggle comment
 "}}}
 
 "{{{ === NERDTree
-nnoremap <leader>c :NERDTreeToggle<CR>
+" nnoremap <leader>c :NERDTreeToggle<CR>
+nnoremap <leader>c :CocCommand explorer<CR>
 "}}}
 
 "{{{ === Fuzzy search
