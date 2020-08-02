@@ -91,21 +91,20 @@ colorscheme intellij
 
 " {{{ === Statusline
 set statusline=
-set statusline+=\ %n\                             " Buffer number
-set statusline+=\ %<%f%m%r%h%w\                   " File path, modified, readonly, helpfile, preview
+set statusline+=\ %n\                              " Buffer number
+set statusline+=\ %<%f%m%r%h%w\                    " File path, modified, readonly, helpfile, preview
 " set statusline+=│                                 " Separator
 " set statusline+=\ (%{&ff})                        " FileFormat (dos/unix..)
-set statusline+=%=                                " Right Side
+set statusline+=%=                                 " Right Side
 set statusline+=%{coc#status()}%{get(b:,'coc_current_function','')}
 " set statusline+=│                                 " Separator
 " set statusline+=\ col:\ %02v\                     " Colomn number
-set statusline+=\ %y\                             " FileType
-set statusline+=│                                 " Separator
-set statusline+=\ %{''.(&fenc!=''?&fenc:&enc).''}\  " Encoding
-set statusline+=│                                 " Separator
-set statusline+=\ %l:%c                          " Line number / total lines
-set statusline+=\ %p%%              " Percentage of document
-set statusline+=\                            " 
+set statusline+=\ %Y\                              " FileType
+set statusline+=│                                  " Separator
+set statusline+=\ %{''.(&fenc!=''?&fenc:&enc).''}\ " Encoding
+set statusline+=│                                  " Separator
+set statusline+=\ %l:%c                            " Line number / total lines
+set statusline+=\ %p%%\                            " Percentage of document
 " }}}
 
 " {{{ === Tabline
@@ -121,10 +120,10 @@ function! Tabline()
 
     let s .= '%' . tab . 'T'
     let s .= (tab == tabpagenr() ? '%#TabLineSel#' : '%#TabLine#')
-    let s .= ' ' . tab .' '
+    let s .= ' ' . tab .'.'
     let s .= (bufname != '' ? '['. fnamemodify(bufname, ':t') . ']' : '[No Name]')
     let s .= (bufmodified ? '[+]' : '')
-    let s .= '%#TabLine# │'
+    let s .= ' %#TabLine#│'
 
   endfor
 

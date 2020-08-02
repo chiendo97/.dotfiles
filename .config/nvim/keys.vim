@@ -77,7 +77,7 @@ vmap <C-_> <plug>NERDCommenterToggle| " map <C-/> to use toggle comment
 
 "{{{ === NERDTree
 " nnoremap <leader>c :NERDTreeToggle<CR>
-nnoremap <leader>c :CocCommand explorer<CR>
+nnoremap <silent><leader>c :CocCommand explorer<CR>
 "}}}
 
 "{{{ === Fuzzy search
