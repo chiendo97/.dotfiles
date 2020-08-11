@@ -6,11 +6,7 @@ call plug#begin('~/.local/share/nvim/plugged')
 
 Plug 'jiangmiao/auto-pairs'
 
-Plug 'ap/vim-css-color'
-
 Plug 'rhysd/git-messenger.vim'
-
-Plug 'danilamihailov/vim-wiki-tips'
 
 " align text ga=
 Plug 'junegunn/vim-easy-align'
@@ -53,8 +49,10 @@ Plug '/usr/local/opt/fzf'
 Plug 'junegunn/fzf.vim'
 
 "{{{ === Syntax and languages
+Plug 'ap/vim-css-color'
 Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }
 Plug 'derekwyatt/vim-scala'
+Plug 'cespare/vim-toml'
 " Plug 'sheerun/vim-polyglot'
 " Plug 'HerringtonDarkholme/yats.vim'
 " Plug 'mattn/emmet-vim'

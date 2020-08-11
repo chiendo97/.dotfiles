@@ -136,6 +136,12 @@ set tabline+=%!Tabline()
 
 " === Autocmd === {{{
 if has("autocmd")
+
+  augroup coc-explorer
+    autocmd!
+    autocmd FileType coc-explorer setlocal statusline=Explorer
+  augroup END
+
   " Disable newline with comment
   augroup newline
     autocmd!
