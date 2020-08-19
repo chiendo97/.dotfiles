@@ -4,7 +4,7 @@
 
 call plug#begin('~/.local/share/nvim/plugged')
 
-Plug 'jiangmiao/auto-pairs'
+" Plug 'jiangmiao/auto-pairs'
 
 Plug 'rhysd/git-messenger.vim'
 
