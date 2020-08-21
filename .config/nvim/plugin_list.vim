@@ -4,8 +4,6 @@
 
 call plug#begin('~/.local/share/nvim/plugged')
 
-" Plug 'jiangmiao/auto-pairs'
-
 Plug 'rhysd/git-messenger.vim'
 
 " align text ga=
@@ -65,7 +63,6 @@ Plug 'scrooloose/nerdcommenter'
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
 
 " directory tree
-Plug 'scrooloose/nerdtree'
 Plug 'ryanoasis/vim-devicons'
 
 call plug#end()

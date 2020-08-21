@@ -5,14 +5,22 @@
 
 let mapleader = " "
 
+command!      -bang -nargs=* Debug                   call s:debug(<q-args>, <bang>0, <bang>0)'])
+
+function! s:debug(arg, extra, bang)
+  echom a:arg
+  echom a:extra
+  echom a:bang
+endfunction
+
 "{{{ === Debug
 " nnoremap <silent> <leader>D :call <SID>Debug()<CR>
 " function! s:Debug()
 "   echo mode()
 " endfunction
-nnoremap <leader>D :echo "hi<" . synIDattr(synID(line("."),col("."),1),"name") . '> trans<'
-\ . synIDattr(synID(line("."),col("."),0),"name") . "> lo<"
-\ . synIDattr(synIDtrans(synID(line("."),col("."),1)),"name") . ">"<CR>
+" nnoremap <leader>D :echo "hi<" . synIDattr(synID(line("."),col("."),1),"name") . '> trans<'
+" \ . synIDattr(synID(line("."),col("."),0),"name") . "> lo<"
+" \ . synIDattr(synIDtrans(synID(line("."),col("."),1)),"name") . ">"<CR>
 "}}}
 
 " {{{ === Align
