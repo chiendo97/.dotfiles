@@ -34,6 +34,8 @@
     "explorer.keyMappingMode": "default",
     "explorer.previewAction.onHover": false,
     "go.goplsOptions": {
+        "deepCompletion": false,
+        "staticcheck": true,
         "completeUnimported": true,
         "usePlaceholders": true
     },
