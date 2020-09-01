@@ -179,6 +179,8 @@ export LC_ALL=en_US.UTF-8
 export LANG=en_US.UTF-8
 export LANGUAGE=en_US.UTF-8
 export EDITOR=/usr/local/bin/nvim
+
+export DOCKER_HOST_IP=127.0.0.1
 # }}}
 
 # {{{ === MAPPING KEY 
@@ -193,20 +195,21 @@ bindkey '^f' edit-command-line
 # }}}
 
 # {{{ === SOURCE 
-source /usr/local/Cellar/fzf/0.20.0/shell/completion.zsh
-source /usr/local/Cellar/fzf/0.20.0/shell/key-bindings.zsh
+source /usr/local/Cellar/fzf/0.22.0/shell/completion.zsh
+source /usr/local/Cellar/fzf/0.22.0/shell/key-bindings.zsh
 # }}}
 
 # {{{ === GO DEV
 export GOPATH=$HOME/go
-export PATH=$GOPATH/bin:$PATH
-
+export GOBIN=$GOPATH/bin
 export GO111MODULE=auto
 export GOPROXY=direct
 export GOSUMDB=off
-
 export GOPRIVATE=git.garena.com/*
+
 export SP_UNIX_SOCKET=~/run/spex/spex.sock
+
+export PATH=$GOPATH/bin:$PATH
 # }}}
 
 # {{{ === FASD INIT ===
