@@ -8,6 +8,8 @@ let mapleader = " "
 
 "{{{ === Debug
 
+command Run set splitright | vnew | set filetype=sh | read !sh #
+
 " command!      -bang -nargs=* Debug                   call s:debug(<q-args>, <bang>0, <bang>0)'])
 " function! s:debug(arg, extra, bang)
 "   echom a:arg
@@ -178,6 +180,9 @@ nnoremap <silent> <leader>ia  :<C-u>CocList diagnostics<cr>|  " Show all diagnos
 nnoremap <silent> <leader>ie  :<C-u>CocList extensions<cr>|   " Manage extensions
 nnoremap <silent> <leader>il  :<C-u>CocList<CR>|              " Open coc list
 nnoremap <silent> <leader>ic  :<C-u>CocList commands<CR>|     " Open coc commands
+
+" Add `:Format` command to format current buffer.
+command! -nargs=0 Format :call CocAction('format')
 "}}}
 
 "{{{ === Autocomplete
