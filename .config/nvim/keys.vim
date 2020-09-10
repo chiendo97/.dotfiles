@@ -8,7 +8,7 @@ let mapleader = " "
 
 "{{{ === Debug
 
-command Run set splitright | vnew | set filetype=sh | read !sh #
+command! Run set splitright | vnew | set filetype=sh | read !sh #
 
 " command!      -bang -nargs=* Debug                   call s:debug(<q-args>, <bang>0, <bang>0)'])
 " function! s:debug(arg, extra, bang)
@@ -16,6 +16,8 @@ command Run set splitright | vnew | set filetype=sh | read !sh #
 "   echom a:extra
 "   echom a:bang
 " endfunction
+
+nnoremap <M-A> :echo "TEST"<CR>
 
 nnoremap <silent> <leader>D :call <SID>Debug()<CR>
 function! s:Debug()
