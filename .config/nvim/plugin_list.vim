@@ -4,6 +4,8 @@
 
 call plug#begin('~/.local/share/nvim/plugged')
 
+Plug 'diepm/vim-rest-console'
+
 Plug 'rhysd/git-messenger.vim'
 
 " align text ga=
