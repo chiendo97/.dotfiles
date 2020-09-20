@@ -36,7 +36,7 @@ Plug 'christoomey/vim-tmux-navigator'
 " colorscheme
 Plug 'chiendo97/intellij.vim'
 Plug 'morhetz/gruvbox'
-Plug 'sonph/onehalf', {'rtp': 'vim/'}
+Plug 'edersonferreira/dalton-vim'
 
 " resize vim windows with ctrl + T
 Plug 'simeji/winresizer'

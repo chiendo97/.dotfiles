@@ -84,9 +84,11 @@ set sidescrolloff=30   " keep 30 columns visible left and right of the cursor at
 
 " === Apperance === {{{
 set termguicolors
-set background=light
+set background=dark
 
-colorscheme intellij
+" color intellij
+" color dalton
+color gruvbox
 " }}}
 
 " {{{ === Statusline
