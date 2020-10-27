@@ -3,6 +3,16 @@
 " Plugins Config:
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
+"{{{ === nvim-treesitter
+lua <<EOF
+require'nvim-treesitter.configs'.setup {
+  highlight = {
+    enable = true,
+  },
+}
+EOF
+"}}}
+
 "{{{ === Git-messenger
 let g:git_messenger_no_default_mappings=v:true
 nmap M <Plug>(git-messenger)
@@ -42,7 +52,7 @@ let g:go_doc_keywordprg_enabled = 0
 let g:go_def_mapping_enabled = 0
 let g:go_fmt_command = "goimports" " Refactor code when save
 let g:go_doc_popup_window = 1 " Use popup windows of neovim
-let g:go_fold_enable = ['block', 'import', 'varconst', 'package_comment', 'comment'] " fold settings
+let g:go_fold_enable = ['block', 'import', 'varconst'] " fold settings
 
 " Highlight settings
 let g:go_highlight_array_whitespace_error = 0

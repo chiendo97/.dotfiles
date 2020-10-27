@@ -80,6 +80,10 @@ set noeb vb t_vb=       " Tell vim to shut up
 set mouse=a
 
 set sidescrolloff=30   " keep 30 columns visible left and right of the cursor at all times
+
+set noeol
+
+let g:vimsyn_embed= 'l' "highlighting embedded script inside vim files
 " }}}
 
 " === Apperance === {{{
@@ -88,7 +92,12 @@ set background=dark
 
 " color intellij
 " color dalton
-color gruvbox
+let g:gruvbox_material_background = 'hard'
+let g:gruvbox_material_enable_italic = 1
+" let g:gruvbox_material_disable_italic_comment = 1
+
+color gruvbox-material
+" color gruvbox
 " }}}
 
 " {{{ === Statusline
@@ -172,22 +181,23 @@ if has("autocmd")
   " Syntax of these languages is fussy over tabs Vs spaces
   augroup filetype
     autocmd!
-    autocmd FileType make setlocal ts=8 sts=8 sw=8 noexpandtab
-    autocmd FileType yaml setlocal ts=2 sts=2 sw=2 expandtab
-    autocmd FileType html setlocal ts=2 sts=2 sw=2 expandtab
-    autocmd FileType css setlocal ts=2 sts=2 sw=2 expandtab
+    autocmd FileType make       setlocal ts=8 sts=8 sw=8 noexpandtab
+    autocmd FileType yaml       setlocal ts=2 sts=2 sw=2 expandtab
+    autocmd FileType html       setlocal ts=2 sts=2 sw=2 expandtab
+    autocmd FileType css        setlocal ts=2 sts=2 sw=2 expandtab
     autocmd FileType typescript setlocal ts=2 sts=2 sw=2 expandtab
     autocmd FileType javascript setlocal ts=4 sts=4 sw=4 expandtab
-    autocmd FileType json setlocal ts=4 sts=4 sw=4 expandtab
-    autocmd FileType cpp setlocal ts=4 sts=4 sw=4 noexpandtab smarttab
-    autocmd FileType go setlocal ts=4 sts=4 sw=4 noexpandtab smarttab
-    autocmd FileType php setlocal ts=4 sts=4 sw=4 expandtab smarttab
-    autocmd FileType vim setlocal ts=2 sts=2 sw=2 expandtab smarttab
-    autocmd FileType sh setlocal ts=2 sts=2 sw=2 expandtab smarttab
-    autocmd FileType zsh setlocal ts=2 sts=2 sw=2 expandtab smarttab
-    autocmd FileType lua setlocal ts=2 sts=2 sw=2 expandtab smarttab
-    autocmd FileType sql setlocal ts=4 sts=4 sw=4 expandtab smarttab
-    autocmd FileType xml setlocal ts=2 sts=2 sw=2 expandtab smarttab
+    autocmd FileType json       setlocal ts=4 sts=4 sw=4 expandtab
+    autocmd FileType cpp        setlocal ts=4 sts=4 sw=4 noexpandtab smarttab
+    autocmd FileType go         setlocal ts=4 sts=4 sw=4 noexpandtab smarttab
+    autocmd FileType php        setlocal ts=4 sts=4 sw=4 expandtab smarttab
+    autocmd FileType vim        setlocal ts=2 sts=2 sw=2 expandtab smarttab
+    autocmd FileType sh         setlocal ts=2 sts=2 sw=2 expandtab smarttab
+    autocmd FileType zsh        setlocal ts=2 sts=2 sw=2 expandtab smarttab
+    autocmd FileType lua        setlocal ts=2 sts=2 sw=2 expandtab smarttab
+    autocmd FileType sql        setlocal ts=4 sts=4 sw=4 expandtab smarttab
+    autocmd FileType xml        setlocal ts=2 sts=2 sw=2 expandtab smarttab
+    autocmd FileType proto      setlocal ts=4 sts=4 sw=4 noexpandtab smarttab
   augroup END
 
   augroup templates

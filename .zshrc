@@ -195,8 +195,8 @@ bindkey '^f' edit-command-line
 # }}}
 
 # {{{ === SOURCE 
-source /usr/local/Cellar/fzf/0.22.0/shell/completion.zsh
-source /usr/local/Cellar/fzf/0.22.0/shell/key-bindings.zsh
+source /usr/local/Cellar/fzf/0.23.1/shell/completion.zsh
+source /usr/local/Cellar/fzf/0.23.1/shell/key-bindings.zsh
 # }}}
 
 # {{{ === GO DEV
@@ -218,3 +218,4 @@ eval "$(fasd --init auto)"
 
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
+export PATH="/usr/local/opt/elasticsearch@6/bin:$PATH"

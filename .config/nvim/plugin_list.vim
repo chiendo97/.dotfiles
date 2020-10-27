@@ -4,6 +4,8 @@
 
 call plug#begin('~/.local/share/nvim/plugged')
 
+Plug 'nvim-treesitter/nvim-treesitter'
+
 Plug 'diepm/vim-rest-console'
 
 Plug 'rhysd/git-messenger.vim'
@@ -36,6 +38,7 @@ Plug 'christoomey/vim-tmux-navigator'
 " colorscheme
 Plug 'chiendo97/intellij.vim'
 Plug 'morhetz/gruvbox'
+Plug 'sainnhe/gruvbox-material'
 Plug 'edersonferreira/dalton-vim'
 
 " resize vim windows with ctrl + T
@@ -50,7 +53,7 @@ Plug 'junegunn/fzf.vim'
 
 "{{{ === Syntax and languages
 Plug 'ap/vim-css-color'
-Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }
+Plug 'fatih/vim-go'
 Plug 'derekwyatt/vim-scala'
 Plug 'cespare/vim-toml'
 " Plug 'sheerun/vim-polyglot'

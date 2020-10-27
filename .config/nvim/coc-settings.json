@@ -8,13 +8,11 @@
         ".hg"
     ],
     "coc.preferences.formatOnSaveFiletypes": [
+        "go",
         "python",
         "json"
     ],
     "coc.preferences.formatOnType": true,
-    "coc.source.omni.filetypes": [
-        ""
-    ],
     "coc.source.buffer.priority": 1,
     "explorer.sources": [
         {
@@ -35,7 +33,7 @@
     "explorer.previewAction.onHover": false,
     "go.goplsOptions": {
         "deepCompletion": true,
-        "staticcheck": true,
+        "staticcheck": false,
         "completeUnimported": true,
         "usePlaceholders": true
     },
@@ -61,6 +59,5 @@
     "python.linting.flake8Enabled": true,
     "python.linting.flake8Path": "/usr/local/bin/flake8",
     "python.sortImports.path": "/usr/local/bin/isort",
-    "java.errors.incompleteClasspath.severity": "ignore",
-    "clangd.path": "/Users/chiendo97/.config/coc/extensions/coc-clangd-data/install/10.0.0/clangd_10.0.0/bin/clangd"
+    "clangd.path": "/Users/chien.le/.config/coc/extensions/coc-clangd-data/install/10.0.0/clangd_10.0.0/bin/clangd"
 }
